@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import MainScreen from "./.src/MainScreen";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+
 import ButtonTimer from './src/components/Button';
 
 // const instructions = Platform.select({
@@ -12,19 +13,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 2,
-    borderColor: 'red',
-    backgroundColor: 'olive',
+    borderColor: 'black',
+    backgroundColor: 'powderblue',
   },
   top: {
     flex: 2,
     borderWidth: 2,
-    borderColor: 'white',
-    backgroundColor: 'tomato',
+    borderColor: 'black',
+    backgroundColor: 'steelblue',
   },
   middle: {
     flex: 6,
     borderWidth: 2,
-    borderColor: 'red',
+    borderColor: 'black',
     backgroundColor: 'green',
     flexDirection: 'row',
   },
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   middleCenter: {
     flex: 1,
     borderWidth: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'olive',
     justifyContent: 'center',
   },
   middleRight: {
@@ -47,8 +48,10 @@ const styles = StyleSheet.create({
   bottom: {
     flex: 2,
     borderWidth: 2,
-    borderColor: 'white',
-    backgroundColor: 'tomato',
+    borderColor: 'black',
+    backgroundColor: 'steelblue',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
 });
 
@@ -59,13 +62,13 @@ export default class App extends Component {
         <View style={styles.top} />
         <View style={styles.middle}>
           <View style={styles.middleLeft} />
-          <View style={styles.middleCenter}>
-            <Text>HOLA</Text>
-          </View>
+          <View style={styles.middleCenter} />
           <View style={styles.middleRight} />
         </View>
         <View style={styles.bottom}>
-          <ButtonTimer />
+          <ButtonTimer style={styles.button} name="play" />
+          <ButtonTimer style={styles.button} name="stop" />
+          {/* <Icon name="rocket" size={30} color="#900" /> */}
         </View>
       </View>
     );

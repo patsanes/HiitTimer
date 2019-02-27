@@ -1,26 +1,43 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { TouchableOpacity, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
+  button: {
+    alignSelf: 'center',
     justifyContent: 'center',
-    padding: 24,
+    backgroundColor: 'skyblue',
+    borderColor: 'skyblue',
+    borderWidth: 1,
+    color: 'white',
+    overflow: 'hidden',
+    height: 110,
+    width: 110,
+    borderRadius: 60,
   },
-  paragraph: {
-    margin: 24,
-    marginTop: 0,
-    fontSize: 14,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  logo: {
-    height: 128,
-    width: 128,
+  icon: {
+    alignSelf: 'center',
   },
 });
 
-const ButtonTimer = () => {
-  return <Button title="Timer" color="#841590" />;
+const ButtonTimer = props => {
+  console.log(props);
+  const { name } = props;
+  return (
+    <TouchableOpacity color="#841590" rounded="true" style={styles.button}>
+      <Icon name={name} size={40} color="white" style={styles.icon} />
+    </TouchableOpacity>
+  );
 };
+
+ButtonTimer.propTypes = {
+  name: PropTypes.string.isRequired,
+  test: PropTypes.string,
+};
+
+ButtonTimer.defaultProps = {
+  test: 'pepe',
+};
+
 export default ButtonTimer;

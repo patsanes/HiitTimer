@@ -21,11 +21,6 @@ const styles = StyleSheet.create({
 });
 
 const ButtonTimer = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>Timer working</Text>
-      <Button title="Timer" color="#841590" />
-    </View>
-  );
+  return <Button title="Timer" color="#841590" />;
 };
 export default ButtonTimer;

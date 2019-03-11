@@ -1,54 +1,51 @@
 import React, { Component } from 'react';
 // import MainScreen from "./.src/MainScreen";
-import { StyleSheet, View } from 'react-native';
+import moment from 'moment';
+import momentDurationFormatSetup from 'moment-duration-format';
+
+import { Text, StyleSheet, View } from 'react-native';
 
 import ButtonTimer from './src/components/Button';
 
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n Cmd+D or shake for dev menu',
-//   android: 'Double tap R on your keyboard to reload,\n Shake or press menu button for dev menu',
-// });
+import Timer from './src/components/Timer';
+
+momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 2,
-    borderColor: 'black',
-    backgroundColor: 'powderblue',
+    borderColor: 'powderblue',
+    backgroundColor: 'steelblue',
   },
   top: {
     flex: 2,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: 'powderblue',
     backgroundColor: 'steelblue',
+    justifyContent: 'flex-end',
   },
   middle: {
-    flex: 6,
+    flex: 7,
     borderWidth: 2,
-    borderColor: 'black',
-    backgroundColor: 'green',
+    borderColor: 'powderblue',
+    backgroundColor: 'steelblue',
     flexDirection: 'row',
-  },
-  middleLeft: {
-    flex: 1,
-    borderWidth: 1,
-    backgroundColor: 'white',
-  },
-  middleCenter: {
-    flex: 1,
-    borderWidth: 1,
-    backgroundColor: 'olive',
     justifyContent: 'center',
   },
+  middleLeft: {
+    flex: 3,
+  },
+  middleCenter: {
+    flex: 3,
+  },
   middleRight: {
-    flex: 1,
-    borderWidth: 1,
-    backgroundColor: 'white',
+    flex: 3,
   },
   bottom: {
-    flex: 2,
+    flex: 3,
     borderWidth: 2,
-    borderColor: 'black',
+    borderColor: 'powderblue',
     backgroundColor: 'steelblue',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -56,19 +53,62 @@ const styles = StyleSheet.create({
 });
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: moment().format('HH:mm:ss'),
+      // isTimerStarted: false,
+      isTimerPaused: false,
+    };
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      time: moment().format('HH:mm:ss'),
+      // isTimerStarted: true,
+      // timerStartedAt: moment(),
+    });
+  }
+
+  playTimer() {
+    this.setState({ isTimerPaused: false });
+  }
+
+  pauseTimer() {
+    this.setState({ isTimerPaused: true });
+  }
+
+  // refreshTimer() {
+  //   // TimerMachine.onStop();
+  // }
+
   render() {
+    const { time, isTimerPaused } = this.state;
+
     return (
       <View style={styles.container}>
-        <View style={styles.top} />
+        <View style={styles.top}>
+          <Text style={styles.paragraph}>La hora es {time}</Text>
+          <Text style={{ color: 'powderblue', fontSize: 60 }}>Are u ready?</Text>
+        </View>
         <View style={styles.middle}>
           <View style={styles.middleLeft} />
-          <View style={styles.middleCenter} />
+          <View style={styles.middleCenter}>
+            <Timer timePass="00" countdown="11" />
+          </View>
           <View style={styles.middleRight} />
         </View>
         <View style={styles.bottom}>
           <ButtonTimer style={styles.button} name="play" />
           <ButtonTimer style={styles.button} name="stop" />
-          {/* <Icon name="rocket" size={30} color="#900" /> */}
         </View>
       </View>
     );

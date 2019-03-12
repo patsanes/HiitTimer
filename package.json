@@ -7,11 +7,12 @@
     "run-ios": "yarn react-native run-ios",
     "run-android": "yarn react-native run-android",
     "info": "yarn react-native info",
-    "test": "jest"
+    "test": "jest",
+    "upgrade-deps": "yarn upgrade-interactive --latest"
   },
   "dependencies": {
-    "moment": "*",
-    "moment-duration-format": "*",
+    "moment": "2.24.0",
+    "moment-duration-format": "2.2.2",
     "prop-types": "^15.7.2",
     "react": "16.6.3",
     "react-native": "0.58.5",

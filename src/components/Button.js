@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: 'center',
     justifyContent: 'center',
-    backgroundColor: 'skyblue',
     borderColor: 'powderblue',
     borderWidth: 3,
     color: 'white',
@@ -16,16 +15,26 @@ const styles = StyleSheet.create({
     width: 110,
     borderRadius: 60,
   },
+  buttonActive: {
+    backgroundColor: 'skyblue',
+  },
+  buttonInactive: {
+    backgroundColor: 'grey',
+  },
   icon: {
     alignSelf: 'center',
   },
 });
 
 const ButtonTimer = props => {
-  console.log(props);
-  const { name } = props;
+  const { name, onPress, disabled } = props;
+  const params = {
+    style: [styles.button, disabled ? styles.buttonInactive : styles.buttonActive],
+    onPress: onPress,
+    disabled: disabled,
+  }
   return (
-    <TouchableOpacity color="#841590" rounded="true" style={styles.button}>
+    <TouchableOpacity {...params}>
       <Icon name={name} size={40} color="white" style={styles.icon} />
     </TouchableOpacity>
   );
@@ -33,11 +42,14 @@ const ButtonTimer = props => {
 
 ButtonTimer.propTypes = {
   name: PropTypes.string.isRequired,
-  test: PropTypes.string,
+  onPress: PropTypes.func.isRequired,
+  disabled: PropTypes.bool.isRequired,
+
+  // test: PropTypes.string,
 };
 
-ButtonTimer.defaultProps = {
-  test: 'pepe',
-};
+// ButtonTimer.defaultProps = {
+//   test: 'pepe',
+// };
 
 export default ButtonTimer;

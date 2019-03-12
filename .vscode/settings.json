@@ -5,7 +5,7 @@
   "editor.formatOnSave": true,
   // disable editor formatting, so eslint can handle it
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   // available through eslint plugin in vscode
   "eslint.autoFixOnSave": true,

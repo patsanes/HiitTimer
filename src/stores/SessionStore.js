@@ -57,7 +57,7 @@ export const SessionStore = types
 
 export const initialState = {
   // countdown: 20,
-  serie: 4,
+  serie: 2,
   currenctSerie: 0,
   cycle: 3,
   currenctCycle: 0,
@@ -67,3 +67,5 @@ export const initialState = {
   isPlay: false,
   isStop: false
 };
+
+// endTime;

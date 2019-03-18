@@ -1,26 +1,26 @@
-import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import PropTypes from "prop-types";
-import Timer from "./Timer";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import PropTypes from 'prop-types';
+import Timer from './Timer';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 3,
-    borderColor: "grey"
+    borderColor: 'grey',
   },
   text: {
-    fontSize: 40
+    fontSize: 40,
   },
   middleLeft: {
-    flex: 3
+    flex: 3,
   },
   middleCenter: {
-    flex: 3
+    flex: 3,
   },
   middleRight: {
-    flex: 3
-  }
+    flex: 3,
+  },
 });
 
 const WorkoutSpace = props => {
@@ -49,7 +49,7 @@ WorkoutSpace.propTypes = {
   training: PropTypes.number.isRequired,
   rest: PropTypes.number.isRequired,
   isPlay: PropTypes.bool.isRequired,
-  isStop: PropTypes.bool.isRequired
+  isStop: PropTypes.bool.isRequired,
 };
 
 export default WorkoutSpace;

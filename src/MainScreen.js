@@ -1,41 +1,41 @@
-import React from "react";
+import React from 'react';
 // import { observer, inject } from "mobx-react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View } from 'react-native';
 
-import Timer from "./components/Timer";
-import PlayPauseContainer from "./containers/PlayPauseContainer";
-import WorkoutSpaceContainer from "./containers/WorkoutSpaceContainer";
+import Timer from './components/Timer';
+import PlayPauseContainer from './containers/PlayPauseContainer';
+import WorkoutSpaceContainer from './containers/WorkoutSpaceContainer';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     borderWidth: 2,
-    borderColor: "powderblue",
-    backgroundColor: "steelblue"
+    borderColor: 'powderblue',
+    backgroundColor: 'steelblue',
   },
   top: {
     flex: 2,
     borderWidth: 2,
-    borderColor: "powderblue",
-    backgroundColor: "steelblue",
-    justifyContent: "flex-end"
+    borderColor: 'powderblue',
+    backgroundColor: 'steelblue',
+    justifyContent: 'flex-end',
   },
   middle: {
     flex: 7,
     borderWidth: 2,
-    borderColor: "powderblue",
-    backgroundColor: "steelblue",
-    flexDirection: "row",
-    justifyContent: "center"
+    borderColor: 'powderblue',
+    backgroundColor: 'steelblue',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
   bottom: {
     flex: 3,
     borderWidth: 2,
-    borderColor: "powderblue",
-    backgroundColor: "steelblue",
-    flexDirection: "row",
-    justifyContent: "space-around"
-  }
+    borderColor: 'powderblue',
+    backgroundColor: 'steelblue',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
 });
 
 class MainScreen extends React.Component {
@@ -57,8 +57,7 @@ class MainScreen extends React.Component {
 // export default inject("session")(observer(MainScreen));
 export default MainScreen;
 
-{
-  /*
+/*
 <View style={styles.container}>
   <View style={styles.top} >
     <Menu />
@@ -71,4 +70,3 @@ export default MainScreen;
   </View>
 </View>
  */
-}

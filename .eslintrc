@@ -1,21 +1,19 @@
 {
   "extends": ["airbnb", "prettier", "prettier/react"],
   "rules": {
+    "prettier/prettier": "error",
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".js", ".jsx"]
       }
     ],
-    "prettier/prettier": [
-      "error",
-      {
-        "trailingComma": "es5",
-        "singleQuote": true,
-        "printWidth": 100
-      }
-    ],
-    "react/prefer-stateless-function": "off"
+    "react/prefer-stateless-function": "off",
+    "react-native/no-unused-styles": "error",
+    "react-native/split-platform-components": "error",
+    "react-native/no-inline-styles": "error",
+    "react-native/no-color-literals": "off",
+    "react-native/no-raw-text": "error"
   },
-  "plugins": ["prettier"]
+  "plugins": ["react", "react-native", "prettier"]
 }

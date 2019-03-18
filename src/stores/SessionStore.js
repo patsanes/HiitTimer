@@ -1,9 +1,9 @@
 // import { values } from "mobx";
-import { types } from "mobx-state-tree";
-import moment from "moment";
+import { types } from 'mobx-state-tree';
+import moment from 'moment';
 
 export const SessionStore = types
-  .model("SessionStore", {
+  .model('SessionStore', {
     serie: types.number,
     currenctSerie: types.number,
     cycle: types.number,
@@ -12,19 +12,15 @@ export const SessionStore = types
     training: types.number, // seconds for training
     rest: types.number, // seconds for resting
     isPlay: types.boolean,
-    isStop: types.boolean
+    isStop: types.boolean,
   })
   .views(self => ({
     get endTime() {
       const extraSeconds =
-        self.rest * self.serie * self.cycle +
-        self.training * self.serie * self.cycle;
-      const endTime = moment(self.startTime, "HH:mm:ss").add(
-        extraSeconds,
-        "seconds"
-      );
-      return endTime.format("HH:mm:ss");
-    }
+        self.rest * self.serie * self.cycle + self.training * self.serie * self.cycle;
+      const endTime = moment(self.startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
+      return endTime.format('HH:mm:ss');
+    },
   }))
   .actions(self => ({
     setPause() {
@@ -41,7 +37,7 @@ export const SessionStore = types
         self.currenctSerie = 0;
         self.increaseCycle();
       } else {
-        self.currenctSerie = self.currenctSerie + 1;
+        self.currenctSerie += 1;
       }
     },
     increaseCycle() {
@@ -49,9 +45,9 @@ export const SessionStore = types
         self.setPause();
         self.setStop();
       } else {
-        self.currenctCycle = self.currenctCycle + 1;
+        self.currenctCycle += 1;
       }
-    }
+    },
   }));
 
 export const initialState = {
@@ -60,11 +56,11 @@ export const initialState = {
   currenctSerie: 0,
   cycle: 3,
   currenctCycle: 0,
-  startTime: "00:00:00",
+  startTime: '00:00:00',
   training: 20, // seconds for training
   rest: 5, // seconds for resting
   isPlay: false,
-  isStop: false
+  isStop: false,
 };
 
 // endTime;

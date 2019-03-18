@@ -1,40 +1,37 @@
-import * as React from "react";
-import Icon from "react-native-vector-icons/FontAwesome";
-import { TouchableOpacity, StyleSheet } from "react-native";
-import PropTypes from "prop-types";
+import React from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { TouchableOpacity, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   button: {
-    alignSelf: "center",
-    justifyContent: "center",
-    borderColor: "powderblue",
+    alignSelf: 'center',
+    justifyContent: 'center',
+    borderColor: 'powderblue',
     borderWidth: 3,
-    color: "white",
-    overflow: "hidden",
+    color: 'white',
+    overflow: 'hidden',
     height: 110,
     width: 110,
-    borderRadius: 60
+    borderRadius: 60,
   },
   buttonActive: {
-    backgroundColor: "skyblue"
+    backgroundColor: 'skyblue',
   },
   buttonInactive: {
-    backgroundColor: "grey"
+    backgroundColor: 'grey',
   },
   icon: {
-    alignSelf: "center"
-  }
+    alignSelf: 'center',
+  },
 });
 
 const ButtonTimer = props => {
   const { name, onPress, disabled } = props;
   const params = {
-    style: [
-      styles.button,
-      disabled ? styles.buttonInactive : styles.buttonActive
-    ],
-    onPress: onPress,
-    disabled: disabled
+    style: [styles.button, disabled ? styles.buttonInactive : styles.buttonActive],
+    onPress,
+    disabled,
   };
   return (
     <TouchableOpacity {...params}>
@@ -46,7 +43,7 @@ const ButtonTimer = props => {
 ButtonTimer.propTypes = {
   name: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
-  disabled: PropTypes.bool.isRequired
+  disabled: PropTypes.bool.isRequired,
 };
 
 export default ButtonTimer;

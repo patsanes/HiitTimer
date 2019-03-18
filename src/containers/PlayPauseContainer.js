@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import PropTypes from "prop-types";
-import { observer, inject } from "mobx-react";
+import { observer, inject } from 'mobx-react';
 
 // import ButtonTimer from "./Button";
-import PlayPause from "../components/PlayPause";
+import PlayPause from '../components/PlayPause';
 
 class PlayPauseContainer extends React.Component {
   render() {
@@ -19,4 +19,4 @@ class PlayPauseContainer extends React.Component {
   }
 }
 
-export default inject("session")(observer(PlayPauseContainer));
+export default inject('session')(observer(PlayPauseContainer));

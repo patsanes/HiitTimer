@@ -1,24 +1,24 @@
-import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import moment from "moment";
-import momentDurationFormatSetup from "moment-duration-format";
-import TimerMachine from "react-timer-machine";
-import PropTypes from "prop-types";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import moment from 'moment';
+import momentDurationFormatSetup from 'moment-duration-format';
+import TimerMachine from 'react-timer-machine';
+import PropTypes from 'prop-types';
 
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
     fontSize: 40,
-    alignSelf: "center",
-    color: "skyblue"
+    alignSelf: 'center',
+    color: 'skyblue',
   },
   titleText: {
     fontSize: 60,
-    fontWeight: "bold",
-    color: "powderblue",
-    alignSelf: "center"
-  }
+    fontWeight: 'bold',
+    color: 'powderblue',
+    alignSelf: 'center',
+  },
 });
 
 const Countdown = props => {
@@ -34,15 +34,9 @@ const Countdown = props => {
           started
           countdown
           interval={1000}
-          formatTimer={(time, ms) =>
-            moment.duration(ms, "milliseconds").format("h, m, s")
-          }
-          onStop={time =>
-            console.info(`Timer stopped: ${JSON.stringify(time)}`)
-          }
-          onComplete={time =>
-            console.info(`Timer completed: ${JSON.stringify(time)}`)
-          }
+          formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
+          onStop={time => console.info(`Timer stopped: ${JSON.stringify(time)}`)}
+          onComplete={time => console.info(`Timer completed: ${JSON.stringify(time)}`)}
         />
       </Text>
     </View>
@@ -50,7 +44,7 @@ const Countdown = props => {
 };
 
 Countdown.propTypes = {
-  countdown: PropTypes.number.isRequired
+  countdown: PropTypes.number.isRequired,
 };
 
 Countdown.defaultProps = {};

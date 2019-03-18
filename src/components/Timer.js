@@ -1,41 +1,44 @@
-import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import moment from "moment";
-import momentDurationFormatSetup from "moment-duration-format";
-import PropTypes from "prop-types";
-import Lap from "./Lap";
-import Countdown from "./Countdown";
-import TimeElapsed from "./TimeElapsed";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import moment from 'moment';
+import momentDurationFormatSetup from 'moment-duration-format';
+import PropTypes from 'prop-types';
+import Lap from './Lap';
+import Countdown from './Countdown';
+import TimeElapsed from './TimeElapsed';
 
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
     fontSize: 40,
-    alignSelf: "center",
-    color: "skyblue"
+    alignSelf: 'center',
+    color: 'skyblue',
   },
   titleText: {
     fontSize: 60,
-    fontWeight: "bold",
-    color: "powderblue",
-    alignSelf: "center"
+    fontWeight: 'bold',
+    color: 'powderblue',
+    alignSelf: 'center',
   },
   container: {
     flex: 3,
-    flexDirection: "column"
+    flexDirection: 'column',
   },
   middleTop: {
     flex: 5,
-    justifyContent: "flex-end"
+    justifyContent: 'flex-end',
   },
   middleMiddle: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: 'row',
+  },
+  miaaddleBottom: {
+    flex: 4,
   },
   middleBottom: {
-    flex: 4
-  }
+    flex: 4,
+  },
 });
 
 const Timer = props => {
@@ -60,7 +63,7 @@ const Timer = props => {
 Timer.propTypes = {
   serie: PropTypes.number.isRequired,
   cycle: PropTypes.number.isRequired,
-  training: PropTypes.number.isRequired
+  training: PropTypes.number.isRequired,
 };
 
 Timer.defaultProps = {};

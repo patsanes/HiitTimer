@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import PropTypes from "prop-types";
-import { observer, inject } from "mobx-react";
+import { observer, inject } from 'mobx-react';
 
 // import ButtonTimer from "./Button";
-import WorkoutSpace from "../components/WorkoutSpace";
+import WorkoutSpace from '../components/WorkoutSpace';
 
 class WorkoutSpaceContainer extends React.Component {
   render() {
@@ -21,4 +21,4 @@ class WorkoutSpaceContainer extends React.Component {
   }
 }
 
-export default inject("session")(observer(WorkoutSpaceContainer));
+export default inject('session')(observer(WorkoutSpaceContainer));

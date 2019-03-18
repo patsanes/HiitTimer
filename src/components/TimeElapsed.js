@@ -1,24 +1,24 @@
-import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
-import moment from "moment";
-import momentDurationFormatSetup from "moment-duration-format";
-import TimerMachine from "react-timer-machine";
-import PropTypes from "prop-types";
+import React from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import moment from 'moment';
+import momentDurationFormatSetup from 'moment-duration-format';
+import TimerMachine from 'react-timer-machine';
+import PropTypes from 'prop-types';
 
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
     fontSize: 40,
-    alignSelf: "center",
-    color: "skyblue"
+    alignSelf: 'center',
+    color: 'skyblue',
   },
   titleText: {
     fontSize: 60,
-    fontWeight: "bold",
-    color: "powderblue",
-    alignSelf: "center"
-  }
+    fontWeight: 'bold',
+    color: 'powderblue',
+    alignSelf: 'center',
+  },
 });
 
 const TimeElapsed = props => {
@@ -33,10 +33,8 @@ const TimeElapsed = props => {
           started
           countdown={false}
           interval={1000}
-          formatTimer={(time, ms) =>
-            moment.duration(ms, "milliseconds").format("h, m, s")
-          }
-        />{" "}
+          formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
+        />{' '}
       </Text>
     </View>
   );

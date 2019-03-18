@@ -1,83 +1,66 @@
-import * as React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import moment from 'moment';
-import momentDurationFormatSetup from 'moment-duration-format';
-import TimerMachine from 'react-timer-machine';
-import PropTypes from 'prop-types';
-import Lap from './Lap';
+import * as React from "react";
+import { View, StyleSheet, Text } from "react-native";
+import moment from "moment";
+import momentDurationFormatSetup from "moment-duration-format";
+import PropTypes from "prop-types";
+import Lap from "./Lap";
+import Countdown from "./Countdown";
+import TimeElapsed from "./TimeElapsed";
 
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
     fontSize: 40,
-    alignSelf: 'center',
-    color: 'skyblue',
+    alignSelf: "center",
+    color: "skyblue"
   },
   titleText: {
     fontSize: 60,
-    fontWeight: 'bold',
-    color: 'powderblue',
-    alignSelf: 'center',
+    fontWeight: "bold",
+    color: "powderblue",
+    alignSelf: "center"
   },
   container: {
     flex: 3,
-    flexDirection: 'column',
+    flexDirection: "column"
   },
   middleTop: {
     flex: 5,
-    justifyContent: 'flex-end',
+    justifyContent: "flex-end"
   },
   middleMiddle: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: "row"
   },
   middleBottom: {
-    flex: 4,
-  },
+    flex: 4
+  }
 });
 
 const Timer = props => {
-  const { timePass, countdown } = props;
+  const { serie, cycle, training, isPlay, isStop, startTime } = props;
   return (
     <View style={styles.container}>
       <View style={styles.middleTop}>
-        <Text style={styles.titleText}>
-          <TimerMachine
-            timeStart={20 * 1000} // empieza a los 20 segundos
-            timeEnd={1000} // termina
-            paused={false}
-            started
-            countdown
-            interval={1000}
-            formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-          />
-        </Text>
+        <Countdown isPause={isPlay} isStop={isStop} countdown={training} />
       </View>
       <View style={styles.middleMiddle}>
-        <Lap name="Cycles" />
-        <Lap name="Series" />
+        <Lap name="Cycles" count={cycle} />
+        <Lap name="Series" count={serie} />
       </View>
       <View style={styles.middleBottom}>
-        <Text style={styles.baseText}>
-          <TimerMachine
-            timeStart={1000} // empieza a los 20 segundos
-            timeEnd={20 * 1000} // termina
-            paused={false}
-            started
-            countdown={false}
-            interval={1000}
-            formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-          />{' '}
-        </Text>
+        {/* <TimeElapsed startTime={startTime} /> */}
+        <TimeElapsed />
       </View>
     </View>
   );
 };
 
 Timer.propTypes = {
-  timePass: PropTypes.string.isRequired,
-  countdown: PropTypes.string.isRequired,
+  serie: PropTypes.number.isRequired,
+  cycle: PropTypes.number.isRequired,
+  training: PropTypes.number.isRequired
 };
 
 Timer.defaultProps = {};

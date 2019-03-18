@@ -8,8 +8,16 @@ import WorkoutSpace from "../components/WorkoutSpace";
 class WorkoutSpaceContainer extends React.Component {
   render() {
     const { session } = this.props;
-    console.log(session.endTime);
-    return <WorkoutSpace prueba={session.isPlay} />;
+    return (
+      <WorkoutSpace
+        serie={session.serie}
+        cycle={session.cycle}
+        training={session.training}
+        rest={session.rest}
+        isPlay={session.isPlay}
+        isStop={session.isStop}
+      />
+    );
   }
 }
 

@@ -4,7 +4,6 @@ import moment from "moment";
 
 export const SessionStore = types
   .model("SessionStore", {
-    // countdown: types.number,
     serie: types.number,
     currenctSerie: types.number,
     cycle: types.number,

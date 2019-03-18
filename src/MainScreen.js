@@ -28,15 +28,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center"
   },
-  middleLeft: {
-    flex: 3
-  },
-  middleCenter: {
-    flex: 3
-  },
-  middleRight: {
-    flex: 3
-  },
   bottom: {
     flex: 3,
     borderWidth: 2,
@@ -53,12 +44,7 @@ class MainScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.top} />
         <View style={styles.middle}>
-          <View style={styles.middleLeft} />
-          <View style={styles.middleCenter}>
-            <WorkoutSpaceContainer />
-            <Timer timePass="00" countdown="11" />
-          </View>
-          <View style={styles.middleRight} />
+          <WorkoutSpaceContainer />
         </View>
         <View style={styles.bottom}>
           <PlayPauseContainer />

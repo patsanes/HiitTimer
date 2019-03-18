@@ -8,7 +8,6 @@ import PlayPause from "../components/PlayPause";
 class PlayPauseContainer extends React.Component {
   render() {
     const { session } = this.props;
-    // console.log(session);
     return (
       <PlayPause
         start={session.isPlay}

@@ -47,12 +47,6 @@ ButtonTimer.propTypes = {
   name: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   disabled: PropTypes.bool.isRequired
-
-  // test: PropTypes.string,
 };
-
-// ButtonTimer.defaultProps = {
-//   test: 'pepe',
-// };
 
 export default ButtonTimer;

@@ -2,9 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
-import PropTypes from 'prop-types';
-import Lap from './Lap';
-import Countdown from './Countdown';
+// import PropTypes from 'prop-types';
+import CountdownContainer from '../containers/CountdownContainer';
+import LapSerieContainer from '../containers/LapSerieContainer';
+import LapCycleContainer from '../containers/LapCycleContainer';
 import TimeElapsed from './TimeElapsed';
 
 momentDurationFormatSetup(moment);
@@ -42,15 +43,14 @@ const styles = StyleSheet.create({
 });
 
 const Timer = props => {
-  const { serie, cycle, training, isPlay, isStop, startTime } = props;
   return (
     <View style={styles.container}>
       <View style={styles.middleTop}>
-        <Countdown isPause={isPlay} isStop={isStop} countdown={training} />
+        <CountdownContainer />
       </View>
       <View style={styles.middleMiddle}>
-        <Lap name="Cycles" count={cycle} />
-        <Lap name="Series" count={serie} />
+        <LapSerieContainer />
+        <LapCycleContainer />
       </View>
       <View style={styles.middleBottom}>
         {/* <TimeElapsed startTime={startTime} /> */}
@@ -60,11 +60,11 @@ const Timer = props => {
   );
 };
 
-Timer.propTypes = {
-  serie: PropTypes.number.isRequired,
-  cycle: PropTypes.number.isRequired,
-  training: PropTypes.number.isRequired,
-};
+// Timer.propTypes = {
+//   serie: PropTypes.number.isRequired,
+//   cycle: PropTypes.number.isRequired,
+//   training: PropTypes.number.isRequired,
+// };
 
 Timer.defaultProps = {};
 

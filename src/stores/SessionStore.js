@@ -5,14 +5,15 @@ import moment from 'moment';
 export const SessionStore = types
   .model('SessionStore', {
     serie: types.number,
-    currenctSerie: types.number,
+    currentSerie: types.number,
     cycle: types.number,
-    currenctCycle: types.number,
+    currentCycle: types.number,
     startTime: types.string,
     training: types.number, // seconds for training
     rest: types.number, // seconds for resting
     isPlay: types.boolean,
     isStop: types.boolean,
+    isRest: types.boolean,
   })
   .views(self => ({
     get endTime() {
@@ -24,28 +25,32 @@ export const SessionStore = types
   }))
   .actions(self => ({
     setPause() {
+      console.log('ok');
       self.isPlay = false;
     },
     setPlay() {
+      console.log('ok2');
       self.isPlay = true;
     },
     setStop() {
       self.isStop = false;
     },
     increaseSerie() {
-      if (self.currenctSerie === self.serie) {
-        self.currenctSerie = 0;
+      // debugger;
+      if (self.currentSerie === self.serie) {
+        self.currentSerie = 0;
         self.increaseCycle();
       } else {
-        self.currenctSerie += 1;
+        self.currentSerie += 1;
       }
+      self.isRest = !self.isRest;
     },
     increaseCycle() {
-      if (self.currenctCycle === self.cycle) {
+      if (self.currentCycle === self.cycle) {
         self.setPause();
         self.setStop();
       } else {
-        self.currenctCycle += 1;
+        self.currentCycle += 1;
       }
     },
   }));
@@ -53,14 +58,15 @@ export const SessionStore = types
 export const initialState = {
   // countdown: 20,
   serie: 2,
-  currenctSerie: 0,
+  currentSerie: 0,
   cycle: 3,
-  currenctCycle: 0,
+  currentCycle: 0,
   startTime: '00:00:00',
-  training: 20, // seconds for training
-  rest: 5, // seconds for resting
+  training: 6, // seconds for training
+  rest: 3, // seconds for resting
   isPlay: false,
   isStop: false,
+  isRest: false,
 };
 
 // endTime;

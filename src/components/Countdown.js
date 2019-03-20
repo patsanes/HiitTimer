@@ -22,21 +22,25 @@ const styles = StyleSheet.create({
 });
 
 const Countdown = props => {
-  const { countdown, isPause, isStop } = props;
-  const count = { countdown }.countdown;
+  const { count, isPlay, increaseSerie } = props;
+
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>
         <TimerMachine
           timeStart={count * 1000} // empieza a los 20 segundos
-          timeEnd={1000} // termina
-          paused={!isPause}
+          // timeEnd={5 * 1000} // termina
+          paused={!isPlay}
           started
           countdown
           interval={1000}
           formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
           onStop={time => console.info(`Timer stopped: ${JSON.stringify(time)}`)}
-          onComplete={time => console.info(`Timer completed: ${JSON.stringify(time)}`)}
+          // onComplete={time => console.info(`Timer completed: ${JSON.stringify(time)}`)}
+          onComplete={time => {
+            console.info(`Timer completed ${JSON.stringify(time)}`);
+            increaseSerie();
+          }}
         />
       </Text>
     </View>
@@ -44,7 +48,9 @@ const Countdown = props => {
 };
 
 Countdown.propTypes = {
-  countdown: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
+  isPlay: PropTypes.bool.isRequired,
+  increaseSerie: PropTypes.func.isRequired,
 };
 
 Countdown.defaultProps = {};

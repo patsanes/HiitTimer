@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 
 import Timer from './components/Timer';
 import PlayPauseContainer from './containers/PlayPauseContainer';
-import WorkoutSpaceContainer from './containers/WorkoutSpaceContainer';
+import WorkoutSpace from './components/WorkoutSpace';
 
 const styles = StyleSheet.create({
   container: {
@@ -44,7 +44,7 @@ class MainScreen extends React.Component {
       <View style={styles.container}>
         <View style={styles.top} />
         <View style={styles.middle}>
-          <WorkoutSpaceContainer />
+          <WorkoutSpace />
         </View>
         <View style={styles.bottom}>
           <PlayPauseContainer />

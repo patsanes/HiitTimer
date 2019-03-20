@@ -10,17 +10,20 @@ const styles = StyleSheet.create({
   },
 });
 const Lap = props => {
-  const { name, count } = props;
+  const { name, count, current } = props;
   return (
     <View style={styles.cycles}>
-      <Text> 0/{count}</Text>
-      <Text> {name}</Text>
+      <Text>
+        {current}/{count}
+      </Text>
+      <Text>{name}</Text>
     </View>
   );
 };
 Lap.propTypes = {
   name: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
+  current: PropTypes.number.isRequired,
 };
 Lap.defaultProps = {};
 

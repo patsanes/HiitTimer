@@ -1,8 +1,6 @@
 import React from 'react';
-// import { observer, inject } from "mobx-react";
 import { StyleSheet, View } from 'react-native';
 
-import Timer from './components/Timer';
 import PlayPauseContainer from './containers/PlayPauseContainer';
 import WorkoutSpace from './components/WorkoutSpace';
 
@@ -54,19 +52,4 @@ class MainScreen extends React.Component {
   }
 }
 
-// export default inject("session")(observer(MainScreen));
 export default MainScreen;
-
-/*
-<View style={styles.container}>
-  <View style={styles.top} >
-    <Menu />
-  </View>
-  <View style={styles.middle}>
-    <WorkoutSpaceContainer />
-  </View>
-  <View style={styles.bottom}>
-    <PlayPauseContainer />
-  </View>
-</View>
- */

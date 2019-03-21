@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import PropTypes from 'prop-types';
 import Timer from './Timer';
 
 const styles = StyleSheet.create({
@@ -34,14 +33,4 @@ const WorkoutSpace = props => {
     </>
   );
 };
-
-// WorkoutSpace.propTypes = {
-//   serie: PropTypes.number.isRequired,
-//   cycle: PropTypes.number.isRequired,
-//   training: PropTypes.number.isRequired,
-//   rest: PropTypes.number.isRequired,
-//   isPlay: PropTypes.bool.isRequired,
-//   isStop: PropTypes.bool.isRequired,
-// };
-
 export default WorkoutSpace;

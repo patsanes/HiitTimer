@@ -29,16 +29,12 @@ const Countdown = props => {
       <Text style={styles.titleText}>
         <TimerMachine
           timeStart={count * 1000} // empieza a los 20 segundos
-          // timeEnd={5 * 1000} // termina
           paused={!isPlay}
           started
           countdown
           interval={1000}
           formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-          onStop={time => console.info(`Timer stopped: ${JSON.stringify(time)}`)}
-          // onComplete={time => console.info(`Timer completed: ${JSON.stringify(time)}`)}
           onComplete={time => {
-            console.info(`Timer completed ${JSON.stringify(time)}`);
             increaseSerie();
           }}
         />

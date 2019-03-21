@@ -2,11 +2,10 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
-// import PropTypes from 'prop-types';
 import CountdownContainer from '../containers/CountdownContainer';
 import LapSerieContainer from '../containers/LapSerieContainer';
 import LapCycleContainer from '../containers/LapCycleContainer';
-import TimeElapsed from './TimeElapsed';
+import TimeElapsedContainer from '../containers/TimeElapsedContainer';
 
 momentDurationFormatSetup(moment);
 
@@ -54,18 +53,10 @@ const Timer = props => {
       </View>
       <View style={styles.middleBottom}>
         {/* <TimeElapsed startTime={startTime} /> */}
-        <TimeElapsed />
+        <TimeElapsedContainer />
       </View>
     </View>
   );
 };
-
-// Timer.propTypes = {
-//   serie: PropTypes.number.isRequired,
-//   cycle: PropTypes.number.isRequired,
-//   training: PropTypes.number.isRequired,
-// };
-
-Timer.defaultProps = {};
 
 export default Timer;

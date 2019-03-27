@@ -14,7 +14,8 @@ const styles = StyleSheet.create({
     color: 'skyblue',
   },
   titleText: {
-    fontSize: 80,
+    fontSize: 100,
+    fontFamily: 'League Gothic',
     fontWeight: 'bold',
     color: 'powderblue',
     alignSelf: 'center',

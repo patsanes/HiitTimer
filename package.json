@@ -8,6 +8,7 @@
     "run-android": "yarn react-native run-android",
     "info": "yarn react-native info",
     "test": "jest",
+    "linter": "yarn eslint ./src",
     "upgrade-deps": "yarn upgrade-interactive --latest"
   },
   "dependencies": {
@@ -43,5 +44,13 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "assets/fonts/LeagueGothic",
+      "assets/fonts/Bangers",
+      "assets/fonts/Pacifico",
+      "assets/fonts/Permanent_Marker"
+    ]
   }
 }

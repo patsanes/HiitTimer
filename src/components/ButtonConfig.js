@@ -7,8 +7,6 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: 'center',
     justifyContent: 'center',
-    borderColor: 'powderblue',
-    color: 'white',
     overflow: 'hidden',
     height: 80,
     width: 80,
@@ -25,7 +23,7 @@ const ButtonConfig = props => {
   };
   return (
     <TouchableOpacity {...params}>
-      <Icon name={name} size={40} color="white" style={styles.icon} />
+      <Icon name={name} size={40} color="powderblue" style={styles.icon} />
     </TouchableOpacity>
   );
 };

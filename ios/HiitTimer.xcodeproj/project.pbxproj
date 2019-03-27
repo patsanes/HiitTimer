@@ -57,6 +57,13 @@
 		E3DB865E3657429D8394EF28 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7595B71A8BA4683B5A5226F /* SimpleLineIcons.ttf */; };
 		7E054810AC1C46FC970992EE /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59AA88472B724B91B62E53E0 /* Zocial.ttf */; };
 		160CA7961A084A2A8AC8DC28 /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2616651FB7114554B3034247 /* libBVLinearGradient.a */; };
+		7EF62A82FF6047858BE9F082 /* LeagueGothic-CondensedItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0BEE1BE173E544238DE37657 /* LeagueGothic-CondensedItalic.otf */; };
+		6EC427FD0BA14E8590CC7950 /* LeagueGothic-CondensedRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E8BF0BCD0D24F2198005384 /* LeagueGothic-CondensedRegular.otf */; };
+		C78D16537F2F41978CB819B3 /* LeagueGothic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1E4A94BB6A4942D780758BE7 /* LeagueGothic-Italic.otf */; };
+		1C6A45977187410F9020AF1A /* LeagueGothic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52E80D9A35CA45028D531EA4 /* LeagueGothic-Regular.otf */; };
+		40FABDFB3FD3497DAAF8C808 /* Bangers-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A62E7BB7D6C44D5D99B71E1D /* Bangers-Regular.ttf */; };
+		CF78594EC16547E58E406E1B /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8914C336CF3D434A861C5F7A /* Pacifico-Regular.ttf */; };
+		AE97BB25D00E41BA8E97F0FA /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 147727A4B84B42A8A44AEB48 /* PermanentMarker-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +391,13 @@
 		59AA88472B724B91B62E53E0 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8663B2399A154123B6059608 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; name = "BVLinearGradient.xcodeproj"; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		2616651FB7114554B3034247 /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0BEE1BE173E544238DE37657 /* LeagueGothic-CondensedItalic.otf */ = {isa = PBXFileReference; name = "LeagueGothic-CondensedItalic.otf"; path = "../assets/fonts/LeagueGothic/LeagueGothic-CondensedItalic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3E8BF0BCD0D24F2198005384 /* LeagueGothic-CondensedRegular.otf */ = {isa = PBXFileReference; name = "LeagueGothic-CondensedRegular.otf"; path = "../assets/fonts/LeagueGothic/LeagueGothic-CondensedRegular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E4A94BB6A4942D780758BE7 /* LeagueGothic-Italic.otf */ = {isa = PBXFileReference; name = "LeagueGothic-Italic.otf"; path = "../assets/fonts/LeagueGothic/LeagueGothic-Italic.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		52E80D9A35CA45028D531EA4 /* LeagueGothic-Regular.otf */ = {isa = PBXFileReference; name = "LeagueGothic-Regular.otf"; path = "../assets/fonts/LeagueGothic/LeagueGothic-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A62E7BB7D6C44D5D99B71E1D /* Bangers-Regular.ttf */ = {isa = PBXFileReference; name = "Bangers-Regular.ttf"; path = "../assets/fonts/Bangers/Bangers-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8914C336CF3D434A861C5F7A /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; name = "Pacifico-Regular.ttf"; path = "../assets/fonts/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		147727A4B84B42A8A44AEB48 /* PermanentMarker-Regular.ttf */ = {isa = PBXFileReference; name = "PermanentMarker-Regular.ttf"; path = "../assets/fonts/Permanent_Marker/PermanentMarker-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -672,6 +686,13 @@
 				C31BD254BF724A838FE728F2 /* Octicons.ttf */,
 				B7595B71A8BA4683B5A5226F /* SimpleLineIcons.ttf */,
 				59AA88472B724B91B62E53E0 /* Zocial.ttf */,
+				0BEE1BE173E544238DE37657 /* LeagueGothic-CondensedItalic.otf */,
+				3E8BF0BCD0D24F2198005384 /* LeagueGothic-CondensedRegular.otf */,
+				1E4A94BB6A4942D780758BE7 /* LeagueGothic-Italic.otf */,
+				52E80D9A35CA45028D531EA4 /* LeagueGothic-Regular.otf */,
+				A62E7BB7D6C44D5D99B71E1D /* Bangers-Regular.ttf */,
+				8914C336CF3D434A861C5F7A /* Pacifico-Regular.ttf */,
+				147727A4B84B42A8A44AEB48 /* PermanentMarker-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1138,6 +1159,13 @@
 				54B01FD5B7834C88B97CCCF8 /* Octicons.ttf in Resources */,
 				E3DB865E3657429D8394EF28 /* SimpleLineIcons.ttf in Resources */,
 				7E054810AC1C46FC970992EE /* Zocial.ttf in Resources */,
+				7EF62A82FF6047858BE9F082 /* LeagueGothic-CondensedItalic.otf in Resources */,
+				6EC427FD0BA14E8590CC7950 /* LeagueGothic-CondensedRegular.otf in Resources */,
+				C78D16537F2F41978CB819B3 /* LeagueGothic-Italic.otf in Resources */,
+				1C6A45977187410F9020AF1A /* LeagueGothic-Regular.otf in Resources */,
+				40FABDFB3FD3497DAAF8C808 /* Bangers-Regular.ttf in Resources */,
+				CF78594EC16547E58E406E1B /* Pacifico-Regular.ttf in Resources */,
+				AE97BB25D00E41BA8E97F0FA /* PermanentMarker-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

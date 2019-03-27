@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
   button: {
     alignSelf: 'center',
     justifyContent: 'center',
-    borderColor: 'powderblue',
     color: 'white',
     flexDirection: 'column',
   },
@@ -24,10 +23,12 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   titleText: {
-    fontSize: 60,
-    fontWeight: 'bold',
+    paddingHorizontal: 10,
+    fontSize: 70,
+    // fontWeight: 'bold',
     color: 'powderblue',
     alignSelf: 'center',
+    fontFamily: 'Permanent Marker',
   },
 });
 
@@ -37,7 +38,7 @@ export default class ConfigTraining extends React.PureComponent {
       <>
         <View style={styles.topLeft} />
         <View style={styles.topMiddle}>
-          <Text style={styles.titleText}>HIIT</Text>
+          <Text style={styles.titleText}>HIIT </Text>
         </View>
         <View style={styles.topRight}>
           <ButtonConfig style={styles.button} disabled={false} name="cog" />

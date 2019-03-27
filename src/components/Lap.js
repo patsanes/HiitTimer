@@ -9,8 +9,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   baseText: {
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: 'League Gothic',
+
     color: 'skyblue',
   },
 });

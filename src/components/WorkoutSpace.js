@@ -3,22 +3,18 @@ import { View, StyleSheet, Text } from 'react-native';
 import Timer from './Timer';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    borderWidth: 3,
-    borderColor: 'grey',
-  },
   text: {
     fontSize: 40,
   },
   middleLeft: {
-    flex: 3,
+    flex: 2,
   },
   middleCenter: {
-    flex: 3,
+    flex: 4,
+    borderWidth: 1,
   },
   middleRight: {
-    flex: 3,
+    flex: 2,
   },
 });
 

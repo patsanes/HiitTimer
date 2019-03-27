@@ -52,7 +52,6 @@ const Timer = props => {
         <LapCycleContainer />
       </View>
       <View style={styles.middleBottom}>
-        {/* <TimeElapsed startTime={startTime} /> */}
         <TimeElapsedContainer />
       </View>
     </View>

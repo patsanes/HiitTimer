@@ -8,15 +8,20 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
   },
+  baseText: {
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: 'skyblue',
+  },
 });
 const Lap = props => {
   const { name, count, current } = props;
   return (
     <View style={styles.cycles}>
-      <Text>
+      <Text style={styles.baseText}>
         {current}/{count}
       </Text>
-      <Text>{name}</Text>
+      <Text style={styles.baseText}>{name}</Text>
     </View>
   );
 };

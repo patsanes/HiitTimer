@@ -9,7 +9,9 @@ momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
-    fontSize: 40,
+    fontSize: 30,
+    fontWeight: 'bold',
+
     alignSelf: 'center',
     color: 'skyblue',
   },

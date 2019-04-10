@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import ButtonTimer from './Button';
+import { ButtonTimer } from '../components';
 
 const styles = StyleSheet.create({
   bottom: {

@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from "prop-types";
 import { observer, inject } from 'mobx-react';
 
-import Lap from '../components/Lap';
+import { Lap } from '../components';
 
 class LapSerieContainer extends React.Component {
   render() {

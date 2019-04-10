@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-
+import { StyleSheet, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import PlayPauseContainer from './containers/PlayPauseContainer';
-import WorkoutSpace from './components/WorkoutSpace';
-import ConfigTrainingContainer from './containers/ConfigTrainingContainer';
+
+import { PlayPauseContainer } from '../containers';
+import { WorkoutSpace, ConfigTraining } from '../components';
+import { goToSettings } from '../navigation/actions';
 
 const styles = StyleSheet.create({
   container: {
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
 
 class MainScreen extends React.Component {
   render() {
+    console.log(this.props);
+    const onPressSettings = () => this.props.navigation.dispatch(goToSettings());
     return (
       <View style={styles.container}>
         <LinearGradient
@@ -45,9 +47,7 @@ class MainScreen extends React.Component {
           colors={['#614385', '#516395']}
           style={styles.linearGradient}
         >
-          <View style={styles.top}>
-            <ConfigTrainingContainer />
-          </View>
+          <View style={styles.top}>{<ConfigTraining onPress={onPressSettings} />}</View>
           <View style={styles.middle}>
             <WorkoutSpace />
           </View>

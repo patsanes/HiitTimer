@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import Timer from './Timer';
+import { Timer } from '../components';
 
 const styles = StyleSheet.create({
   text: {

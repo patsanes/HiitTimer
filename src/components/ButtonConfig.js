@@ -20,6 +20,7 @@ const ButtonConfig = props => {
   const { name, onPress } = props;
   const params = {
     style: [styles.button],
+    onPress,
   };
   return (
     <TouchableOpacity {...params}>

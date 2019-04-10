@@ -2,10 +2,12 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
-import CountdownContainer from '../containers/CountdownContainer';
-import LapSerieContainer from '../containers/LapSerieContainer';
-import LapCycleContainer from '../containers/LapCycleContainer';
-import TimeElapsedContainer from '../containers/TimeElapsedContainer';
+import {
+  CountdownContainer,
+  LapCycleContainer,
+  LapSerieContainer,
+  TimeElapsedContainer,
+} from '../containers';
 
 momentDurationFormatSetup(moment);
 

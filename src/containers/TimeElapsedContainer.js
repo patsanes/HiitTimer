@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 
-import TimeElapsed from '../components/TimeElapsed';
+import { TimeElapsed } from '../components';
 
 class TimeElapsedContainer extends React.Component {
   render() {

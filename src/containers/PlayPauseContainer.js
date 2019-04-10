@@ -1,9 +1,6 @@
 import React from 'react';
-// import PropTypes from "prop-types";
 import { observer, inject } from 'mobx-react';
-
-// import ButtonTimer from "./Button";
-import PlayPause from '../components/PlayPause';
+import { PlayPause } from '../components';
 
 class PlayPauseContainer extends React.Component {
   render() {

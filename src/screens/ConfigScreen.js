@@ -1,19 +1,25 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 import { goToHome } from '../navigation/actions';
 
+const styles = StyleSheet.create({
+  touchable: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+});
 export default class ConfigScreen extends React.Component {
   render() {
-    console.log(this.props);
-    const onPress = () => this.props.navigation.dispatch(goToHome());
+    const { navigation } = this.props;
+    const { dispatch } = navigation;
+    const onPress = () => dispatch(goToHome());
     return (
-      <TouchableOpacity
-        style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-        onPress={onPress}
-      >
+      <TouchableOpacity style={styles.touchable} onPress={onPress}>
         <Text>ConfigScreen</Text>
       </TouchableOpacity>
     );
   }
 }
+
+ConfigScreen.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};

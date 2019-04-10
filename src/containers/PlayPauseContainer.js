@@ -1,5 +1,7 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
+import PropTypes from 'prop-types';
+
 import { PlayPause } from '../components';
 
 class PlayPauseContainer extends React.Component {
@@ -15,5 +17,9 @@ class PlayPauseContainer extends React.Component {
     );
   }
 }
+
+PlayPauseContainer.propTypes = {
+  session: PropTypes.object.isRequired,
+};
 
 export default inject('session')(observer(PlayPauseContainer));

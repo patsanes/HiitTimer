@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import {
@@ -12,17 +12,6 @@ import {
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
-  baseText: {
-    fontSize: 40,
-    alignSelf: 'center',
-    color: 'skyblue',
-  },
-  titleText: {
-    fontSize: 60,
-    fontWeight: 'bold',
-    color: 'powderblue',
-    alignSelf: 'center',
-  },
   container: {
     flex: 3,
     flexDirection: 'column',
@@ -35,15 +24,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
-  miaaddleBottom: {
-    flex: 4,
-  },
   middleBottom: {
     flex: 4,
   },
 });
 
-const Timer = props => {
+const Timer = () => {
   return (
     <View style={styles.container}>
       <View style={styles.middleTop}>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { ButtonConfig } from '../components';
+import ButtonConfig from './ButtonConfig';
 
 const styles = StyleSheet.create({
   button: {
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
   titleText: {
     paddingHorizontal: 10,
     fontSize: 70,
-    // fontWeight: 'bold',
     color: 'powderblue',
     alignSelf: 'center',
     fontFamily: 'Permanent Marker',
@@ -42,20 +41,7 @@ export default class ConfigTraining extends React.PureComponent {
           <Text style={styles.titleText}>HIIT </Text>
         </View>
         <View style={styles.topRight}>
-          <ButtonConfig
-            style={styles.button}
-            disabled={false}
-            name="cog"
-            onPress={onPress}
-            // onPress={() => {
-            //   this.props.navigation.dispatch(
-            //     StackActions.reset({
-            //       index: 0,
-            //       actions: [NavigationActions.navigate({ routeName: 'ConfigScreen' })],
-            //     }),
-            //   );
-            // }}
-          />
+          <ButtonConfig style={styles.button} disabled={false} name="cog" onPress={onPress} />
         </View>
       </>
     );

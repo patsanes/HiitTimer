@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Timer } from '../components';
+import Timer from './Timer';
 
 const styles = StyleSheet.create({
   text: {
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const WorkoutSpace = props => {
+const WorkoutSpace = () => {
   return (
     <>
       <View style={styles.middleLeft} />

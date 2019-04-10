@@ -1,19 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { ButtonTimer } from '../components';
-
-const styles = StyleSheet.create({
-  bottom: {
-    flex: 3,
-    borderWidth: 2,
-    borderColor: 'powderblue',
-    backgroundColor: 'steelblue',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-});
+import ButtonTimer from './ButtonTimer';
 
 export default class PlayPause extends React.PureComponent {
   render() {
@@ -21,12 +9,11 @@ export default class PlayPause extends React.PureComponent {
     return (
       <>
         <ButtonTimer
-          style={styles.button}
           disabled={false}
           name={start ? 'pause' : 'play'}
           onPress={start ? onPause : onPlay}
         />
-        <ButtonTimer style={styles.button} disabled={!start} name="stop" onPress={stop} />
+        <ButtonTimer disabled={!start} name="stop" onPress={stop} />
       </>
     );
   }

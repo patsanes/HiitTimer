@@ -8,11 +8,6 @@ import PropTypes from 'prop-types';
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
-  baseText: {
-    fontSize: 40,
-    alignSelf: 'center',
-    color: 'skyblue',
-  },
   titleText: {
     fontSize: 100,
     fontFamily: 'League Gothic',
@@ -35,7 +30,7 @@ const Countdown = props => {
           countdown
           interval={1000}
           formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-          onComplete={time => {
+          onComplete={() => {
             increaseSerie();
           }}
         />

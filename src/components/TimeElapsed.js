@@ -15,12 +15,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: 'skyblue',
   },
-  titleText: {
-    fontSize: 60,
-    fontWeight: 'bold',
-    color: 'powderblue',
-    alignSelf: 'center',
-  },
 });
 
 const TimeElapsed = props => {
@@ -35,7 +29,7 @@ const TimeElapsed = props => {
           started
           countdown={false}
           interval={1000}
-          formatTimer={(time, ms) => moment(time).format('HH:mm:ss')}
+          formatTimer={time => moment(time).format('HH:mm:ss')}
         />{' '}
       </Text>
     </View>

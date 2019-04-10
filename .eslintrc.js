@@ -11,11 +11,11 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
-      "useJSXTextNode": true
+      useJSXTextNode: true,
     },
     // ecmaVersion: 2018,
-  //   sourceType: 'module',
-  // },
+    //   sourceType: 'module',
+  },
   plugins: ['react', 'react-native', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
@@ -30,6 +30,6 @@ module.exports = {
     'react-native/split-platform-components': 'error',
     'react-native/no-inline-styles': 'error',
     'react-native/no-color-literals': 'off',
-    'react-native/no-raw-text': 'error',
+    'react/forbid-prop-types': 'off',
   },
 };

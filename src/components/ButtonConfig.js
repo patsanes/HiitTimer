@@ -31,6 +31,7 @@ const ButtonConfig = props => {
 
 ButtonConfig.propTypes = {
   name: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 export default ButtonConfig;

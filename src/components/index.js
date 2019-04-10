@@ -7,3 +7,5 @@ export { default as PlayPause } from './PlayPause';
 export { default as TimeElapsed } from './TimeElapsed';
 export { default as Timer } from './Timer';
 export { default as WorkoutSpace } from './WorkoutSpace';
+export { default as SettingsSpace } from './SettingsSpace';
+export { default as GoBackToMain } from './GoBackToMain';

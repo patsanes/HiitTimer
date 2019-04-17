@@ -1,8 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 // import { UselessTextInput } from '.';
-import { TextInputCountDownContainer, PickerTrainingContainer } from '../containers';
+import {
+  PickerTrainingContainer,
+  PickerRestContainer,
+  PickerCycleContainer,
+  PickerSerieContainer,
+} from '../containers';
 
 const styles = StyleSheet.create({
   text: {
@@ -33,16 +38,10 @@ const SettingsSpace = () => {
       <View style={styles.upper} />
       <View style={styles.blackSpace} />
       <View style={styles.middle}>
-        {/* <TextInputSessionContainer placeholder="Countdown" /> */}
-        {/* <TextInputCountDownContainer /> */}
         <PickerTrainingContainer />
-        {/* <TextInputRestContainer  /> */}
-        {/* <TextInputCycleContainer  /> */}
-        <Text style={styles.text}>Rest</Text>
-
-        <Text style={styles.text}>Cycles</Text>
-
-        <Text style={styles.text}>Series</Text>
+        <PickerRestContainer />
+        <PickerCycleContainer />
+        <PickerSerieContainer />
       </View>
       <View style={styles.blackSpace} />
 

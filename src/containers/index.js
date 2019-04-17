@@ -5,3 +5,6 @@ export { default as PlayPauseContainer } from './PlayPauseContainer';
 export { default as TimeElapsedContainer } from './TimeElapsedContainer';
 export { default as TextInputCountDownContainer } from './TextInputCountDownContainer';
 export { default as PickerTrainingContainer } from './PickerTrainingContainer';
+export { default as PickerRestContainer } from './PickerRestContainer';
+export { default as PickerCycleContainer } from './PickerCycleContainer';
+export { default as PickerSerieContainer } from './PickerSerieContainer';

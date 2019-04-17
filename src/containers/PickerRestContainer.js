@@ -4,24 +4,24 @@ import { observer, inject } from 'mobx-react';
 
 import { HPicker } from '../components';
 
-class PickerTrainingContainer extends React.Component {
+class PickerRestContainer extends React.Component {
   render() {
     const { session } = this.props;
-    const { updateTraining, training } = session;
+    const { updateRest, rest } = session;
     const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
-        placeholder="Countdown"
-        selectedValue={training.toString()}
-        onValueChange={updateTraining}
+        placeholder="Rest"
+        selectedValue={rest.toString()}
+        onValueChange={updateRest}
         items={items}
       />
     );
   }
 }
 
-PickerTrainingContainer.propTypes = {
+PickerRestContainer.propTypes = {
   session: PropTypes.object.isRequired,
 };
 
-export default inject('session')(observer(PickerTrainingContainer));
+export default inject('session')(observer(PickerRestContainer));

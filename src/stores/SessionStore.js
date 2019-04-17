@@ -55,6 +55,15 @@ export const SessionStore = types
     updateTraining(newValue) {
       self.training = Number(newValue);
     },
+    updateRest(newValue) {
+      self.rest = Number(newValue);
+    },
+    updateCycle(newValue) {
+      self.cycle = Number(newValue);
+    },
+    updateSerie(newValue) {
+      self.serie = Number(newValue);
+    },
   }));
 
 export const initialState = {

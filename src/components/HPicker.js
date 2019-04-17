@@ -9,22 +9,28 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 import PropTypes from 'prop-types';
-import ButtonTimer from './ButtonTimer';
 
 const styles = StyleSheet.create({
-  text: {
+  valueContainer: {
+    flexDirection: 'row',
+  },
+  headerValue: {
     fontSize: 20,
     color: 'white',
-    marginRight: 10,
+    flex: 0.4,
+  },
+  value: {
+    fontSize: 20,
+    color: 'grey',
+    flex: 0.6,
   },
   container: {
     flex: 1,
-    borderWidth: 5,
-    borderColor: 'white',
-  },
-  textContainer: {
-    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: 'grey',
   },
   modalContent: {
     justifyContent: 'flex-end',
@@ -34,6 +40,15 @@ const styles = StyleSheet.create({
   inner: {
     opacity: 0.95,
     backgroundColor: 'grey',
+  },
+  icon: {
+    alignSelf: 'center',
+  },
+  modalTitle: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    alignSelf: 'center',
   },
 });
 
@@ -62,7 +77,7 @@ export default class HPicker extends Component {
     const { isVisiblePicker } = this.state;
 
     return (
-      <View style={{ height: '30%' }}>
+      <View style={{ height: '8%' }}>
         <View style={styles.container}>
           <TouchableHighlight
             onPress={this._togglePicker}
@@ -71,15 +86,25 @@ export default class HPicker extends Component {
               this.setModalVisible(true);
             }}
           >
-            <Text style={styles.text}>{placeholder}</Text>
+            <View style={styles.valueContainer}>
+              <Text style={styles.headerValue}>{placeholder}</Text>
+              <Text style={styles.value}>{selectedValue}</Text>
+            </View>
           </TouchableHighlight>
         </View>
         {!isVisiblePicker ? (
           <Modal animationType="slide" transparent visible={this.state.modalVisible}>
             <View style={styles.modalContent}>
               <View style={styles.inner}>
-                <TouchableOpacity style={styles.textContainer}>
-                  <Button style={styles.text} title="Done" onPress={this._togglePicker} />
+                <TouchableOpacity>
+                  <Icon
+                    name="chevron-up"
+                    size={30}
+                    color="white"
+                    style={styles.icon}
+                    onPress={this._togglePicker}
+                  />
+                  <Text style={styles.modalTitle}>{placeholder}</Text>
                 </TouchableOpacity>
                 <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
                   {items.map(item => (

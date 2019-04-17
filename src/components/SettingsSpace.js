@@ -7,23 +7,25 @@ import {
   PickerRestContainer,
   PickerCycleContainer,
   PickerSerieContainer,
+  PickerRestBetweenCyclesContainer,
+  PickerStartCountdownContainer,
 } from '../containers';
 
 const styles = StyleSheet.create({
-  text: {
-    fontSize: 20,
-    color: 'white',
-  },
+  // text: {
+  //   fontSize: 18,
+  //   color: 'white',
+  // },
   middle: {
-    flex: 8,
+    flex: 6,
     borderWidth: 1,
+    backgroundColor: '#16222A',
   },
   blackSpace: {
-    // flex: 1,
     borderWidth: 1,
   },
   bottom: {
-    flex: 0.5,
+    flex: 4,
     backgroundColor: 'black',
   },
 });
@@ -36,6 +38,8 @@ const SettingsSpace = () => {
         <PickerRestContainer />
         <PickerCycleContainer />
         <PickerSerieContainer />
+        <PickerRestBetweenCyclesContainer />
+        <PickerStartCountdownContainer />
       </View>
       <View style={styles.bottom} />
     </>

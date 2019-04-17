@@ -18,19 +18,22 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   headerValue: {
-    fontSize: 20,
+    fontSize: 18,
+    fontWeight: 'bold',
     color: 'white',
-    flex: 0.4,
+    flex: 0.6,
+    justifyContent: 'space-around',
   },
   value: {
-    fontSize: 20,
+    fontSize: 18,
     color: 'grey',
-    flex: 0.6,
+    flex: 0.4,
   },
   container: {
     flex: 1,
     borderWidth: 1,
     borderColor: 'grey',
+    justifyContent: 'center',
   },
   modalContent: {
     justifyContent: 'flex-end',
@@ -40,12 +43,14 @@ const styles = StyleSheet.create({
   inner: {
     opacity: 0.95,
     backgroundColor: 'grey',
+    borderRadius: 20,
+    borderWidth: 1,
   },
   icon: {
     alignSelf: 'center',
   },
   modalTitle: {
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: 'bold',
     color: 'white',
     alignSelf: 'center',
@@ -106,6 +111,7 @@ export default class HPicker extends Component {
                   />
                   <Text style={styles.modalTitle}>{placeholder}</Text>
                 </TouchableOpacity>
+                <View style={styles.border} />
                 <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
                   {items.map(item => (
                     <Picker.Item label={item} value={item} />

@@ -11,11 +11,14 @@ export const SessionStore = types
     startTime: types.string,
     training: types.number, // seconds for training
     rest: types.number, // seconds for resting
+    restBetween: types.number, // seconds for resting
+    startCountdown: types.number,
     isPlay: types.boolean,
     isStop: types.boolean,
     isRest: types.boolean,
   })
   .views(self => ({
+    // no se usa para nada revisar despues
     get endTime() {
       const extraSeconds =
         self.rest * self.serie * self.cycle + self.training * self.serie * self.cycle;
@@ -64,6 +67,12 @@ export const SessionStore = types
     updateSerie(newValue) {
       self.serie = Number(newValue);
     },
+    updateRestBetween(newValue) {
+      self.restBetween = Number(newValue);
+    },
+    updateStartCountdown(newValue) {
+      self.startCountdown = Number(newValue);
+    },
   }));
 
 export const initialState = {
@@ -74,6 +83,8 @@ export const initialState = {
   startTime: '00:00:00',
   training: 6, // seconds for training
   rest: 3, // seconds for resting
+  restBetween: 3, // seconds for resting
+  startCountdown: 10, // seconds for resting
   isPlay: false,
   isStop: false,
   isRest: false,

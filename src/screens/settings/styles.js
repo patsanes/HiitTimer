@@ -7,19 +7,18 @@ const styles = StyleSheet.create({
   top: {
     flexDirection: 'row',
   },
-  blackSpace: {
-    // flex: 0.2,
-  },
+  // blackSpace: {
+  //   // flex: 0.2,
+  // },
   middle: {
     flex: 8.8,
     flexDirection: 'column',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   linearGradient: {
     flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
+    paddingLeft: 8,
+    paddingRight: 8,
   },
 
   upper: {

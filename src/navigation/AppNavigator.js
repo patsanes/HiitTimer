@@ -6,7 +6,11 @@ const AppNavigator = createStackNavigator(
   {
     MainScreen: {
       screen: MainScreen,
-      header: null,
+      headerMode: 'none',
+      navigationOptions: () => ({
+        headerVisible: false,
+        header: null,
+      }),
     },
     ConfigScreen: {
       screen: ConfigScreen,

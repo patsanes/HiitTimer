@@ -1,33 +1,53 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
+// import { UselessTextInput } from '.';
+import { TextInputCountDownContainer, PickerTrainingContainer } from '../containers';
+
 const styles = StyleSheet.create({
   text: {
-    fontSize: 40,
+    fontSize: 20,
+    color: 'white',
   },
-  left: {
-    flex: 2,
+  upper: {
+    flex: 0.5,
+    backgroundColor: 'black',
   },
-  center: {
-    flex: 4,
+  middle: {
+    flex: 8,
     borderWidth: 1,
   },
-  right: {
-    flex: 2,
+  blackSpace: {
+    flex: 1,
+    borderWidth: 1,
+  },
+  bottom: {
+    flex: 0.5,
+    backgroundColor: 'black',
   },
 });
 
 const SettingsSpace = () => {
   return (
     <>
-      <View style={styles.middleLeft} />
-      <View style={styles.middleCenter}>
-        <Text>Countdown</Text>
-        <Text>Rest</Text>
-        <Text>Cycles</Text>
-        <Text>Series</Text>
+      <View style={styles.upper} />
+      <View style={styles.blackSpace} />
+      <View style={styles.middle}>
+        {/* <TextInputSessionContainer placeholder="Countdown" /> */}
+        {/* <TextInputCountDownContainer /> */}
+        <PickerTrainingContainer />
+        {/* <TextInputRestContainer  /> */}
+        {/* <TextInputCycleContainer  /> */}
+        <Text style={styles.text}>Rest</Text>
+
+        <Text style={styles.text}>Cycles</Text>
+
+        <Text style={styles.text}>Series</Text>
       </View>
-      <View style={styles.middleRight} />
+      <View style={styles.blackSpace} />
+
+      <View style={styles.bottom} />
+      <View style={styles.blackSpace} />
     </>
   );
 };

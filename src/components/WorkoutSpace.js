@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
   },
   middleCenter: {
     flex: 4,
-    borderWidth: 1,
   },
   middleRight: {
     flex: 2,

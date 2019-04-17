@@ -6,14 +6,23 @@ const AppNavigator = createStackNavigator(
   {
     MainScreen: {
       screen: MainScreen,
+      header: null,
     },
     ConfigScreen: {
       screen: ConfigScreen,
+      // headerMode: 'float',
+      headerBackTitleVisible: true,
+
+      navigationOptions: () => ({
+        title: `SETTINGS`,
+
+        // headerStyle: '',
+      }),
     },
   },
   {
     initialRouteName: 'MainScreen',
-    headerMode: 'none',
+    headerMode: 'float',
   },
 );
 export default createAppContainer(AppNavigator);

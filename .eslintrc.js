@@ -31,5 +31,6 @@ module.exports = {
     'react-native/no-inline-styles': 'error',
     'react-native/no-color-literals': 'off',
     'react/forbid-prop-types': 'off',
+    'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['self'] }],
   },
 };

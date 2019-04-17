@@ -7,20 +7,20 @@ const styles = StyleSheet.create({
     borderColor: 'black',
   },
   top: {
-    flex: 2,
-    justifyContent: 'flex-end',
+    flex: 1,
     flexDirection: 'row',
     borderWidth: 2,
-
-    borderColor: 'black',
+    borderColor: 'red',
+  },
+  blackSpace: {
+    flex: 0.2,
   },
   middle: {
-    flex: 8,
-    flexDirection: 'row',
+    flex: 8.8,
+    flexDirection: 'column',
     justifyContent: 'center',
     borderWidth: 2,
-
-    borderColor: 'black',
+    borderColor: 'green',
   },
   linearGradient: {
     flex: 1,

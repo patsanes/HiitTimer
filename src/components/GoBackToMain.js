@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const styles = StyleSheet.create({
   topLeft: {
     flex: 2,
     justifyContent: 'flex-end',
   },
-  topMiddle: {
+  topM: {
     flex: 6,
     justifyContent: 'flex-end',
   },
@@ -18,24 +19,41 @@ const styles = StyleSheet.create({
   title: {
     paddingHorizontal: 10,
     fontSize: 30,
-    color: 'powderblue',
     alignSelf: 'center',
+    color: 'powderblue',
     fontFamily: 'Permanent Marker',
+  },
+  icon: {
+    alignSelf: 'center',
+    paddingVertical: 6,
+  },
+  button: {
+    justifyContent: 'center',
+    color: 'white',
   },
 });
 
 export default class GoBackToMain extends React.PureComponent {
   render() {
     const { onPress } = this.props;
+    const params = {
+      style: [styles.button, onPress],
+    };
     return (
       <>
         <View style={styles.topLeft}>
-          <TouchableOpacity onPress={onPress}>
-            <Text>Back</Text>
+          <TouchableOpacity {...params}>
+            <Icon
+              name="chevron-left"
+              size={30}
+              color="powderblue"
+              style={styles.icon}
+              onPress={onPress}
+            />
           </TouchableOpacity>
         </View>
-        <View style={styles.topMiddle}>
-          <Text style={styles.title}>Settings </Text>
+        <View style={styles.topM}>
+          <Text style={styles.title}>SETTINGS </Text>
         </View>
         <View style={styles.topRight} />
       </>

@@ -24,9 +24,8 @@ export default class ConfigScreen extends React.Component {
         >
           <View style={styles.top}>
             <GoBackToMain onPress={onPress} />
-
-            <Text>Top</Text>
           </View>
+          <View style={styles.blackSpace} />
           <View style={styles.middle}>
             <SettingsSpace />
           </View>

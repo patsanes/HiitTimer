@@ -9,3 +9,5 @@ export { default as Timer } from './Timer';
 export { default as WorkoutSpace } from './WorkoutSpace';
 export { default as SettingsSpace } from './SettingsSpace';
 export { default as GoBackToMain } from './GoBackToMain';
+export { default as UselessTextInput } from './UselessTextInput';
+export { default as HPicker } from './HPicker';

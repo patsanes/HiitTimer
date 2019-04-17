@@ -52,6 +52,9 @@ export const SessionStore = types
         self.currentCycle += 1;
       }
     },
+    updateTraining(newValue) {
+      self.training = Number(newValue);
+    },
   }));
 
 export const initialState = {

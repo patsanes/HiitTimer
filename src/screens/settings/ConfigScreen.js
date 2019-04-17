@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -22,10 +22,11 @@ export default class ConfigScreen extends React.Component {
           colors={['#16222A', '#3A6073']}
           style={styles.linearGradient}
         >
+          <View style={styles.upper} />
+
           <View style={styles.top}>
             <GoBackToMain onPress={onPress} />
           </View>
-          <View style={styles.blackSpace} />
           <View style={styles.middle}>
             <SettingsSpace />
           </View>

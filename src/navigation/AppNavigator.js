@@ -10,13 +10,15 @@ const AppNavigator = createStackNavigator(
     },
     ConfigScreen: {
       screen: ConfigScreen,
-      // headerMode: 'float',
       headerBackTitleVisible: true,
 
       navigationOptions: () => ({
         title: `SETTINGS`,
-
-        // headerStyle: '',
+        headerStyle: {
+          backgroundColor: '#16222A',
+          fontFamily: 'Permanent Marker',
+        },
+        headerTintColor: 'white',
       }),
     },
   },

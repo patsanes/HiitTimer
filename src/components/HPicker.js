@@ -6,9 +6,11 @@ import {
   StyleSheet,
   Text,
   View,
+  Button,
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import ButtonTimer from './ButtonTimer';
 
 const styles = StyleSheet.create({
   text: {
@@ -20,14 +22,18 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 5,
     borderColor: 'white',
-    width: '100%',
   },
   textContainer: {
     flexDirection: 'row',
-    // flex: 1,
-    // borderWidth: 5,
-    // borderColor: 'white',
-    // width: '100%',
+  },
+  modalContent: {
+    justifyContent: 'flex-end',
+    flex: 1,
+    backgroundColor: 'transparent',
+  },
+  inner: {
+    opacity: 0.95,
+    backgroundColor: 'grey',
   },
 });
 
@@ -39,70 +45,53 @@ export default class HPicker extends Component {
   _togglePicker = () => {
     const { isVisiblePicker } = this.state;
     this.setState({ isVisiblePicker: !isVisiblePicker });
+    this.setModalVisible(isVisiblePicker);
   };
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }
+  openModal() {
+    this.setState({ modalVisible: true });
+  }
+  closeModal() {
+    this.setState({ modalVisible: false });
+  }
+
   render() {
     const { placeholder, selectedValue, onValueChange, items } = this.props;
     const { isVisiblePicker } = this.state;
-    return (
-      <View style={{ height: '30%', bottom: 1, marginTop: 22, backgroundColor: 'transparent' }}>
-        <Modal
-          animationType="slide"
-          transparent
-          visible={this.state.modalVisible}
-          onRequestClose={() => {
-            Alert.alert('Modal has been closed.');
-          }}
-          // presentationStyle="pageSheet"
-        >
-          <View style={{ backgroundColor: 'tomato' }}>
-            <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-              {items.map(item => (
-                <Picker.Item label={item} value={item} />
-              ))}
-            </Picker>
-          </View>
-        </Modal>
 
+    return (
+      <View style={{ height: '30%' }}>
         <View style={styles.container}>
           <TouchableHighlight
+            onPress={this._togglePicker}
             onPress={() => {
+              this._togglePicker;
               this.setModalVisible(true);
             }}
           >
             <Text style={styles.text}>{placeholder}</Text>
           </TouchableHighlight>
-          {/* <TouchableOpacity style={styles.textContainer} onPress={this._togglePicker}>
-            <Text style={styles.text}>{placeholder}</Text>
-            <Text style={styles.text}>{selectedValue}</Text>
-          </TouchableOpacity> */}
-          {isVisiblePicker ? (
-            <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-              {items.map(item => (
-                <Picker.Item label={item} value={item} />
-              ))}
-            </Picker>
-          ) : null}
         </View>
+        {!isVisiblePicker ? (
+          <Modal animationType="slide" transparent visible={this.state.modalVisible}>
+            <View style={styles.modalContent}>
+              <View style={styles.inner}>
+                <TouchableOpacity style={styles.textContainer}>
+                  <Button style={styles.text} title="Done" onPress={this._togglePicker} />
+                </TouchableOpacity>
+                <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
+                  {items.map(item => (
+                    <Picker.Item label={item} value={item} />
+                  ))}
+                </Picker>
+              </View>
+            </View>
+          </Modal>
+        ) : null}
       </View>
     );
-    // return (
-    //   <View style={styles.container}>
-    //     <TouchableOpacity style={styles.textContainer} onPress={this._togglePicker}>
-    //       <Text style={styles.text}>{placeholder}</Text>
-    //       <Text style={styles.text}>{selectedValue}</Text>
-    //     </TouchableOpacity>
-    //     {isVisiblePicker ? (
-    //       <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-    //         {items.map(item => (
-    //           <Picker.Item label={item} value={item} />
-    //         ))}
-    //       </Picker>
-    //     ) : null}
-    //   </View>
-    // );
   }
 }
 

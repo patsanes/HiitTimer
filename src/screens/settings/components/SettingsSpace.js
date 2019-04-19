@@ -13,9 +13,9 @@ import {
 
 const styles = StyleSheet.create({
   middle: {
-    borderWidth: 1,
-    borderColor: 'grey',
     backgroundColor: '#16222A',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
 });
 

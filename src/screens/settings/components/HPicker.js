@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import IconI from 'react-native-vector-icons/Ionicons';
 
 import PropTypes from 'prop-types';
 
@@ -16,11 +17,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+
+    borderWidth: 1,
+    borderColor: 'grey',
   },
   valueContainer: {
     flexDirection: 'row',
-    borderBottomWidth: 1,
-    borderBottomColor: 'grey',
   },
   headerValue: {
     fontSize: 16,
@@ -55,6 +57,14 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
   },
+  iconList: {
+    alignSelf: 'center',
+    marginRight: 10,
+    marginLeft: 10,
+    borderRadius: 3,
+    borderWidth: 1,
+    borderColor: 'white',
+  },
 });
 
 export default class HPicker extends Component {
@@ -86,7 +96,10 @@ export default class HPicker extends Component {
             }}
           >
             <View style={styles.valueContainer}>
+              <IconI name="ios-fitness" size={16} color="white" style={styles.iconList} />
+
               <Text style={styles.headerValue}>{placeholder}</Text>
+
               <Text style={styles.value}>{selectedValue} s </Text>
             </View>
           </TouchableHighlight>

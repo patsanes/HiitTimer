@@ -19,11 +19,10 @@ export const SessionStore = types
     isRest: types.boolean,
   })
   .views(self => ({
-    // no se usa para nada revisar despues
     get endTime() {
       const extraSeconds = (self.rest + self.training) * self.serie * self.cycle;
       const endTime = moment(self.startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
-      return endTime.format('HH:mm:ss');
+      return endTime.format('H [horas] m [min y] s [seg]');
     },
   }))
   .actions(self => ({

@@ -3,7 +3,6 @@ import { View, StyleSheet, Text } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     // marginBottom: '0,2%',
   },
   title: {
@@ -14,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class GoBackToMain extends React.PureComponent {
+export default class Header extends React.PureComponent {
   render() {
     return (
       <>

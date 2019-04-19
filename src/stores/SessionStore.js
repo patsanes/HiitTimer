@@ -13,6 +13,7 @@ export const SessionStore = types
     rest: types.number, // seconds for resting
     restBetween: types.number, // seconds for resting
     startCountdown: types.number,
+    timeCompleteWorkout: types.number,
     isPlay: types.boolean,
     isStop: types.boolean,
     isRest: types.boolean,
@@ -20,8 +21,7 @@ export const SessionStore = types
   .views(self => ({
     // no se usa para nada revisar despues
     get endTime() {
-      const extraSeconds =
-        self.rest * self.serie * self.cycle + self.training * self.serie * self.cycle;
+      const extraSeconds = (self.rest + self.training) * self.serie * self.cycle;
       const endTime = moment(self.startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
       return endTime.format('HH:mm:ss');
     },
@@ -78,13 +78,14 @@ export const SessionStore = types
 export const initialState = {
   serie: 2,
   currentSerie: 0,
-  cycle: 3,
+  cycle: 4,
   currentCycle: 0,
   startTime: '00:00:00',
-  training: 6, // seconds for training
+  training: 28, // seconds for training
   rest: 3, // seconds for resting
   restBetween: 3, // seconds for resting
-  startCountdown: 10, // seconds for resting
+  startCountdown: 1, // seconds for resting
+  timeCompleteWorkout: 54,
   isPlay: false,
   isStop: false,
   isRest: false,

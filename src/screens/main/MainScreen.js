@@ -3,8 +3,8 @@ import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
 
-import { PlayPauseContainer } from '../../containers';
-import { WorkoutSpace, ConfigTraining } from '../../components';
+import { PlayPauseContainer } from './containers';
+import { WorkoutSpace, ConfigTraining } from './components';
 import { goToSettings } from '../../navigation/actions';
 import styles from './styles';
 

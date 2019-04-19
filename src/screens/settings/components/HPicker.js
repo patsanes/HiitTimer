@@ -6,7 +6,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   TouchableOpacity,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -14,35 +13,36 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
-  valueContainer: {
-    flexDirection: 'row',
-  },
-  headerValue: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'white',
-    flex: 0.6,
-    justifyContent: 'space-around',
-  },
-  value: {
-    fontSize: 18,
-    color: 'grey',
-    flex: 0.4,
-  },
   container: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: 'grey',
     justifyContent: 'center',
+  },
+  valueContainer: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
+  },
+  headerValue: {
+    fontSize: 16,
+    color: 'white',
+    flex: 0.45,
+  },
+  value: {
+    fontSize: 16,
+    color: 'grey',
+    flex: 0.55,
+    textAlign: 'right',
+    marginRight: 8,
   },
   modalContent: {
     justifyContent: 'flex-end',
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor: 'grey',
+    opacity: 0.8,
   },
   inner: {
-    opacity: 0.95,
-    backgroundColor: 'grey',
+    opacity: 0.98,
+    backgroundColor: 'black',
     borderRadius: 20,
     borderWidth: 1,
   },
@@ -70,19 +70,13 @@ export default class HPicker extends Component {
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }
-  openModal() {
-    this.setState({ modalVisible: true });
-  }
-  closeModal() {
-    this.setState({ modalVisible: false });
-  }
 
   render() {
     const { placeholder, selectedValue, onValueChange, items } = this.props;
     const { isVisiblePicker } = this.state;
 
     return (
-      <View style={{ height: '8%' }}>
+      <View style={{ height: 30 }}>
         <View style={styles.container}>
           <TouchableHighlight
             onPress={this._togglePicker}
@@ -93,7 +87,7 @@ export default class HPicker extends Component {
           >
             <View style={styles.valueContainer}>
               <Text style={styles.headerValue}>{placeholder}</Text>
-              <Text style={styles.value}>{selectedValue}</Text>
+              <Text style={styles.value}>{selectedValue} s </Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -114,7 +108,7 @@ export default class HPicker extends Component {
                 <View style={styles.border} />
                 <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
                   {items.map(item => (
-                    <Picker.Item label={item} value={item} />
+                    <Picker.Item color="white" label={item} value={item} />
                   ))}
                 </Picker>
               </View>

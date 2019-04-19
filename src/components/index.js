@@ -1,13 +1,4 @@
 export { default as ButtonTimer } from './ButtonTimer';
 export { default as ButtonConfig } from './ButtonConfig';
-export { default as ConfigTraining } from './ConfigTraining';
-export { default as Countdown } from './Countdown';
-export { default as Lap } from './Lap';
-export { default as PlayPause } from './PlayPause';
-export { default as TimeElapsed } from './TimeElapsed';
-export { default as Timer } from './Timer';
-export { default as WorkoutSpace } from './WorkoutSpace';
-export { default as SettingsSpace } from './SettingsSpace';
-export { default as GoBackToMain } from './GoBackToMain';
+export { default as Header } from './Header';
 export { default as UselessTextInput } from './UselessTextInput';
-export { default as HPicker } from './HPicker';

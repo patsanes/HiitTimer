@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ButtonTimer from './ButtonTimer';
+import { ButtonTimer } from '../../../components';
 
 export default class PlayPause extends React.PureComponent {
   render() {

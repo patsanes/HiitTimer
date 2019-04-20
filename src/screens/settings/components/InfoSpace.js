@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'powderblue',
-
     height: 30,
     width: 30,
     borderRadius: 30 / 2,
     borderWidth: 2,
+    marginBottom: 5,
   },
 });
 

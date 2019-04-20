@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
   },
+  completeWorkout: {
+    paddingTop: 5,
+    paddingBottom: 10,
+    paddingLeft: 8,
+    paddingRight: 8,
+  },
 });
 
 const SettingsSpace = () => {

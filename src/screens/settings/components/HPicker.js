@@ -8,8 +8,11 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
+import Icons from '../../../utils/Icons';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import IconI from 'react-native-vector-icons/Ionicons';
+import IconA from 'react-native-vector-icons/AntDesign';
+import IconE from 'react-native-vector-icons/Entypo';
 
 import PropTypes from 'prop-types';
 
@@ -84,6 +87,7 @@ export default class HPicker extends Component {
   render() {
     const { placeholder, selectedValue, onValueChange, items } = this.props;
     const { isVisiblePicker } = this.state;
+    console.log(placeholder);
 
     return (
       <View style={{ height: 30 }}>
@@ -96,10 +100,8 @@ export default class HPicker extends Component {
             }}
           >
             <View style={styles.valueContainer}>
-              <IconI name="ios-fitness" size={16} color="white" style={styles.iconList} />
-
+              <Icons name={placeholder} />
               <Text style={styles.headerValue}>{placeholder}</Text>
-
               <Text style={styles.value}>{selectedValue} s </Text>
             </View>
           </TouchableHighlight>

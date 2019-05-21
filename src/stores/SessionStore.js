@@ -17,6 +17,7 @@ export const SessionStore = types
     isPlay: types.boolean,
     isStop: types.boolean,
     isRest: types.boolean,
+    currentTime: types.number,
   })
   .views(self => ({
     get endTime() {
@@ -31,9 +32,21 @@ export const SessionStore = types
     },
     setPlay() {
       self.isPlay = true;
+      self.isStop = false;
     },
     setStop() {
-      self.isStop = false;
+      if (!self.isStop) {
+        self.isPlay = false;
+        self.isStop = true;
+        self.resetTime(true);
+      }
+    },
+    saveTime() {
+      self.currentTime -= 1;
+    },
+    resetTime(isCountdown) {
+      if (isCountdown) self.currentTime = self.training;
+      else self.currentTime = self.rest;
     },
     increaseSerie() {
       if (!self.isRest) {
@@ -83,9 +96,10 @@ export const initialState = {
   training: 28, // seconds for training
   rest: 3, // seconds for resting
   restBetween: 3, // seconds for resting
-  startCountdown: 1, // seconds for resting
+  startCountdown: 5, // seconds for resting
   timeCompleteWorkout: 54,
   isPlay: false,
-  isStop: false,
+  isStop: true,
   isRest: false,
+  currentTime: 28,
 };

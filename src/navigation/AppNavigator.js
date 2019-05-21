@@ -1,6 +1,6 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
 
-import { ConfigScreen, MainScreen } from '../screens';
+import { ConfigScreen, MainScreen, CountdownScreen } from '../screens';
 
 const AppNavigator = createStackNavigator(
   {
@@ -23,6 +23,14 @@ const AppNavigator = createStackNavigator(
           fontFamily: 'Permanent Marker',
         },
         headerTintColor: 'white',
+      }),
+    },
+    CountdownScreen: {
+      screen: CountdownScreen,
+      headerMode: 'none',
+      navigationOptions: () => ({
+        headerVisible: false,
+        header: null,
       }),
     },
   },

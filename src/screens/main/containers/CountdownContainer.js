@@ -6,10 +6,36 @@ import { Countdown } from '../components';
 class CountdownContainer extends React.Component {
   render() {
     const { session } = this.props;
-    const { training, rest, isRest, isPlay, increaseSerie } = session;
+    const {
+      training,
+      rest,
+      isRest,
+      isPlay,
+      isStop,
+
+      increaseSerie,
+      saveTime,
+      currentTime,
+      cycle,
+      serie,
+      resetTime,
+    } = session;
 
     const count = isRest ? rest : training;
-    return <Countdown count={count} isPlay={isPlay} increaseSerie={increaseSerie} />;
+    return (
+      <Countdown
+        count={count}
+        rest={rest}
+        cycle={cycle}
+        serie={serie}
+        isPlay={isPlay}
+        increaseSerie={increaseSerie}
+        saveTime={saveTime}
+        currentTime={currentTime}
+        resetTime={resetTime}
+        isStop={isStop}
+      />
+    );
   }
 }
 

@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 
 import { PlayPauseContainer } from './containers';
 import { WorkoutSpace, ConfigTraining } from './components';
-import { goToSettings } from '../../navigation/actions';
+import { goToSettings, goToCountdown } from '../../navigation/actions';
+
 import styles from './styles';
 
 class MainScreen extends React.Component {
@@ -14,6 +15,8 @@ class MainScreen extends React.Component {
     const { dispatch } = navigation;
 
     const onPressSettings = () => dispatch(goToSettings());
+    const onPressPlay = () => dispatch(goToCountdown());
+
     return (
       <View style={styles.container}>
         <LinearGradient
@@ -28,7 +31,7 @@ class MainScreen extends React.Component {
             <WorkoutSpace />
           </View>
           <View style={styles.bottom}>
-            <PlayPauseContainer />
+            <PlayPauseContainer onPress={onPressPlay} />
           </View>
         </LinearGradient>
       </View>

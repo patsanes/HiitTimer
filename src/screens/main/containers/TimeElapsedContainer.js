@@ -7,8 +7,8 @@ import { TimeElapsed } from '../components';
 class TimeElapsedContainer extends React.Component {
   render() {
     const { session } = this.props;
-    const { isPlay } = session;
-    return <TimeElapsed isPlay={isPlay} />;
+    const { isPlay, isStop } = session;
+    return <TimeElapsed isPlay={isPlay} isStop={isStop} />;
   }
 }
 

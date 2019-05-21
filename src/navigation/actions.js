@@ -9,6 +9,15 @@ export const goToSettings = () =>
     ],
   });
 
+export const goToCountdown = () =>
+  StackActions.reset({
+    index: 1,
+    actions: [
+      NavigationActions.navigate({ routeName: 'MainScreen' }),
+      NavigationActions.navigate({ routeName: 'CountdownScreen' }),
+    ],
+  });
+
 export const goToHome = () =>
   StackActions.reset({
     index: 0,

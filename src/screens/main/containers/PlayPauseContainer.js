@@ -3,16 +3,18 @@ import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 
 import { PlayPause } from '../components';
+// import { goToCountdown } from '../../../navigation/actions';
 
 class PlayPauseContainer extends React.Component {
   render() {
-    const { session } = this.props;
+    const { session, onPress } = this.props;
     return (
       <PlayPause
-        start={session.isPlay}
-        onPlay={session.setPlay}
+        isPlay={session.isPlay}
+        onPlay={session.setPlay} // go to countdown screen & there session.setPlay
         onPause={session.setPause}
-        stop={session.setStop}
+        onStop={session.setStop}
+        onPress={onPress}
       />
     );
   }
@@ -20,6 +22,7 @@ class PlayPauseContainer extends React.Component {
 
 PlayPauseContainer.propTypes = {
   session: PropTypes.object.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 
 export default inject('session')(observer(PlayPauseContainer));

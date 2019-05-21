@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 });
 
 const TimeElapsed = props => {
-  const { isPlay } = props;
+  const { isPlay, isStop } = props;
 
   return (
     <View style={styles.container}>
@@ -26,7 +26,7 @@ const TimeElapsed = props => {
         <TimerMachine
           timeStart={1000} // empieza a los 20 segundos
           paused={!isPlay}
-          started
+          started={!isStop}
           countdown={false}
           interval={1000}
           formatTimer={time => moment(time).format('HH:mm:ss')}
@@ -38,6 +38,7 @@ const TimeElapsed = props => {
 
 TimeElapsed.propTypes = {
   isPlay: PropTypes.bool.isRequired,
+  isStop: PropTypes.bool.isRequired,
 };
 
 TimeElapsed.defaultProps = {};

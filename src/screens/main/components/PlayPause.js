@@ -5,23 +5,28 @@ import { ButtonTimer } from '../../../components';
 
 export default class PlayPause extends React.PureComponent {
   render() {
-    const { start, onPlay, onPause, stop } = this.props;
+    const { isPlay, onPlay, onPause, onStop, onPress } = this.props;
     return (
       <>
         <ButtonTimer
           disabled={false}
-          name={start ? 'pause' : 'play'}
-          onPress={start ? onPause : onPlay}
+          name={isPlay ? 'pause' : 'play'}
+          onPress={onPress}
+          // { isPlay ? (onPress = { isPlay? onPause: onPlay }) : (onPress = { onPress })}
+
+          // onPress={isPlay ? onPause : onPlay}
+          // && isPlay ? onPause : onPlay
         />
-        <ButtonTimer disabled={!start} name="stop" onPress={stop} />
+        <ButtonTimer disabled={!isPlay} name="stop" onPress={onStop} />
       </>
     );
   }
 }
 
 PlayPause.propTypes = {
-  start: PropTypes.bool.isRequired,
+  isPlay: PropTypes.bool.isRequired,
   onPlay: PropTypes.func.isRequired,
   onPause: PropTypes.func.isRequired,
-  stop: PropTypes.func.isRequired,
+  onStop: PropTypes.func.isRequired,
+  onPress: PropTypes.func.isRequired,
 };

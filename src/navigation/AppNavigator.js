@@ -27,7 +27,7 @@ const AppNavigator = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'ConfigScreen',
+    initialRouteName: 'MainScreen',
     headerMode: 'float',
   },
 );

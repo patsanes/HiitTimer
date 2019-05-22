@@ -50,26 +50,34 @@ const Countdown = props => {
   return (
     <React.Fragment>
       <Text style={styles.titleText}>
-        <TimerMachine
-          timeStart={count * 1000} // empieza a los 20 segundos
-          paused={!isPlay}
-          started={!isStop}
-          countdown
-          interval={1000}
-          formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-          onStop={() => {
-            resetTime(true);
-          }}
-          onTick={() => {
-            saveTime();
-            if ({ currentTime } < 1) {
+        {!isStop ? (
+          <TimerMachine
+            timeStart={0} // empieza a los 20 segundos
+            interval={1000}
+            formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
+          />
+        ) : (
+          <TimerMachine
+            timeStart={count * 1000} // empieza a los 20 segundos
+            paused={!isPlay}
+            started={!isStop}
+            countdown
+            interval={1000}
+            formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
+            onStop={() => {
               resetTime(true);
-            }
-          }}
-          onComplete={() => {
-            increaseSerie();
-          }}
-        />
+            }}
+            onTick={() => {
+              saveTime();
+              if ({ currentTime } < 1) {
+                resetTime(true);
+              }
+            }}
+            onComplete={() => {
+              increaseSerie();
+            }}
+          />
+        )}
       </Text>
       <View style={styles.container}>
         <AnimatedCircularProgress

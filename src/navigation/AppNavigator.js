@@ -1,27 +1,51 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { Dimensions } from 'react-native';
+import React from 'react';
 
 import { ConfigScreen, MainScreen, CountdownScreen } from '../screens';
+import { ButtonConfigContainer } from '../containers';
+
+const { height } = Dimensions.get('window');
 
 const AppNavigator = createStackNavigator(
   {
     MainScreen: {
       screen: MainScreen,
-      headerMode: 'none',
-      navigationOptions: () => ({
-        headerVisible: false,
-        header: null,
+      navigationOptions: ({ navigation }) => ({
+        title: `HIIT`,
+        // headerTransparent: true,
+        headerStyle: {
+          backgroundColor: '#d9a7c7',
+          height: height * 0.1,
+          borderWidth: 1,
+          borderColor: 'white',
+        },
+        headerTitleStyle: {
+          fontSize: 50,
+          fontFamily: 'Permanent Marker',
+          color: 'powderblue',
+          paddingHorizontal: 10,
+        },
+        headerBackgroundTransitionPreset: 'translate',
+
+        // headerBackgroundTransitionPreset: 'fade',
+        headerRight: <ButtonConfigContainer dispatch={navigation.dispatch} />,
       }),
     },
     ConfigScreen: {
       screen: ConfigScreen,
-      headerBackTitleVisible: true,
+      headerBackTitleVisible: false,
 
       navigationOptions: () => ({
         title: `SETTINGS`,
         headerStyle: {
-          backgroundColor: '#16222A',
+          backgroundColor: '#d9a7c7',
           fontFamily: 'Permanent Marker',
+          height: height * 0.1,
+          borderWidth: 1,
+          borderColor: 'red',
         },
+        headerBackgroundTransitionPreset: 'translate',
         headerTintColor: 'white',
       }),
     },

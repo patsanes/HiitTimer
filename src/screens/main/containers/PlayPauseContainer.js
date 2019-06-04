@@ -5,16 +5,26 @@ import PropTypes from 'prop-types';
 import { PlayPause } from '../components';
 
 class PlayPauseContainer extends React.Component {
+  _onPlay = () => {
+    const {
+      session: { setPlay, inProgress },
+      onPress,
+    } = this.props;
+    if (inProgress) {
+      setPlay();
+    } else {
+      onPress();
+    }
+  };
+
   render() {
-    const { session, onPress } = this.props;
+    const { session } = this.props;
     return (
       <PlayPause
-        inProgress={session.inProgress} // comenzo la cuenta regresiva
-        isPlay={session.isPlay} // isPlay pasa a true
-        onPlay={session.setPlay} // go to countdown screen & there session.setPlay
+        isPlay={session.isPlay}
+        onPlay={this._onPlay}
         onPause={session.setPause}
         onStop={session.setStop}
-        onPress={onPress} // Para ir a countdown?
         setInProgress={session.setInProgress}
       />
     );

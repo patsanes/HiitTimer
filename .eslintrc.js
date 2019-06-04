@@ -1,9 +1,10 @@
 module.exports = {
-  // env: {
-  //   browser: true,
-  //   es6: true,
-  // },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  env: {
+    browser: true,
+    es6: true,
+  },
+  extends: ['airbnb', 'prettier', 'prettier/react', 'eslint:recommended'],
+  parser: 'babel-eslint',
   // globals: {
   //   Atomics: 'readonly',
   //   SharedArrayBuffer: 'readonly',
@@ -13,9 +14,10 @@ module.exports = {
       jsx: true,
       useJSXTextNode: true,
     },
-    // ecmaVersion: 2018,
+    ecmaVersion: 2018,
     //   sourceType: 'module',
   },
+
   plugins: ['react', 'react-native', 'prettier'],
   rules: {
     'prettier/prettier': 'error',

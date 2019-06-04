@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
 export default class UselessTextInput extends Component {
   render() {
     const { placeholder, onChange, value } = this.props;
-    console.log({ placeholder, onChange, value });
 
     return (
       <View style={styles.container}>

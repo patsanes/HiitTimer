@@ -44,7 +44,7 @@ const Countdown = props => {
     currentTime,
     resetTime,
     inProgress,
-    setInProgress,
+    // setInProgress,
   } = props;
 
   const fill = -[[(currentTime / count) * 100] - 100];
@@ -74,7 +74,7 @@ const Countdown = props => {
             }}
             onTick={() => {
               saveTime();
-              if ({ currentTime } < 1) {
+              if (currentTime < 1) {
                 resetTime(true);
               }
             }}
@@ -125,7 +125,7 @@ Countdown.propTypes = {
   currentTime: PropTypes.number.isRequired,
   resetTime: PropTypes.func.isRequired,
   inProgress: PropTypes.bool.isRequired,
-  setInProgress: PropTypes.func.isRequired,
+  // setInProgress: PropTypes.func.isRequired,
 };
 
 Countdown.defaultProps = {};

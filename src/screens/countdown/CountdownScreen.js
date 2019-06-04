@@ -2,9 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
+import { observer, inject } from 'mobx-react';
+
 import { StartCountdownContainer } from './containers';
 import styles from './styles';
-import { observer, inject } from 'mobx-react';
 
 class CountdownScreen extends React.Component {
   goToHomeFromCountdown = () => {

@@ -8,13 +8,10 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import Icons from '../../../utils/Icons';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import IconI from 'react-native-vector-icons/Ionicons';
-import IconA from 'react-native-vector-icons/AntDesign';
-import IconE from 'react-native-vector-icons/Entypo';
 
 import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Icons from '../../../utils/Icons';
 
 const styles = StyleSheet.create({
   container: {
@@ -60,13 +57,8 @@ const styles = StyleSheet.create({
     color: 'white',
     alignSelf: 'center',
   },
-  iconList: {
-    alignSelf: 'center',
-    marginRight: 10,
-    marginLeft: 10,
-    borderRadius: 3,
-    borderWidth: 1,
-    borderColor: 'white',
+  containerParent: {
+    height: 30,
   },
 });
 
@@ -75,25 +67,24 @@ export default class HPicker extends Component {
     isVisiblePicker: false,
     modalVisible: false,
   };
+
+  setModalVisible(visible) {
+    this.setState({ modalVisible: visible });
+  }
   _togglePicker = () => {
     const { isVisiblePicker } = this.state;
     this.setState({ isVisiblePicker: !isVisiblePicker });
     this.setModalVisible(isVisiblePicker);
   };
-  setModalVisible(visible) {
-    this.setState({ modalVisible: visible });
-  }
 
   render() {
     const { placeholder, selectedValue, onValueChange, items } = this.props;
-    const { isVisiblePicker } = this.state;
-    console.log(placeholder);
+    const { isVisiblePicker, modalVisible } = this.state;
 
     return (
-      <View style={{ height: 30 }}>
+      <View style={styles.containerParent}>
         <View style={styles.container}>
           <TouchableHighlight
-            onPress={this._togglePicker}
             onPress={() => {
               this._togglePicker;
               this.setModalVisible(true);
@@ -107,7 +98,7 @@ export default class HPicker extends Component {
           </TouchableHighlight>
         </View>
         {!isVisiblePicker ? (
-          <Modal animationType="slide" transparent visible={this.state.modalVisible}>
+          <Modal animationType="slide" transparent visible={modalVisible}>
             <View style={styles.modalContent}>
               <View style={styles.inner}>
                 <TouchableOpacity>
@@ -123,7 +114,7 @@ export default class HPicker extends Component {
                 <View style={styles.border} />
                 <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
                   {items.map((item, index) => (
-                    <Picker.Item key={index} color="white" label={item} value={item} />
+                    <Picker.Item key={index.id} color="white" label={item} value={item} />
                   ))}
                 </Picker>
               </View>

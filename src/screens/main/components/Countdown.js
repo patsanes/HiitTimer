@@ -68,12 +68,9 @@ const Countdown = props => {
             countdown
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-            onStart={() => {
-              // setInProgress();
-            }}
             onStop={() => {
-              resetTime(true);
               // setInProgress();
+              resetTime(true);
             }}
             onTick={() => {
               saveTime();

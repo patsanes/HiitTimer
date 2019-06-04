@@ -42,6 +42,7 @@ export const SessionStore = types
         self.isPlay = false;
         self.isStop = true;
         self.resetTime(true);
+        self.setInProgress();
       }
     },
     saveTime() {
@@ -91,12 +92,12 @@ export const SessionStore = types
   }));
 
 export const initialState = {
-  serie: 2,
+  serie: 1,
   currentSerie: 0,
-  cycle: 4,
+  cycle: 1,
   currentCycle: 0,
   startTime: '00:00:00',
-  training: 28, // seconds for training
+  training: 5, // seconds for training
   rest: 3, // seconds for resting
   restBetween: 3, // seconds for resting
   startCountdown: 2, // seconds for resting

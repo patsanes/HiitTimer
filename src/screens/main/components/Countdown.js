@@ -47,8 +47,6 @@ const Countdown = props => {
     setInProgress,
   } = props;
 
-  console.log('Countdown', { inProgress });
-
   const fill = -[[(currentTime / count) * 100] - 100];
   const totalTime = (count + rest) * cycle * serie;
   const fillComplete = -[(currentTime / totalTime) * 100];
@@ -75,7 +73,7 @@ const Countdown = props => {
             }}
             onStop={() => {
               resetTime(true);
-              setInProgress();
+              // setInProgress();
             }}
             onTick={() => {
               saveTime();

@@ -17,9 +17,6 @@ class MainScreen extends React.Component {
     const { dispatch } = navigation;
     const { inProgress } = session;
 
-    console.log('Main Screen is timer started: ', { inProgress });
-    console.log('Session', { session });
-
     const onPressPlay = () => dispatch(goToCountdown());
 
     return (
@@ -30,7 +27,6 @@ class MainScreen extends React.Component {
             <WorkoutSpace inProgress={inProgress} />
           </View>
           <View style={styles.bottom}>
-            {/* Va a countdown para arrancar la cuenta regresiva, pero que pasa cuando no necesito ir? */}
             <PlayPauseContainer onPress={onPressPlay} />
           </View>
         </BackgroundGradient>
@@ -44,5 +40,4 @@ MainScreen.propTypes = {
   session: PropTypes.object.isRequired,
 };
 
-// export default MainScreen;
 export default inject('session')(observer(MainScreen));

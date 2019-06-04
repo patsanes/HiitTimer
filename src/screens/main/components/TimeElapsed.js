@@ -19,8 +19,6 @@ const styles = StyleSheet.create({
 
 const TimeElapsed = props => {
   const { inProgress } = props;
-  console.log('Time Elapsed', { inProgress });
-
   return (
     <View style={styles.container}>
       <Text style={styles.baseText}>

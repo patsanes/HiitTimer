@@ -3,21 +3,18 @@ import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
 import { StartCountdownContainer } from './containers';
-import { goToHome } from '../../navigation/actions';
 import styles from './styles';
 import { observer, inject } from 'mobx-react';
 
 class CountdownScreen extends React.Component {
   goToHomeFromCountdown = () => {
     const { navigation, session } = this.props;
-    const { goBack, dispatch } = navigation;
-    const { inProgress, setInProgress, setPlay } = session;
-
+    const { goBack } = navigation;
+    const { setInProgress, setPlay } = session;
     setInProgress();
     setPlay();
     goBack();
   };
-
   render() {
     return (
       <View style={styles.container}>

@@ -13,7 +13,6 @@ const AppNavigator = createStackNavigator(
       screen: MainScreen,
       navigationOptions: ({ navigation }) => ({
         title: `HIIT`,
-        // headerTransparent: true,
         headerStyle: {
           backgroundColor: '#d9a7c7',
           height: height * 0.1,
@@ -27,15 +26,12 @@ const AppNavigator = createStackNavigator(
           paddingHorizontal: 10,
         },
         headerBackgroundTransitionPreset: 'translate',
-
-        // headerBackgroundTransitionPreset: 'fade',
         headerRight: <ButtonConfigContainer dispatch={navigation.dispatch} />,
       }),
     },
     ConfigScreen: {
       screen: ConfigScreen,
       headerBackTitleVisible: false,
-
       navigationOptions: () => ({
         title: `SETTINGS`,
         headerStyle: {

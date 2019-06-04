@@ -1,4 +1,3 @@
-// import { values } from "mobx";
 import { types } from 'mobx-state-tree';
 import moment from 'moment';
 
@@ -18,6 +17,7 @@ export const SessionStore = types
     isStop: types.boolean,
     isRest: types.boolean,
     currentTime: types.number,
+    inProgress: types.boolean,
   })
   .views(self => ({
     get endTime() {
@@ -27,6 +27,9 @@ export const SessionStore = types
     },
   }))
   .actions(self => ({
+    setInProgress() {
+      self.inProgress = !self.inProgress;
+    },
     setPause() {
       self.isPlay = false;
     },
@@ -96,10 +99,11 @@ export const initialState = {
   training: 28, // seconds for training
   rest: 3, // seconds for resting
   restBetween: 3, // seconds for resting
-  startCountdown: 5, // seconds for resting
+  startCountdown: 2, // seconds for resting
   timeCompleteWorkout: 54,
   isPlay: false,
   isStop: true,
   isRest: false,
   currentTime: 28,
+  inProgress: false,
 };

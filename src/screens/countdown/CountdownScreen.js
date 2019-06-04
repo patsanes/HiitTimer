@@ -5,13 +5,20 @@ import PropTypes from 'prop-types';
 import { StartCountdownContainer } from './containers';
 import { goToHome } from '../../navigation/actions';
 import styles from './styles';
+import { observer, inject } from 'mobx-react';
 
 class CountdownScreen extends React.Component {
-  render() {
-    const { navigation } = this.props;
-    const { dispatch } = navigation;
-    const goHome = () => dispatch(goToHome());
+  goToHomeFromCountdown = () => {
+    const { navigation, session } = this.props;
+    const { goBack, dispatch } = navigation;
+    const { inProgress, setInProgress, setPlay } = session;
 
+    setInProgress();
+    setPlay();
+    goBack();
+  };
+
+  render() {
     return (
       <View style={styles.container}>
         <LinearGradient
@@ -22,7 +29,7 @@ class CountdownScreen extends React.Component {
           style={styles.linearGradient}
         >
           <View style={styles.middle}>
-            <StartCountdownContainer goToHome={goHome} />
+            <StartCountdownContainer goToHome={this.goToHomeFromCountdown} />
           </View>
         </LinearGradient>
       </View>
@@ -32,6 +39,7 @@ class CountdownScreen extends React.Component {
 
 CountdownScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
+  session: PropTypes.object.isRequired,
 };
 
-export default CountdownScreen;
+export default inject('session')(observer(CountdownScreen));

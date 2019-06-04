@@ -3,18 +3,19 @@ import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 
 import { PlayPause } from '../components';
-// import { goToCountdown } from '../../../navigation/actions';
 
 class PlayPauseContainer extends React.Component {
   render() {
     const { session, onPress } = this.props;
     return (
       <PlayPause
-        isPlay={session.isPlay}
+        inProgress={session.inProgress} // comenzo la cuenta regresiva
+        isPlay={session.isPlay} // isPlay pasa a true
         onPlay={session.setPlay} // go to countdown screen & there session.setPlay
         onPause={session.setPause}
         onStop={session.setStop}
-        onPress={onPress}
+        onPress={onPress} // Para ir a countdown?
+        setInProgress={session.setInProgress}
       />
     );
   }

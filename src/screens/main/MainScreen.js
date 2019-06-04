@@ -2,20 +2,24 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
 
+import { observer, inject } from 'mobx-react';
 import { PlayPauseContainer } from './containers';
 import { BackgroundGradient } from '../../components';
 
 import { WorkoutSpace } from './components';
-import { goToSettings, goToCountdown } from '../../navigation/actions';
+import { goToCountdown } from '../../navigation/actions';
 
 import styles from './styles';
 
 class MainScreen extends React.Component {
   render() {
-    const { inProgress, navigation } = this.props;
+    const { session, navigation } = this.props;
     const { dispatch } = navigation;
+    const { inProgress } = session;
 
-    const onPressSettings = () => dispatch(goToSettings());
+    console.log('Main Screen is timer started: ', { inProgress });
+    console.log('Session', { session });
+
     const onPressPlay = () => dispatch(goToCountdown());
 
     return (
@@ -23,9 +27,10 @@ class MainScreen extends React.Component {
         <BackgroundGradient>
           <View style={styles.top} />
           <View style={styles.middle}>
-            <WorkoutSpace />
+            <WorkoutSpace inProgress={inProgress} />
           </View>
           <View style={styles.bottom}>
+            {/* Va a countdown para arrancar la cuenta regresiva, pero que pasa cuando no necesito ir? */}
             <PlayPauseContainer onPress={onPressPlay} />
           </View>
         </BackgroundGradient>
@@ -36,7 +41,8 @@ class MainScreen extends React.Component {
 
 MainScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
-  // inProgress: PropTypes.bool.isRequired,
+  session: PropTypes.object.isRequired,
 };
 
-export default MainScreen;
+// export default MainScreen;
+export default inject('session')(observer(MainScreen));

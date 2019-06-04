@@ -43,16 +43,22 @@ const Countdown = props => {
     saveTime,
     currentTime,
     resetTime,
+    inProgress,
+    setInProgress,
   } = props;
+
+  console.log('Countdown', { inProgress });
+
   const fill = -[[(currentTime / count) * 100] - 100];
   const totalTime = (count + rest) * cycle * serie;
   const fillComplete = -[(currentTime / totalTime) * 100];
+
   return (
     <React.Fragment>
       <Text style={styles.titleText}>
-        {!isStop ? (
+        {!inProgress ? (
           <TimerMachine
-            timeStart={0} // empieza a los 20 segundos
+            timeStart={0}
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
           />
@@ -64,8 +70,12 @@ const Countdown = props => {
             countdown
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
+            onStart={() => {
+              // setInProgress();
+            }}
             onStop={() => {
               resetTime(true);
+              setInProgress();
             }}
             onTick={() => {
               saveTime();
@@ -119,6 +129,8 @@ Countdown.propTypes = {
   saveTime: PropTypes.func.isRequired,
   currentTime: PropTypes.number.isRequired,
   resetTime: PropTypes.func.isRequired,
+  inProgress: PropTypes.bool.isRequired,
+  setInProgress: PropTypes.func.isRequired,
 };
 
 Countdown.defaultProps = {};

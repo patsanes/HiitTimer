@@ -22,10 +22,12 @@ class StartCountdownContainer extends React.Component {
   timer() {
     const { currentCount } = this.state;
     const { goToHome } = this.props;
+    if (currentCount > 0) {
+      this.setState({
+        currentCount: currentCount - 1,
+      });
+    }
 
-    this.setState({
-      currentCount: currentCount - 1,
-    });
     if (currentCount < 1) {
       goToHome();
       clearInterval(this.intervalId);

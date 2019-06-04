@@ -9,6 +9,9 @@ class CountdownContainer extends React.Component {
     const {
       training,
       rest,
+      cycle,
+      serie,
+
       isRest,
       isPlay,
       isStop,
@@ -16,9 +19,10 @@ class CountdownContainer extends React.Component {
       increaseSerie,
       saveTime,
       currentTime,
-      cycle,
-      serie,
       resetTime,
+
+      setInProgress,
+      inProgress,
     } = session;
 
     const count = isRest ? rest : training;
@@ -29,11 +33,13 @@ class CountdownContainer extends React.Component {
         cycle={cycle}
         serie={serie}
         isPlay={isPlay}
+        isStop={isStop}
         increaseSerie={increaseSerie}
         saveTime={saveTime}
         currentTime={currentTime}
         resetTime={resetTime}
-        isStop={isStop}
+        setInProgress={setInProgress}
+        inProgress={inProgress}
       />
     );
   }

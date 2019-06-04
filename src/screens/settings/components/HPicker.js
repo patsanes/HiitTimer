@@ -122,8 +122,8 @@ export default class HPicker extends Component {
                 </TouchableOpacity>
                 <View style={styles.border} />
                 <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-                  {items.map(item => (
-                    <Picker.Item color="white" label={item} value={item} />
+                  {items.map((item, index) => (
+                    <Picker.Item key={index} color="white" label={item} value={item} />
                   ))}
                 </Picker>
               </View>

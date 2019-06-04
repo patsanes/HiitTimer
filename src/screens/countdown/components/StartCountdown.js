@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
 });
 const StartCountdown = props => {
   const { currentCount } = props;
-
   return (
     <React.Fragment>
       <Text style={styles.titleText}>{currentCount}</Text>

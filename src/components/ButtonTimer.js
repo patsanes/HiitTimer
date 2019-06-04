@@ -32,11 +32,7 @@ const ButtonTimer = props => {
     style: [styles.button, disabled ? styles.buttonInactive : styles.buttonActive],
     onPress,
     disabled,
-    // hide,
   };
-  // if (hide) {
-  // return null;
-  // }
   return (
     <TouchableOpacity {...params}>
       <Icon name={name} size={40} color="white" style={styles.icon} />
@@ -48,7 +44,6 @@ ButtonTimer.propTypes = {
   name: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
   disabled: PropTypes.bool.isRequired,
-  // hide: PropTypes.bool.isRequired,
 };
 
 export default ButtonTimer;

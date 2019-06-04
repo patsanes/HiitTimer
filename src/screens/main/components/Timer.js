@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
+
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import {
@@ -29,21 +31,25 @@ const styles = StyleSheet.create({
   },
 });
 
-const Timer = () => {
+const Timer = props => {
+  const { inProgress } = props;
   return (
     <View style={styles.container}>
       <View style={styles.middleTop}>
-        <CountdownContainer />
+        <CountdownContainer inProgress={inProgress} />
       </View>
       <View style={styles.middleMiddle}>
         <LapSerieContainer />
         <LapCycleContainer />
       </View>
       <View style={styles.middleBottom}>
-        <TimeElapsedContainer />
+        <TimeElapsedContainer inProgress={inProgress} />
       </View>
     </View>
   );
+};
+Timer.propTypes = {
+  inProgress: PropTypes.bool.isRequired,
 };
 
 export default Timer;

@@ -78,7 +78,9 @@ export const SessionStore = types
     increaseCycle() {
       if (self.currentCycle === self.cycle) {
         self.setPause();
-        self.finishWorkout();
+        if (self.isTimeToFinish()) {
+          self.finishWorkout();
+        }
       } else {
         self.currentCycle += 1;
       }
@@ -89,8 +91,9 @@ export const SessionStore = types
         self.cycle == self.currentCycle &&
         self.timePased == self.timeCompleteWorkout
       ) {
-        self.finishWorkout();
+        return true;
       }
+      return false;
     },
     finishWorkout() {
       self.setStop();

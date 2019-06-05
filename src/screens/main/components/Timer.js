@@ -32,24 +32,25 @@ const styles = StyleSheet.create({
 });
 
 const Timer = props => {
-  const { inProgress } = props;
+  const { inProgress, onCompleteWorkout } = props;
   return (
     <View style={styles.container}>
       <View style={styles.middleTop}>
-        <CountdownContainer inProgress={inProgress} />
+        <CountdownContainer inProgress={inProgress} onCompleteWorkout={onCompleteWorkout} />
       </View>
       <View style={styles.middleMiddle}>
         <LapSerieContainer />
         <LapCycleContainer />
       </View>
       <View style={styles.middleBottom}>
-        <TimeElapsedContainer inProgress={inProgress} />
+        <TimeElapsedContainer inProgress={inProgress} onCompleteWorkout={onCompleteWorkout} />
       </View>
     </View>
   );
 };
 Timer.propTypes = {
   inProgress: PropTypes.bool.isRequired,
+  onCompleteWorkout: PropTypes.func.isRequired,
 };
 
 export default Timer;

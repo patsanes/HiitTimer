@@ -7,7 +7,7 @@ import { PlayPauseContainer } from './containers';
 import { BackgroundGradient } from '../../components';
 
 import { WorkoutSpace } from './components';
-import { goToCountdown } from '../../navigation/actions';
+import { goToCountdown, goToCongrats } from '../../navigation/actions';
 
 import styles from './styles';
 
@@ -18,13 +18,14 @@ class MainScreen extends React.Component {
     const { inProgress } = session;
 
     const onPressPlay = () => dispatch(goToCountdown());
+    const onCompleteWorkout = () => dispatch(goToCongrats());
 
     return (
       <View style={styles.container}>
         <BackgroundGradient>
           <View style={styles.top} />
           <View style={styles.middle}>
-            <WorkoutSpace inProgress={inProgress} />
+            <WorkoutSpace inProgress={inProgress} onCompleteWorkout={onCompleteWorkout} />
           </View>
           <View style={styles.bottom}>
             <PlayPauseContainer onPress={onPressPlay} />

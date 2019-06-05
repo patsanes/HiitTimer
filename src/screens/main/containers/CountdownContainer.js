@@ -4,6 +4,15 @@ import PropTypes from 'prop-types';
 import { Countdown } from '../components';
 
 class CountdownContainer extends React.Component {
+  _onFinish = () => {
+    const {
+      session: { timeCompleteWorkout, timePased },
+      onCompleteWorkout,
+    } = this.props;
+    if (timeCompleteWorkout == timePased) {
+      onCompleteWorkout();
+    }
+  };
   render() {
     const { session } = this.props;
     const {
@@ -35,6 +44,7 @@ class CountdownContainer extends React.Component {
         inProgress={inProgress}
         fill={fill}
         fillComplete={fillComplete}
+        _onFinish={this._onFinish}
       />
     );
   }
@@ -42,6 +52,7 @@ class CountdownContainer extends React.Component {
 
 CountdownContainer.propTypes = {
   session: PropTypes.object.isRequired,
+  onCompleteWorkout: PropTypes.func.isRequired,
 };
 
 export default inject('session')(observer(CountdownContainer));

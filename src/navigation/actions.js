@@ -13,14 +13,19 @@ export const goToSettings = () =>
 export const goToCountdown = () =>
   StackActions.push({
     routeName: 'CountdownScreen',
-    // actions: [
-    // NavigationActions.navigate({ routeName: 'MainScreen' }),
-    // NavigationActions.navigate({ routeName: 'CountdownScreen' }),
-    // ],
   });
 
 export const goToHome = () =>
   StackActions.reset({
     index: 0,
     actions: [NavigationActions.navigate({ routeName: 'MainScreen' })],
+  });
+
+export const goToCongrats = () =>
+  StackActions.reset({
+    index: 1,
+    actions: [
+      NavigationActions.navigate({ routeName: 'MainScreen' }),
+      NavigationActions.navigate({ routeName: 'CongratsScreen' }),
+    ],
   });

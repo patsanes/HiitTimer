@@ -2,7 +2,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Dimensions } from 'react-native';
 import React from 'react';
 
-import { ConfigScreen, MainScreen, CountdownScreen } from '../screens';
+import { ConfigScreen, MainScreen, CountdownScreen, CongratsScreen } from '../screens';
 import { ButtonConfigContainer } from '../containers';
 
 const { height } = Dimensions.get('window');
@@ -47,6 +47,14 @@ const AppNavigator = createStackNavigator(
     },
     CountdownScreen: {
       screen: CountdownScreen,
+      headerMode: 'none',
+      navigationOptions: () => ({
+        headerVisible: false,
+        header: null,
+      }),
+    },
+    CongratsScreen: {
+      screen: CongratsScreen,
       headerMode: 'none',
       navigationOptions: () => ({
         headerVisible: false,

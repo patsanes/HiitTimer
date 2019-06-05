@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 });
 
 const TimeElapsed = props => {
-  const { isPlay, isStop } = props;
+  const { isPlay, isStop, increaseTime } = props;
   return (
     <View style={styles.container}>
       <Text style={styles.baseText}>
@@ -29,6 +29,9 @@ const TimeElapsed = props => {
           countdown={false}
           interval={1000}
           formatTimer={time => moment(time).format('HH:mm:ss')}
+          onTick={() => {
+            increaseTime();
+          }}
         />{' '}
       </Text>
     </View>
@@ -38,6 +41,7 @@ const TimeElapsed = props => {
 TimeElapsed.propTypes = {
   isPlay: PropTypes.bool.isRequired,
   isStop: PropTypes.bool.isRequired,
+  increaseTime: PropTypes.func.isRequired,
 };
 
 TimeElapsed.defaultProps = {};

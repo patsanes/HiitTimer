@@ -7,10 +7,9 @@ export const SessionStore = types
     currentSerie: types.number,
     cycle: types.number,
     currentCycle: types.number,
-    startTime: types.string,
     training: types.number, // seconds for training
     rest: types.number, // seconds for resting
-    restBetween: types.number, // seconds for resting
+    restBetween: types.number, // seconds for resting ADD THIS LATER ON
     startCountdown: types.number,
     timeCompleteWorkout: types.number,
     isPlay: types.boolean,
@@ -18,11 +17,13 @@ export const SessionStore = types
     isRest: types.boolean,
     currentTime: types.number,
     inProgress: types.boolean,
+    timePased: types.number,
   })
   .views(self => ({
     get endTime() {
+      const { startTime } = '00:00:00';
       const extraSeconds = (self.rest + self.training) * self.serie * self.cycle;
-      const endTime = moment(self.startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
+      const endTime = moment(startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
       return endTime.format('H [horas] m [min y] s [seg]');
     },
   }))
@@ -41,9 +42,12 @@ export const SessionStore = types
       if (!self.isStop) {
         self.isPlay = false;
         self.isStop = true;
-        self.resetTime();
+        // self.resetTime();
         self.setInProgress();
       }
+    },
+    increaseTime() {
+      self.timePased = self.timePased + 1;
     },
     saveTime() {
       self.currentTime -= 1;
@@ -74,10 +78,22 @@ export const SessionStore = types
     increaseCycle() {
       if (self.currentCycle === self.cycle) {
         self.setPause();
-        self.setStop();
+        self.finishWorkout();
       } else {
         self.currentCycle += 1;
       }
+    },
+    isTimeToFinish() {
+      if (
+        self.serie == self.currentSerie &&
+        self.cycle == self.currentCycle &&
+        self.timePased == self.timeCompleteWorkout
+      ) {
+        self.finishWorkout();
+      }
+    },
+    finishWorkout() {
+      self.setStop();
     },
     updateTraining(newValue) {
       self.training = Number(newValue);
@@ -99,20 +115,23 @@ export const SessionStore = types
     },
   }));
 
-export const initialState = {
+const initialState = {
   serie: 1,
   currentSerie: 0,
   cycle: 1,
   currentCycle: 0,
-  startTime: '00:00:00',
   training: 5, // seconds for training
   rest: 3, // seconds for resting
   restBetween: 3, // seconds for resting
   startCountdown: 2, // seconds for resting
-  timeCompleteWorkout: 54,
   isPlay: false,
   isStop: true,
   isRest: false,
-  currentTime: 5, //first has to be the value of training
   inProgress: false,
+  timePased: 0,
 };
+initialState.currentTime = initialState.training;
+initialState.timeCompleteWorkout =
+  (initialState.training + initialState.rest) * initialState.serie * initialState.cycle;
+
+export { initialState };

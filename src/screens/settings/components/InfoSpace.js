@@ -2,13 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 
-// import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
-// import icoMoonConfig from '../../assets/fonts/CustomIconMoon/selection.json';
-
-// console.log({ icoMoonConfig });
-
-// const Icon = createIconSetFromIcoMoon(icoMoonConfig, 'icomoon', 'iconmoon.ttf');
-
 const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',

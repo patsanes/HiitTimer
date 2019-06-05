@@ -38,18 +38,21 @@ const Countdown = props => {
     cycle,
     serie,
     isPlay,
+    isRest,
     isStop,
     increaseSerie,
     saveTime,
     currentTime,
     resetTime,
     inProgress,
+    fill,
     // setInProgress,
   } = props;
 
-  const fill = -[[(currentTime / count) * 100] - 100];
-  const totalTime = (count + rest) * cycle * serie;
-  const fillComplete = -[(currentTime / totalTime) * 100];
+  // const totalTime = (count + rest) * cycle * serie;
+  // const fillComplete = -[(currentTime / totalTime) * 100];
+
+  // const fill = !isRest ? fillCountdown : fillRest;
 
   return (
     <React.Fragment>
@@ -70,11 +73,13 @@ const Countdown = props => {
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
             onStop={() => {
               // setInProgress();
-              resetTime(true);
+              resetTime();
             }}
             onTick={() => {
-              saveTime();
-              if (currentTime < 1) {
+              // saveTime();
+              if (currentTime < 0) {
+                resetTime(false);
+              } else {
                 resetTime(true);
               }
             }}
@@ -84,7 +89,7 @@ const Countdown = props => {
           />
         )}
       </Text>
-      <View style={styles.container}>
+      {/* <View style={styles.container}>
         <AnimatedCircularProgress
           size={350}
           width={15}
@@ -95,14 +100,13 @@ const Countdown = props => {
           lineCap="round"
           rotation={0}
         />
-      </View>
+      </View> */}
       <View style={styles.secondContainer}>
         <AnimatedCircularProgress
           size={320}
           width={15}
           fill={fill}
           tintColor="#1565C0"
-          // onAnimationComplete={() => console.log('onAnimationComplete')}
           backgroundColor="#3d5875"
           lineCap="round"
           rotation={0}
@@ -119,12 +123,15 @@ Countdown.propTypes = {
   serie: PropTypes.number.isRequired,
 
   isPlay: PropTypes.bool.isRequired,
+  isRest: PropTypes.bool.isRequired,
   isStop: PropTypes.bool.isRequired,
   increaseSerie: PropTypes.func.isRequired,
   saveTime: PropTypes.func.isRequired,
   currentTime: PropTypes.number.isRequired,
   resetTime: PropTypes.func.isRequired,
   inProgress: PropTypes.bool.isRequired,
+  fill: PropTypes.number.isRequired,
+
   // setInProgress: PropTypes.func.isRequired,
 };
 

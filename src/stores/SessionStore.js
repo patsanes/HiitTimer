@@ -41,16 +41,23 @@ export const SessionStore = types
       if (!self.isStop) {
         self.isPlay = false;
         self.isStop = true;
-        self.resetTime(true);
+        self.resetTime();
         self.setInProgress();
       }
     },
     saveTime() {
       self.currentTime -= 1;
     },
-    resetTime(isCountdown) {
-      if (isCountdown) self.currentTime = self.training;
-      else self.currentTime = self.rest;
+    resetTime(save) {
+      if (save) {
+        self.saveTime();
+      } else {
+        if (self.isRest) {
+          self.currentTime = self.rest;
+        } else {
+          self.currentTime = self.training;
+        }
+      }
     },
     increaseSerie() {
       if (!self.isRest) {
@@ -62,6 +69,7 @@ export const SessionStore = types
         }
       }
       self.isRest = !self.isRest;
+      self.resetTime(false);
     },
     increaseCycle() {
       if (self.currentCycle === self.cycle) {
@@ -105,6 +113,6 @@ export const initialState = {
   isPlay: false,
   isStop: true,
   isRest: false,
-  currentTime: 28,
+  currentTime: 5, //first has to be the value of training
   inProgress: false,
 };

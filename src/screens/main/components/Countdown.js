@@ -65,7 +65,7 @@ const Countdown = props => {
               resetTime();
             }}
             onTick={() => {
-              if (currentTime < 0) {
+              if (currentTime <= -1) {
                 resetTime(false);
               } else {
                 resetTime(true);

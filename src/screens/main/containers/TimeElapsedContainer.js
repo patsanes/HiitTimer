@@ -6,7 +6,7 @@ import { TimeElapsed } from '../components';
 
 class TimeElapsedContainer extends React.Component {
   render() {
-    const { session, onCompleteWorkout } = this.props;
+    const { session } = this.props;
     const { isPlay, isStop, increaseTime } = session;
     return <TimeElapsed isPlay={isPlay} isStop={isStop} increaseTime={increaseTime} />;
   }
@@ -14,7 +14,7 @@ class TimeElapsedContainer extends React.Component {
 
 TimeElapsedContainer.propTypes = {
   session: PropTypes.object.isRequired,
-  onCompleteWorkout: PropTypes.func.isRequired,
+  // onCompleteWorkout: PropTypes.func.isRequired,
 };
 
 export default inject('session')(observer(TimeElapsedContainer));

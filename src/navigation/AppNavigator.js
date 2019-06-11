@@ -6,23 +6,20 @@ import { ConfigScreen, MainScreen, CountdownScreen, CongratsScreen } from '../sc
 import { ButtonConfigContainer } from '../containers';
 
 const { height } = Dimensions.get('window');
-// const backgroundColors = isRest ? ['#11998e', '#11998e'] : ['#232526', '#414345'];
 
 const AppNavigator = createStackNavigator(
   {
     MainScreen: {
       screen: MainScreen,
       navigationOptions: ({ navigation }) => ({
-        title: `HIIT`,
+        title: `HiiTimer`,
         headerStyle: {
           backgroundColor: '#232526',
           height: height * 0.1,
-          // borderWidth: 1,
-          // borderColor: 'white',
         },
         headerTitleStyle: {
-          fontSize: 50,
-          fontFamily: 'Permanent Marker',
+          fontSize: 30,
+          fontFamily: 'Montserrat-Light',
           color: 'powderblue',
           paddingHorizontal: 10,
         },
@@ -37,7 +34,7 @@ const AppNavigator = createStackNavigator(
         title: `SETTINGS`,
         headerStyle: {
           backgroundColor: '#d9a7c7',
-          fontFamily: 'Permanent Marker',
+          fontFamily: 'Montserrat-Light',
           height: height * 0.1,
           borderWidth: 1,
           borderColor: 'red',
@@ -61,11 +58,10 @@ const AppNavigator = createStackNavigator(
         title: `Well done!`,
         headerStyle: {
           height: height * 0.1,
-          // borderWidth: 1,
         },
         headerTitleStyle: {
           fontSize: 50,
-          fontFamily: 'Permanent Marker',
+          fontFamily: 'Montserrat-Light',
           color: 'black',
           paddingHorizontal: 10,
         },

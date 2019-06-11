@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 });
 const BackgroundGradient = props => {
   const { children, isRest } = props;
-  const backgroundColors = isRest ? ['#11998e', '#11998e'] : ['#232526', '#414345'];
+  const backgroundColors = isRest ? ['#11998e', '#11998e'] : ['#16222A', '#3A6073'];
   return (
     <LinearGradient
       start={{ x: 0.0, y: 0.25 }}

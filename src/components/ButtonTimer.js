@@ -18,17 +18,6 @@ const styles = StyleSheet.create({
     width: 110,
     borderRadius: 60,
   },
-  // button: {
-  //   alignSelf: 'center',
-  //   justifyContent: 'center',
-  //   borderColor: '#0f0c29',
-  //   borderWidth: 3,
-  //   color: 'white',
-  //   overflow: 'hidden',
-  //   height: 110,
-  //   width: 110,
-  //   borderRadius: 60,
-  // },
   icon: {
     alignSelf: 'center',
   },

@@ -67,7 +67,6 @@ export default class HPicker extends Component {
     isVisiblePicker: false,
     modalVisible: false,
   };
-
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }

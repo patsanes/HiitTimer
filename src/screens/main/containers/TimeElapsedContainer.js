@@ -14,7 +14,6 @@ class TimeElapsedContainer extends React.Component {
 
 TimeElapsedContainer.propTypes = {
   session: PropTypes.object.isRequired,
-  // onCompleteWorkout: PropTypes.func.isRequired,
 };
 
 export default inject('session')(observer(TimeElapsedContainer));

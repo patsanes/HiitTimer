@@ -6,11 +6,12 @@ import { Countdown } from '../components';
 class CountdownContainer extends React.Component {
   _onFinish = () => {
     const {
-      session: { timeCompleteWorkout, timePased },
-      onCompleteWorkout,
+      session: { timeCompleteWorkout, timePased, setStop },
+      goToCongratsFromHome,
     } = this.props;
     if (timeCompleteWorkout == timePased) {
-      onCompleteWorkout();
+      setStop();
+      goToCongratsFromHome();
     }
   };
   render() {
@@ -54,7 +55,7 @@ class CountdownContainer extends React.Component {
 
 CountdownContainer.propTypes = {
   session: PropTypes.object.isRequired,
-  onCompleteWorkout: PropTypes.func.isRequired,
+  goToCongratsFromHome: PropTypes.func.isRequired,
 };
 
 export default inject('session')(observer(CountdownContainer));

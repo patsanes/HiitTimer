@@ -123,14 +123,14 @@ export const SessionStore = types
   }));
 
 const initialState = {
-  serie: 3,
+  serie: 2,
   currentSerie: 0,
-  cycle: 2,
+  cycle: 1,
   currentCycle: 0,
   training: 3, // seconds for training
   rest: 2, // seconds for resting
-  restBetween: 3, // seconds for resting
-  startCountdown: 2, // seconds for resting
+  restBetween: 2, // seconds for resting
+  startCountdown: 3, // seconds for resting
   isPlay: false,
   isStop: true,
   isRest: false,

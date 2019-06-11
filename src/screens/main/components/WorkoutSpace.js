@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
 });
 
 const WorkoutSpace = props => {
-  const { inProgress, onCompleteWorkout } = props;
+  const { inProgress, goToCongratsFromHome } = props;
   return (
     <>
       <View style={styles.middleLeft} />
       <View style={styles.middleCenter}>
-        <Timer inProgress={inProgress} onCompleteWorkout={onCompleteWorkout} />
+        <Timer inProgress={inProgress} goToCongratsFromHome={goToCongratsFromHome} />
       </View>
       <View style={styles.middleRight} />
     </>
@@ -32,7 +32,7 @@ const WorkoutSpace = props => {
 };
 WorkoutSpace.propTypes = {
   inProgress: PropTypes.bool.isRequired,
-  onCompleteWorkout: PropTypes.func.isRequired,
+  goToCongratsFromHome: PropTypes.func.isRequired,
 };
 
 export default WorkoutSpace;

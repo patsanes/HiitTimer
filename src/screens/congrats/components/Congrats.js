@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Card } from 'react-native-elements';
+import { Card, Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Icons from '../../../utils/Icons';
+// import { goToHome } from '../../../navigation/actions';
 
 const styles = StyleSheet.create({
   titleText: {
@@ -18,12 +19,6 @@ const styles = StyleSheet.create({
     fontFamily: 'League Gothic',
     color: 'white',
   },
-  headerTitleStyle: {
-    fontSize: 50,
-    fontFamily: 'Permanent Marker',
-    color: 'black',
-    paddingHorizontal: 10,
-  },
   card: {
     backgroundColor: 'black',
   },
@@ -31,7 +26,7 @@ const styles = StyleSheet.create({
 });
 
 const Congrats = props => {
-  const { training, rest, cycle, serie, endTime } = props;
+  const { training, rest, cycle, serie, endTime, onPress } = props;
   const details = [
     {
       name: 'Countdown',
@@ -53,7 +48,6 @@ const Congrats = props => {
   return (
     <React.Fragment>
       <View style={styles.container}>
-        <Text style={styles.headerTitleStyle}>Well done! </Text>
         <View>
           <Text style={styles.titleText}>
             You have completed a session of {cycle} cycles with {serie} series in {endTime} time.
@@ -71,6 +65,7 @@ const Congrats = props => {
           </View>
         ))}
       </Card>
+      <Button title="Go back" onPress={onPress} />
     </React.Fragment>
   );
 };
@@ -81,5 +76,6 @@ Congrats.propTypes = {
   cycle: PropTypes.number.isRequired,
   serie: PropTypes.number.isRequired,
   endTime: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
 };
 export default Congrats;

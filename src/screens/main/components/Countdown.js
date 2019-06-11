@@ -42,6 +42,7 @@ const Countdown = props => {
     inProgress,
     fill,
     fillComplete,
+    _onFinish,
   } = props;
 
   return (
@@ -73,6 +74,8 @@ const Countdown = props => {
             }}
             onComplete={() => {
               increaseSerie();
+              //go to complete workout
+              _onFinish();
             }}
           />
         )}
@@ -115,6 +118,7 @@ Countdown.propTypes = {
   inProgress: PropTypes.bool.isRequired,
   fill: PropTypes.number.isRequired,
   fillComplete: PropTypes.number.isRequired,
+  _onFinish: PropTypes.func.isRequired,
 };
 
 Countdown.defaultProps = {};

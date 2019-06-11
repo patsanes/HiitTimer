@@ -12,14 +12,12 @@ export default class CongratsScreen extends React.Component {
   render() {
     const { navigation } = this.props;
     const { dispatch } = navigation;
-    const onPress = () => dispatch(goToHome());
+    const goHome = () => dispatch(goToHome());
     return (
       <BackgroundGradient>
-        <View style={styles.top}>
-          <Header onPress={onPress} />
-        </View>
+        <View style={styles.top}>{/* <Header onPress={onPress} /> */}</View>
         <View style={styles.middle}>
-          <CongratsContainer />
+          <CongratsContainer onPress={goHome} />
         </View>
         <View style={styles.bottom}>{/* <InfoSpace /> */}</View>
       </BackgroundGradient>

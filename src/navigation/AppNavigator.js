@@ -55,10 +55,21 @@ const AppNavigator = createStackNavigator(
     },
     CongratsScreen: {
       screen: CongratsScreen,
-      headerMode: 'none',
+      headerMode: 'float',
       navigationOptions: () => ({
-        headerVisible: false,
-        header: null,
+        title: `Well done!`,
+        headerStyle: {
+          height: height * 0.1,
+          borderWidth: 1,
+        },
+        headerTitleStyle: {
+          fontSize: 50,
+          fontFamily: 'Permanent Marker',
+          color: 'black',
+          paddingHorizontal: 10,
+        },
+        headerBackgroundTransitionPreset: 'translate',
+        headerTintColor: 'white',
       }),
     },
   },

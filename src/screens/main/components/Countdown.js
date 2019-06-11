@@ -39,6 +39,7 @@ const Countdown = props => {
     increaseSerie,
     currentTime,
     resetTime,
+    setStop,
     inProgress,
     fill,
     fillComplete,
@@ -63,18 +64,20 @@ const Countdown = props => {
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
             onStop={() => {
-              resetTime();
+              //ChangeState
+              resetTime(false);
             }}
             onTick={() => {
               if (currentTime <= -1) {
+                //ChangeState
                 resetTime(false);
               } else {
+                //SaveState
                 resetTime(true);
               }
             }}
             onComplete={() => {
               increaseSerie();
-              //go to complete workout
               _onFinish();
             }}
           />
@@ -115,6 +118,7 @@ Countdown.propTypes = {
   increaseSerie: PropTypes.func.isRequired,
   currentTime: PropTypes.number.isRequired,
   resetTime: PropTypes.func.isRequired,
+  setStop: PropTypes.func.isRequired,
   inProgress: PropTypes.bool.isRequired,
   fill: PropTypes.number.isRequired,
   fillComplete: PropTypes.number.isRequired,

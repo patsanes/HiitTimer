@@ -3,14 +3,14 @@ import moment from 'moment';
 
 export const SessionStore = types
   .model('SessionStore', {
+    training: types.number, // seconds for training
+    rest: types.number, // seconds for resting
+    restBetween: types.number, // seconds for resting ADD THIS LATER ON
     serie: types.number,
     currentSerie: types.number,
     cycle: types.number,
     currentCycle: types.number,
-    training: types.number, // seconds for training
-    rest: types.number, // seconds for resting
-    restBetween: types.number, // seconds for resting ADD THIS LATER ON
-    startCountdown: types.number,
+    startCountdown: types.number, // countdown para arrancar
     timeCompleteWorkout: types.number,
     isPlay: types.boolean,
     isStop: types.boolean,
@@ -42,8 +42,9 @@ export const SessionStore = types
       if (!self.isStop) {
         self.isPlay = false;
         self.isStop = true;
-        // self.resetTime();
-        self.setInProgress();
+        self.currentCycle = 0;
+        self.currentSerie = 0;
+        self.inProgress = false;
       }
     },
     increaseTime() {
@@ -52,15 +53,18 @@ export const SessionStore = types
     saveTime() {
       self.currentTime -= 1;
     },
-    resetTime(save) {
-      if (save) {
+    changeState() {
+      if (self.isRest) {
+        self.currentTime = self.rest;
+      } else {
+        self.currentTime = self.training;
+      }
+    },
+    resetTime(saveOrChangeState) {
+      if (saveOrChangeState) {
         self.saveTime();
       } else {
-        if (self.isRest) {
-          self.currentTime = self.rest;
-        } else {
-          self.currentTime = self.training;
-        }
+        self.changeState();
       }
     },
     increaseSerie() {
@@ -68,9 +72,9 @@ export const SessionStore = types
         if (self.currentSerie === self.serie) {
           self.currentSerie = 0;
           self.increaseCycle();
-        } else {
-          self.currentSerie += 1;
         }
+      } else {
+        self.currentSerie += 1;
       }
       self.isRest = !self.isRest;
       self.resetTime(false);
@@ -119,12 +123,12 @@ export const SessionStore = types
   }));
 
 const initialState = {
-  serie: 1,
+  serie: 3,
   currentSerie: 0,
-  cycle: 1,
+  cycle: 2,
   currentCycle: 0,
-  training: 5, // seconds for training
-  rest: 3, // seconds for resting
+  training: 3, // seconds for training
+  rest: 2, // seconds for resting
   restBetween: 3, // seconds for resting
   startCountdown: 2, // seconds for resting
   isPlay: false,

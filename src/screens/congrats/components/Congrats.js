@@ -48,24 +48,24 @@ const Congrats = props => {
   return (
     <React.Fragment>
       <View style={styles.container}>
+        <Text style={styles.titleText}>
+          You have completed a session of {cycle} cycles with {serie} series in {endTime} time.
+        </Text>
+        <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
+          {details.map((item, index) => (
+            <View style={styles.card}>
+              <View key={index.id} label={item} value={item}>
+                <Text style={styles.text}>
+                  <Icons name={item.name} /> {item.name}: {item.data}
+                </Text>
+              </View>
+            </View>
+          ))}
+        </Card>
         <View>
-          <Text style={styles.titleText}>
-            You have completed a session of {cycle} cycles with {serie} series in {endTime} time.
-          </Text>
+          <Button title="Go back" type="clear" onPress={onPress} />
         </View>
       </View>
-      <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
-        {details.map((item, index) => (
-          <View style={styles.card}>
-            <View key={index.id} label={item} value={item}>
-              <Text style={styles.text}>
-                <Icons name={item.name} /> {item.name}: {item.data}
-              </Text>
-            </View>
-          </View>
-        ))}
-      </Card>
-      <Button title="Go back" onPress={onPress} />
     </React.Fragment>
   );
 };

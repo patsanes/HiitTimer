@@ -24,6 +24,7 @@ class CountdownContainer extends React.Component {
       increaseSerie,
       currentTime,
       resetTime,
+      setStop,
       timePased,
       inProgress,
       timeCompleteWorkout,
@@ -41,6 +42,7 @@ class CountdownContainer extends React.Component {
         increaseSerie={increaseSerie}
         currentTime={currentTime}
         resetTime={resetTime}
+        setStop={setStop}
         inProgress={inProgress}
         fill={fill}
         fillComplete={fillComplete}

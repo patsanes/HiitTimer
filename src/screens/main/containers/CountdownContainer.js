@@ -38,6 +38,7 @@ class CountdownContainer extends React.Component {
     return (
       <Countdown
         count={count}
+        isRest={isRest}
         isPlay={isPlay}
         isStop={isStop}
         increaseSerie={increaseSerie}

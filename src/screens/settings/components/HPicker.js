@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
 
-    borderWidth: 1,
-    borderColor: 'grey',
+    // borderWidth: 1,
+    // borderColor: 'grey',
   },
   valueContainer: {
     flexDirection: 'row',

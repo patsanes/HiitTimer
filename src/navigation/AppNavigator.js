@@ -6,6 +6,7 @@ import { ConfigScreen, MainScreen, CountdownScreen, CongratsScreen } from '../sc
 import { ButtonConfigContainer } from '../containers';
 
 const { height } = Dimensions.get('window');
+// const backgroundColors = isRest ? ['#11998e', '#11998e'] : ['#232526', '#414345'];
 
 const AppNavigator = createStackNavigator(
   {
@@ -14,10 +15,10 @@ const AppNavigator = createStackNavigator(
       navigationOptions: ({ navigation }) => ({
         title: `HIIT`,
         headerStyle: {
-          backgroundColor: '#d9a7c7',
+          backgroundColor: '#232526',
           height: height * 0.1,
-          borderWidth: 1,
-          borderColor: 'white',
+          // borderWidth: 1,
+          // borderColor: 'white',
         },
         headerTitleStyle: {
           fontSize: 50,
@@ -60,7 +61,7 @@ const AppNavigator = createStackNavigator(
         title: `Well done!`,
         headerStyle: {
           height: height * 0.1,
-          borderWidth: 1,
+          // borderWidth: 1,
         },
         headerTitleStyle: {
           fontSize: 50,

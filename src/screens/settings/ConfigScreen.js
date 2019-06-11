@@ -14,7 +14,7 @@ export default class ConfigScreen extends React.Component {
     const { dispatch } = navigation;
     const onPress = () => dispatch(goToHome());
     return (
-      <BackgroundGradient>
+      <BackgroundGradient isRest={false}>
         <View style={styles.top}>
           <Header onPress={onPress} />
         </View>

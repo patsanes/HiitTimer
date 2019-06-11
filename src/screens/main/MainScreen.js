@@ -15,14 +15,14 @@ class MainScreen extends React.Component {
   render() {
     const { session, navigation } = this.props;
     const { dispatch } = navigation;
-    const { inProgress } = session;
+    const { inProgress, isRest } = session;
 
     const onPressPlay = () => dispatch(goToCountdown());
     const goToCongratsFromHome = () => dispatch(goToCongrats());
 
     return (
       <View style={styles.container}>
-        <BackgroundGradient>
+        <BackgroundGradient isRest={isRest}>
           <View style={styles.top} />
           <View style={styles.middle}>
             <WorkoutSpace inProgress={inProgress} goToCongratsFromHome={goToCongratsFromHome} />

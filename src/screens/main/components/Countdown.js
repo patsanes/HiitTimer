@@ -34,17 +34,18 @@ const styles = StyleSheet.create({
 const Countdown = props => {
   const {
     count,
+    isRest,
     isPlay,
     isStop,
     increaseSerie,
     currentTime,
     resetTime,
-    setStop,
     inProgress,
     fill,
     fillComplete,
     _onFinish,
   } = props;
+  const backgroundColors = isRest ? '#904e95' : '#e96443';
 
   return (
     <React.Fragment>
@@ -87,9 +88,9 @@ const Countdown = props => {
       <View style={styles.container}>
         <AnimatedCircularProgress
           size={350}
-          width={12}
+          width={15}
           fill={fillComplete}
-          tintColor="#00e0ff"
+          tintColor="#92FE9D"
           backgroundColor="#3d5875"
           lineCap="round"
           rotation={0}
@@ -101,8 +102,8 @@ const Countdown = props => {
           size={320}
           width={15}
           fill={fill}
-          tintColor="#1565C0"
           backgroundColor="#3d5875"
+          tintColor={backgroundColors}
           lineCap="round"
           rotation={0}
         />
@@ -113,12 +114,12 @@ const Countdown = props => {
 
 Countdown.propTypes = {
   count: PropTypes.number.isRequired,
+  isRest: PropTypes.bool.isRequired,
   isPlay: PropTypes.bool.isRequired,
   isStop: PropTypes.bool.isRequired,
   increaseSerie: PropTypes.func.isRequired,
   currentTime: PropTypes.number.isRequired,
   resetTime: PropTypes.func.isRequired,
-  setStop: PropTypes.func.isRequired,
   inProgress: PropTypes.bool.isRequired,
   fill: PropTypes.number.isRequired,
   fillComplete: PropTypes.number.isRequired,

@@ -14,7 +14,7 @@ export default class CongratsScreen extends React.Component {
     const { dispatch } = navigation;
     const goHome = () => dispatch(goToHome());
     return (
-      <BackgroundGradient>
+      <BackgroundGradient isRest={false}>
         <View style={styles.top}>{/* <Header onPress={onPress} /> */}</View>
         <View style={styles.middle}>
           <CongratsContainer onPress={goHome} />

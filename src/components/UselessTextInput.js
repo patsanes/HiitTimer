@@ -12,8 +12,8 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 20,
     color: 'white',
-    borderWidth: 1,
-    borderColor: 'white',
+    // borderWidth: 1,
+    // borderColor: 'white',
   },
   container: {
     flexDirection: 'row',

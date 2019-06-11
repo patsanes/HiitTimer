@@ -21,7 +21,7 @@ export const SessionStore = types
   })
   .views(self => ({
     get endTime() {
-      const { startTime } = '00:00:00';
+      const startTime = '00:00:00';
       const extraSeconds = (self.rest + self.training) * self.serie * self.cycle;
       const endTime = moment(startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
       return endTime.format('H [horas] m [min y] s [seg]');

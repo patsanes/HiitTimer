@@ -77,10 +77,11 @@ const Countdown = props => {
           />
         )}
       </Text>
+      {/* Complete workout */}
       <View style={styles.container}>
         <AnimatedCircularProgress
           size={350}
-          width={15}
+          width={12}
           fill={fillComplete}
           tintColor="#00e0ff"
           backgroundColor="#3d5875"
@@ -88,6 +89,7 @@ const Countdown = props => {
           rotation={0}
         />
       </View>
+      {/* Countdown workout */}
       <View style={styles.secondContainer}>
         <AnimatedCircularProgress
           size={320}

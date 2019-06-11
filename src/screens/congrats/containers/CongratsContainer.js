@@ -12,11 +12,11 @@ momentDurationFormatSetup(moment);
 class CongratsContainer extends React.Component {
   render() {
     const { session } = this.props;
-    const { endTime } = session;
+    const { training, rest, cycle, serie, endTime } = session;
+
     return (
       <View>
-        <Congrats />
-        <Text>Tiempo completo de entrenamiento: {endTime}.</Text>
+        <Congrats training={training} rest={rest} cycle={cycle} serie={serie} endTime={endTime} />
       </View>
     );
   }

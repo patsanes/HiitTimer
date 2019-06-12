@@ -24,7 +24,7 @@ const ButtonConfig = props => {
   };
   return (
     <TouchableOpacity {...params}>
-      <Icon name={name} size={40} color="powderblue" style={styles.icon} />
+      <Icon name={name} size={40} color="white" style={styles.icon} />
     </TouchableOpacity>
   );
 };

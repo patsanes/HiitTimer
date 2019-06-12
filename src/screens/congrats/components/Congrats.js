@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   titleText: {
     fontSize: 30,
     fontFamily: 'League Gothic',
-    color: 'black',
+    color: 'white',
   },
   titleCard: {
     color: 'white',

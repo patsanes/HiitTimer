@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontFamily: 'League Gothic',
     fontWeight: 'bold',
-    color: 'powderblue',
+    color: 'white',
     alignSelf: 'center',
   },
   container: {
@@ -45,7 +45,8 @@ const Countdown = props => {
     fillComplete,
     _onFinish,
   } = props;
-  const backgroundColors = isRest ? '#904e95' : '#e96443';
+  const backgroundColors = isRest ? '#38ef7d' : '#6DD5FA';
+  const backgroundColorsOff = isRest ? '#1D4350' : '#1D4350';
 
   return (
     <React.Fragment>
@@ -90,8 +91,8 @@ const Countdown = props => {
           size={350}
           width={15}
           fill={fillComplete}
-          tintColor="#92FE9D"
-          backgroundColor="#3d5875"
+          tintColor="#ff4b2b"
+          backgroundColor="#1D4350"
           lineCap="round"
           rotation={0}
         />
@@ -102,7 +103,7 @@ const Countdown = props => {
           size={320}
           width={15}
           fill={fill}
-          backgroundColor="#3d5875"
+          backgroundColor={backgroundColorsOff}
           tintColor={backgroundColors}
           lineCap="round"
           rotation={0}

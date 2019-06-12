@@ -23,7 +23,7 @@ class CountdownScreen extends React.Component {
           start={{ x: 0.0, y: 0.25 }}
           end={{ x: 0.5, y: 1.0 }}
           locations={[0, 0.5]}
-          colors={['#FF416C', '#FF4B2B']}
+          colors={['#FDC830', '#F37335']}
           style={styles.linearGradient}
         >
           <View style={styles.middle}>

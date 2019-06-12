@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     fontFamily: 'League Gothic',
     fontWeight: 'bold',
     alignSelf: 'center',
-    color: 'skyblue',
+    color: 'white',
   },
 });
 

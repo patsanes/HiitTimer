@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontFamily: 'League Gothic',
     fontWeight: 'bold',
-    color: 'black',
+    color: 'white',
     alignSelf: 'center',
   },
 });

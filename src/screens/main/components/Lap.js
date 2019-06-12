@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontFamily: 'League Gothic',
 
-    color: 'skyblue',
+    color: 'white',
   },
 });
 const Lap = props => {

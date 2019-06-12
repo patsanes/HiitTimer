@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   titleText: {
     paddingHorizontal: 10,
     fontSize: 70,
-    color: 'powderblue',
+    color: 'white',
     alignSelf: 'center',
     fontFamily: 'Permanent Marker',
   },

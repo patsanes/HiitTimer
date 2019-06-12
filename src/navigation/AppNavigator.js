@@ -14,13 +14,13 @@ const AppNavigator = createStackNavigator(
       navigationOptions: ({ navigation }) => ({
         title: `HiiTimer`,
         headerStyle: {
-          backgroundColor: '#232526',
+          backgroundColor: '#373B44',
           height: height * 0.1,
         },
         headerTitleStyle: {
           fontSize: 30,
           fontFamily: 'Montserrat-Light',
-          color: 'powderblue',
+          color: 'white',
           paddingHorizontal: 10,
         },
         headerBackgroundTransitionPreset: 'translate',
@@ -33,7 +33,7 @@ const AppNavigator = createStackNavigator(
       navigationOptions: () => ({
         title: `SETTINGS`,
         headerStyle: {
-          backgroundColor: '#d9a7c7',
+          backgroundColor: '#373B44',
           fontFamily: 'Montserrat-Light',
           height: height * 0.1,
           borderWidth: 1,
@@ -57,12 +57,13 @@ const AppNavigator = createStackNavigator(
       navigationOptions: () => ({
         title: `Well done!`,
         headerStyle: {
+          backgroundColor: '#373B44',
           height: height * 0.1,
         },
         headerTitleStyle: {
           fontSize: 50,
           fontFamily: 'Montserrat-Light',
-          color: 'black',
+          color: 'white',
           paddingHorizontal: 10,
         },
         headerBackgroundTransitionPreset: 'translate',

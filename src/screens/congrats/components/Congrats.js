@@ -45,6 +45,7 @@ const Congrats = props => {
       data: serie,
     },
   ];
+
   return (
     <React.Fragment>
       <View style={styles.container}>
@@ -53,12 +54,10 @@ const Congrats = props => {
         </Text>
         <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
           {details.map((item, index) => (
-            <View style={styles.card}>
-              <View key={index.id} label={item} value={item}>
-                <Text style={styles.text}>
-                  <Icons name={item.name} /> {item.name}: {item.data}
-                </Text>
-              </View>
+            <View key={item.name} label={item} value={item} style={styles.card}>
+              <Text key={index.id} style={styles.text}>
+                <Icons name={item.name} /> {item.name}: {item.data}
+              </Text>
             </View>
           ))}
         </Card>

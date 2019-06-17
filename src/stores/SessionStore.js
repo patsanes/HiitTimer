@@ -1,6 +1,10 @@
 import { types } from 'mobx-state-tree';
 import moment from 'moment';
 
+var Sound = require('react-native-sound');
+
+Sound.setCategory('Playback');
+
 export const SessionStore = types
   .model('SessionStore', {
     training: types.number, // seconds for training
@@ -28,6 +32,17 @@ export const SessionStore = types
     },
   }))
   .actions(self => ({
+    playSound() {
+      if (self.isRest) {
+        var restSound = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, error => {
+          restSound.play();
+        });
+      } else {
+        var countSound = new Sound('single_note.mp3', Sound.MAIN_BUNDLE, error => {
+          countSound.play();
+        });
+      }
+    },
     setInProgress() {
       self.inProgress = !self.inProgress;
     },

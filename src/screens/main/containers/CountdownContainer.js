@@ -29,6 +29,7 @@ class CountdownContainer extends React.Component {
       timePased,
       inProgress,
       timeCompleteWorkout,
+      playSound,
     } = session;
 
     const count = isRest ? rest : training;
@@ -49,6 +50,7 @@ class CountdownContainer extends React.Component {
         fill={fill}
         fillComplete={fillComplete}
         _onFinish={this._onFinish}
+        playSound={playSound}
       />
     );
   }

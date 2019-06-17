@@ -88,6 +88,8 @@
 		C1F224E022B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1F224DF22B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 */; };
 		C1F2259922B832A500DA21CE /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2254922B8322E00DA21CE /* Lottie.framework */; };
 		C1F2259A22B832A500DA21CE /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2254922B8322E00DA21CE /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C1F2259F22B8511600DA21CE /* single_note.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1F2259E22B8511600DA21CE /* single_note.mp3 */; };
+		C1F225A122B8559A00DA21CE /* light_applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1F225A022B8559A00DA21CE /* light_applause.mp3 */; };
 		C55109D78E594C039B9EDE8B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EE9B3FE40B9E49A8A6656D3E /* Montserrat-Bold.ttf */; };
 		C6E5E6F926364018BF1C62C4 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05D6671FEC4FCABA583788 /* Lato-Hairline.ttf */; };
 		C78D16537F2F41978CB819B3 /* LeagueGothic-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1E4A94BB6A4942D780758BE7 /* LeagueGothic-Italic.otf */; };
@@ -587,6 +589,8 @@
 		C073583316A44F99BEF6E254 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; };
 		C0D00F9E794A414780243FC1 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Italic.ttf"; path = "../assets/fonts/Montserrat/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		C1F224DF22B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = zapsplat_multimedia_alert.mp3; path = ../assets/sounds/zapsplat_multimedia_alert.mp3; sourceTree = "<group>"; };
+		C1F2259E22B8511600DA21CE /* single_note.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = single_note.mp3; path = ../assets/sounds/single_note.mp3; sourceTree = "<group>"; };
+		C1F225A022B8559A00DA21CE /* light_applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = light_applause.mp3; path = ../assets/sounds/light_applause.mp3; sourceTree = "<group>"; };
 		C31BD254BF724A838FE728F2 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		C34E029DDE114C92AE3E3924 /* Lato-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Italic.ttf"; path = "../assets/fonts/Lato/Lato-Italic.ttf"; sourceTree = "<group>"; };
 		DBC5FB8FD5E449A2ADE0C7D2 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
@@ -970,6 +974,8 @@
 		D2969AE824734FF285680317 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C1F225A022B8559A00DA21CE /* light_applause.mp3 */,
+				C1F2259E22B8511600DA21CE /* single_note.mp3 */,
 				C1F224DF22B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 */,
 				EF52E418D9814B8C96112992 /* AntDesign.ttf */,
 				293001C014944753B3F694B2 /* Entypo.ttf */,
@@ -1633,9 +1639,11 @@
 				603D5EEA86C541229CF59734 /* Lato-Italic.ttf in Resources */,
 				44B544B12E48489DBD406199 /* Lato-Light.ttf in Resources */,
 				F7CC7FD042014875BC50E54E /* Lato-LightItalic.ttf in Resources */,
+				C1F225A122B8559A00DA21CE /* light_applause.mp3 in Resources */,
 				23140732453C4160A3A165F0 /* Lato-Regular.ttf in Resources */,
 				45A06A043A1040DA980596CA /* Montserrat-Black.ttf in Resources */,
 				379B9CE06BFF40E5963D4978 /* Montserrat-BlackItalic.ttf in Resources */,
+				C1F2259F22B8511600DA21CE /* single_note.mp3 in Resources */,
 				C55109D78E594C039B9EDE8B /* Montserrat-Bold.ttf in Resources */,
 				334B098F9B0D454494D3A83B /* Montserrat-BoldItalic.ttf in Resources */,
 				6086A34D2FD94213BEC734F3 /* Montserrat-ExtraBold.ttf in Resources */,

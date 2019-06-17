@@ -7,7 +7,7 @@ import Icons from '../../../utils/Icons';
 
 const styles = StyleSheet.create({
   titleText: {
-    fontSize: 30,
+    fontSize: 35,
     fontFamily: 'League Gothic',
     color: 'white',
   },
@@ -15,14 +15,17 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   text: {
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: 'League Gothic',
     color: 'white',
   },
   card: {
     backgroundColor: 'black',
   },
-  container: {},
+  container: {
+    // borderWidth: 2,
+    // borderColor: 'green',
+  },
 });
 
 const Congrats = props => {
@@ -61,9 +64,7 @@ const Congrats = props => {
             </View>
           ))}
         </Card>
-        <View>
-          <Button title="Go back" type="clear" onPress={onPress} />
-        </View>
+        <View>{/* <Button title="Go back" type="clear" onPress={onPress} /> */}</View>
       </View>
     </React.Fragment>
   );

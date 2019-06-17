@@ -72,7 +72,7 @@ const AppNavigator = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'MainScreen',
+    initialRouteName: 'CongratsScreen',
     headerMode: 'float',
   },
 );

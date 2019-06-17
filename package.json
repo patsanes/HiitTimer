@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "global": "^4.3.2",
+    "lottie-react-native": "^2.6.1",
     "mobx": "^5.9.0",
     "mobx-devtools": "^0.9.21",
     "mobx-devtools-mst": "^0.9.21",

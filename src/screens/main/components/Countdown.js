@@ -5,6 +5,8 @@ import momentDurationFormatSetup from 'moment-duration-format';
 import TimerMachine from 'react-timer-machine';
 import PropTypes from 'prop-types';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+// import Sound from '../../../../assets/sounds/zapsplat_multimedia_alert.mp3';
+var Sound = require('react-native-sound');
 
 momentDurationFormatSetup(moment);
 
@@ -48,6 +50,36 @@ const Countdown = props => {
   const backgroundColors = isRest ? '#38ef7d' : '#6DD5FA';
   const backgroundColorsOff = isRest ? '#1D4350' : '#1D4350';
 
+  Sound.setCategory('Playback');
+  // Load the sound file 'whoosh.mp3' from the app bundle
+  // See notes below about preloading sounds within initialization code below.
+  var whoosh = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, error => {
+    if (error) {
+      console.log('failed to load the sound', error);
+      return;
+    }
+
+    // Play the sound with an onEnd callback
+    whoosh.play(success => {
+      if (success) {
+        console.log('successfully finished playing');
+      } else {
+        console.log('playback failed due to audio decoding errors');
+      }
+    });
+  });
+
+  // whoosh.pause();
+  // Stop the sound and rewind to the beginning
+  whoosh.stop(() => {
+    // Note: If you want to play a sound after stopping and rewinding it,
+    // it is important to call play() in a callback.
+    whoosh.play();
+  });
+
+  // Release the audio player resource
+  whoosh.release();
+
   return (
     <React.Fragment>
       <Text style={styles.titleText}>
@@ -77,6 +109,17 @@ const Countdown = props => {
                 //SaveState
                 resetTime(true);
               }
+              var whoosh = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, error => {
+                whoosh.setVolume(1);
+                // Play the sound with an onEnd callback
+                whoosh.play(success => {
+                  if (success) {
+                    console.log('successfully finished playing');
+                  } else {
+                    console.log('playback failed due to audio decoding errors');
+                  }
+                });
+              });
             }}
             onComplete={() => {
               increaseSerie();

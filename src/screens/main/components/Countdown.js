@@ -1,14 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-// import moment from 'moment';
-// import momentDurationFormatSetup from 'moment-duration-format';
-// import TimerMachine from 'react-timer-machine';
 import PropTypes from 'prop-types';
 import { ProgressContainer, TimerMachineContainer } from '../containers';
 
 var Sound = require('react-native-sound');
-
-// momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   titleText: {

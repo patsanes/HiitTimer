@@ -1,5 +1,6 @@
 import { types } from 'mobx-state-tree';
 import moment from 'moment';
+// https://facebook.github.io/react-native/docs/vibration
 import { Vibration } from 'react-native';
 
 var Sound = require('react-native-sound');

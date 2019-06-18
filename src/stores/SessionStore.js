@@ -1,9 +1,12 @@
 import { types } from 'mobx-state-tree';
 import moment from 'moment';
+import { Vibration } from 'react-native';
 
 var Sound = require('react-native-sound');
 
 Sound.setCategory('Playback');
+
+const DURATION = 1000;
 
 export const SessionStore = types
   .model('SessionStore', {
@@ -33,6 +36,8 @@ export const SessionStore = types
   }))
   .actions(self => ({
     playSound() {
+      Vibration.vibrate(DURATION);
+
       if (self.isRest) {
         var restSound = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, error => {
           restSound.play();

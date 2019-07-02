@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
+import firebase from 'react-native-firebase';
 
 import { observer, inject } from 'mobx-react';
 import { PlayPauseContainer } from './containers';
 import { BackgroundGradient } from '../../components';
-
 import { WorkoutSpace } from './components';
 import { goToCountdown, goToCongrats } from '../../navigation/actions';
 
@@ -17,7 +17,20 @@ class MainScreen extends React.Component {
     const { dispatch } = navigation;
     const { inProgress, isRest } = session;
 
-    const onPressPlay = () => dispatch(goToCountdown());
+    const onPressPlay = () => {
+      dispatch(goToCountdown());
+      console.log('holla');
+      // Build notification
+      const notification = new firebase.notifications.Notification();
+
+      // Schedule the notification for 1 minute in the future
+      const date = new Date();
+      date.setMinutes(date.getMinutes() + 1);
+
+      firebase.notifications().scheduleNotification(notification, {
+        fireDate: date.getTime(),
+      })
+    };
     const goToCongratsFromHome = () => dispatch(goToCongrats());
 
     return (

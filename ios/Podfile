@@ -24,8 +24,10 @@ target 'HiitTimer' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-
-
+  
+  # Add new pods below this line
+  # Required by RNFirebase
+  pod 'Firebase/Core', '~> 6.3.0'
   # Pods for HiitTimer
 
   # target 'HiitTimer-tvOSTests' do

@@ -28,6 +28,7 @@ target 'HiitTimer' do
   # Add new pods below this line
   # Required by RNFirebase
   pod 'Firebase/Core', '~> 6.3.0'
+  pod 'Firebase/Messaging', '~> 6.3.0'
   # Pods for HiitTimer
 
   # target 'HiitTimer-tvOSTests' do

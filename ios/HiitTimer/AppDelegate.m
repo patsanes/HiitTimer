@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-// #import "RNFirebaseNotifications.h"
+#import "RNFirebaseNotifications.h"
 #import <Firebase.h>
 #import "AppDelegate.h"
 
@@ -16,7 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [FIRApp configure];
-  // [RNFirebaseNotifications configure];
+  [RNFirebaseNotifications configure];
 
   NSURL *jsCodeLocation;
 
@@ -35,8 +35,8 @@
   [self.window makeKeyAndVisible];
   return YES;
 }
-// - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-//   [[RNFirebaseNotifications instance] didReceiveLocalNotification:notification];
-// }
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+  [[RNFirebaseNotifications instance] didReceiveLocalNotification:notification];
+}
 
 @end

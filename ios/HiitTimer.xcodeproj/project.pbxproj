@@ -68,6 +68,7 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		AE97BB25D00E41BA8E97F0FA /* PermanentMarker-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 147727A4B84B42A8A44AEB48 /* PermanentMarker-Regular.ttf */; };
 		B82B1192DFC0446EAEC2DB2B /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04FBD6467DCE4E5EAD1BA5D7 /* Montserrat-SemiBold.ttf */; };
+		B97C3AA08A944EDB3CE75760 /* libPods-HiitTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F93EDCFABA2926B7123B29CA /* libPods-HiitTimer.a */; };
 		C01B756581724AB686C51939 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375D155E37B648918A9B682E /* Montserrat-ExtraLight.ttf */; };
 		C167C496AB1A4DE9AB63EF58 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7935ACCEC7DF4F4881F4FB88 /* Montserrat-ExtraLightItalic.ttf */; };
 		C1A5F09822CBFC3D00CEAB44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1A5F06522CBFC3D00CEAB44 /* GoogleService-Info.plist */; };
@@ -85,7 +86,6 @@
 		E3DB865E3657429D8394EF28 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7595B71A8BA4683B5A5226F /* SimpleLineIcons.ttf */; };
 		E771A56F3339436199A83D91 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35EF1FF78C33406FB221FF29 /* Montserrat-SemiBoldItalic.ttf */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
-		F3B7C02E2FAA2636A13D7811 /* Pods_HiitTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D74F24C16A36DB1C19999EA /* Pods_HiitTimer.framework */; };
 		F7CC7FD042014875BC50E54E /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 302229DF0FE44FB7A238079C /* Lato-LightItalic.ttf */; };
 		FB3C62D2C61E42729039C369 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FC2AEBA2E0145A9B581CF66 /* MaterialIcons.ttf */; };
 		FCD5BDFF49C04866AAD1579D /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83CD51DA43B24DAB81AB4A05 /* libRNVectorIcons.a */; };
@@ -531,7 +531,6 @@
 		3E8BF0BCD0D24F2198005384 /* LeagueGothic-CondensedRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueGothic-CondensedRegular.otf"; path = "../assets/fonts/LeagueGothic/LeagueGothic-CondensedRegular.otf"; sourceTree = "<group>"; };
 		499735A786674DE1A2D925ED /* libRNGestureHandler-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNGestureHandler-tvOS.a"; sourceTree = "<group>"; };
 		4CF55E1F2C2F444383A53C48 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-BoldItalic.ttf"; path = "../assets/fonts/Montserrat/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
-		4D74F24C16A36DB1C19999EA /* Pods_HiitTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HiitTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E80D9A35CA45028D531EA4 /* LeagueGothic-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "LeagueGothic-Regular.otf"; path = "../assets/fonts/LeagueGothic/LeagueGothic-Regular.otf"; sourceTree = "<group>"; };
 		54F2353AA7D62BAB4CFAFF4A /* Pods-HiitTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiitTimer.debug.xcconfig"; path = "Target Support Files/Pods-HiitTimer/Pods-HiitTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		5856B51C16934B7894C1F3E9 /* libLottieReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libLottieReactNative.a; sourceTree = "<group>"; };
@@ -584,6 +583,7 @@
 		F39958FC07A44F4395775F82 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		F89BE19278694DE7A5F589B7 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-LightItalic.ttf"; path = "../assets/fonts/Montserrat/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
 		F8C2DE72E7844D96B22B46A3 /* libRNFirebase.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFirebase.a; sourceTree = "<group>"; };
+		F93EDCFABA2926B7123B29CA /* libPods-HiitTimer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HiitTimer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA66614632EA4721A5CD32F6 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		FDE6353489184651915A98B2 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		FE90061582A449C691E1CF26 /* Lottie.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = Lottie.xcodeproj; path = "../node_modules/lottie-ios/Lottie.xcodeproj"; sourceTree = "<group>"; };
@@ -616,8 +616,8 @@
 				612CDBF241144365AACFE5C1 /* Lottie.framework in Frameworks */,
 				6DD72700171D43158E38BED1 /* libLottie.a in Frameworks */,
 				A5313B33EB1F4DEB972C968D /* libLottieReactNative.a in Frameworks */,
-				F3B7C02E2FAA2636A13D7811 /* Pods_HiitTimer.framework in Frameworks */,
 				5A5A8337962F4F999CE4A018 /* libRNFirebase.a in Frameworks */,
+				B97C3AA08A944EDB3CE75760 /* libPods-HiitTimer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,7 +746,7 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				4D74F24C16A36DB1C19999EA /* Pods_HiitTimer.framework */,
+				F93EDCFABA2926B7123B29CA /* libPods-HiitTimer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1014,7 +1014,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				C1F2259D22B832A600DA21CE /* Embed Frameworks */,
-				8434EB7C8F3470C491AF6246 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1616,38 +1615,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8434EB7C8F3470C491AF6246 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HiitTimer/Pods-HiitTimer-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/DoubleConversion/DoubleConversion.framework",
-				"${BUILT_PRODUCTS_DIR}/Folly/folly.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/React/React.framework",
-				"${BUILT_PRODUCTS_DIR}/glog/glog.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/yoga/yoga.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoubleConversion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/folly.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/yoga.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HiitTimer/Pods-HiitTimer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

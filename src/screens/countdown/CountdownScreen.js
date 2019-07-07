@@ -16,6 +16,7 @@ class CountdownScreen extends React.Component {
     setPlay();
     goBack();
   };
+
   render() {
     return (
       <View style={styles.container}>

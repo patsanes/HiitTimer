@@ -36,15 +36,15 @@ class TimerMachineContainer extends React.Component {
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
             onStop={() => {
-              //ChangeState
+              // ChangeState
               resetTime(false);
             }}
             onTick={() => {
               if (currentTime <= -1) {
-                //ChangeState
+                // ChangeState
                 resetTime(false);
               } else {
-                //SaveState
+                // SaveState
                 resetTime(true);
               }
             }}

@@ -19,7 +19,6 @@ class MainScreen extends React.Component {
 
     const onPressPlay = () => {
       dispatch(goToCountdown());
-      console.log('holla');
       // Build notification
       const notification = new firebase.notifications.Notification();
 
@@ -29,7 +28,7 @@ class MainScreen extends React.Component {
 
       firebase.notifications().scheduleNotification(notification, {
         fireDate: date.getTime(),
-      })
+      });
     };
     const goToCongratsFromHome = () => dispatch(goToCongrats());
 

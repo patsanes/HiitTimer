@@ -8,18 +8,13 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-
 import PropTypes from 'prop-types';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Icons from '../../../utils/Icons';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-
-    // borderWidth: 1,
-    // borderColor: 'grey',
   },
   valueContainer: {
     flexDirection: 'row',
@@ -48,9 +43,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
   },
-  icon: {
-    alignSelf: 'center',
-  },
   modalTitle: {
     fontSize: 25,
     fontWeight: 'bold',
@@ -67,10 +59,12 @@ export default class HPicker extends Component {
     isVisiblePicker: false,
     modalVisible: false,
   };
+
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }
-  _togglePicker = () => {
+
+  togglePicker = () => {
     const { isVisiblePicker } = this.state;
     this.setState({ isVisiblePicker: !isVisiblePicker });
     this.setModalVisible(isVisiblePicker);
@@ -85,7 +79,6 @@ export default class HPicker extends Component {
         <View style={styles.container}>
           <TouchableHighlight
             onPress={() => {
-              this._togglePicker;
               this.setModalVisible(true);
             }}
           >
@@ -100,14 +93,8 @@ export default class HPicker extends Component {
           <Modal animationType="slide" transparent visible={modalVisible}>
             <View style={styles.modalContent}>
               <View style={styles.inner}>
-                <TouchableOpacity>
-                  <Icon
-                    name="chevron-up"
-                    size={30}
-                    color="white"
-                    style={styles.icon}
-                    onPress={this._togglePicker}
-                  />
+                <TouchableOpacity onPress={this.togglePicker}>
+                  <Icons name="chevron-up" size={30} />
                   <Text style={styles.modalTitle}>{placeholder}</Text>
                 </TouchableOpacity>
                 <View style={styles.border} />

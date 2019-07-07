@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import Sound from 'react-native-sound';
 import { ProgressContainer, TimerMachineContainer } from '../containers';
-
-var Sound = require('react-native-sound');
 
 const styles = StyleSheet.create({
   titleText: {
@@ -13,18 +12,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     alignSelf: 'center',
-  },
-  container: {
-    position: 'absolute',
-    alignSelf: 'center',
-    height: 20,
-    justifyContent: 'center',
-  },
-  secondContainer: {
-    position: 'absolute',
-    alignSelf: 'center',
-    height: 20,
-    justifyContent: 'center',
   },
 });
 

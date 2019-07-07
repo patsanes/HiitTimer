@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Icons from '../../../utils/Icons';
 // import { goToHome } from '../../../navigation/actions';
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 });
 
 const Congrats = props => {
-  const { training, rest, cycle, serie, endTime, onPress } = props;
+  const { training, rest, cycle, serie, endTime } = props;
   const details = [
     {
       name: 'Countdown',
@@ -76,6 +76,5 @@ Congrats.propTypes = {
   cycle: PropTypes.number.isRequired,
   serie: PropTypes.number.isRequired,
   endTime: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
 };
 export default Congrats;

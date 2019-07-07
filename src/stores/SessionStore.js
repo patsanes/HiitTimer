@@ -2,8 +2,7 @@ import { types } from 'mobx-state-tree';
 import moment from 'moment';
 // https://facebook.github.io/react-native/docs/vibration
 import { Vibration } from 'react-native';
-
-var Sound = require('react-native-sound');
+import Sound from 'react-native-sound';
 
 Sound.setCategory('Playback');
 
@@ -40,11 +39,11 @@ export const SessionStore = types
       Vibration.vibrate(DURATION);
 
       if (self.isRest) {
-        var restSound = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, error => {
+        const restSound = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, () => {
           restSound.play();
         });
       } else {
-        var countSound = new Sound('single_note.mp3', Sound.MAIN_BUNDLE, error => {
+        const countSound = new Sound('single_note.mp3', Sound.MAIN_BUNDLE, () => {
           countSound.play();
         });
       }
@@ -69,7 +68,7 @@ export const SessionStore = types
       }
     },
     increaseTime() {
-      self.timePased = self.timePased + 1;
+      self.timePased += 1;
     },
     saveTime() {
       self.currentTime -= 1;
@@ -112,9 +111,9 @@ export const SessionStore = types
     },
     isTimeToFinish() {
       if (
-        self.serie == self.currentSerie &&
-        self.cycle == self.currentCycle &&
-        self.timePased == self.timeCompleteWorkout
+        self.serie === self.currentSerie &&
+        self.cycle === self.currentCycle &&
+        self.timePased === self.timeCompleteWorkout
       ) {
         return true;
       }

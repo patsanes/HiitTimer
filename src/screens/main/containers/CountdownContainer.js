@@ -4,16 +4,17 @@ import PropTypes from 'prop-types';
 import { Countdown } from '../components';
 
 class CountdownContainer extends React.Component {
-  _onFinish = () => {
+  onFinish = () => {
     const {
       session: { timeCompleteWorkout, timePased, setStop },
       goToCongratsFromHome,
     } = this.props;
-    if (timeCompleteWorkout == timePased) {
+    if (timeCompleteWorkout === timePased) {
       setStop();
       goToCongratsFromHome();
     }
   };
+
   render() {
     const { session } = this.props;
     const {
@@ -49,7 +50,7 @@ class CountdownContainer extends React.Component {
         inProgress={inProgress}
         fill={fill}
         fillComplete={fillComplete}
-        _onFinish={this._onFinish}
+        _onFinish={this.onFinish}
         playSound={playSound}
       />
     );

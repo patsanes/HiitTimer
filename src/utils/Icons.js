@@ -23,14 +23,21 @@ const iconsSettings = {
   Serie: { name: 'spinner', Icon: IconFontAwesome },
   'Rest between cycles': { name: 'ios-timer', Icon: IconIonicons },
   'Start countdown': { name: 'stopwatch', Icon: IconEntypo },
+  'chevron-up': { name: 'chevron-up', Icon: IconFontAwesome },
 };
-const Icons = ({ name: iconName }) => {
+const Icons = ({ name: iconName, size: sizeIcon, color: colorIcon }) => {
   const { name, Icon } = iconsSettings[iconName];
-  return <Icon name={name} size={16} color="white" style={styles.iconList} />;
+  return <Icon name={name} size={sizeIcon} color={colorIcon} style={styles.iconList} />;
 };
 
 Icons.propTypes = {
   name: PropTypes.string.isRequired,
+  size: PropTypes.number,
+  color: PropTypes.string,
+};
+Icons.defaultProps = {
+  size: 16,
+  color: 'white',
 };
 
 export default Icons;

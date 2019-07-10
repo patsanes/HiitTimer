@@ -3,7 +3,6 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Icons from '../../../utils/Icons';
-// import { goToHome } from '../../../navigation/actions';
 
 const styles = StyleSheet.create({
   titleText: {
@@ -21,10 +20,6 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: 'black',
-  },
-  container: {
-    // borderWidth: 2,
-    // borderColor: 'green',
   },
 });
 
@@ -51,7 +46,7 @@ const Congrats = props => {
 
   return (
     <React.Fragment>
-      <View style={styles.container}>
+      <View>
         <Text style={styles.titleText}>
           You have completed a session of {cycle} cycles with {serie} series in {endTime} time.
         </Text>
@@ -64,7 +59,6 @@ const Congrats = props => {
             </View>
           ))}
         </Card>
-        <View>{/* <Button title="Go back" type="clear" onPress={onPress} /> */}</View>
       </View>
     </React.Fragment>
   );

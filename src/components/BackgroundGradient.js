@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
-    // borderRadius: 5,
   },
 });
 const BackgroundGradient = props => {

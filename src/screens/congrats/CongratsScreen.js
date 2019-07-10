@@ -18,7 +18,7 @@ export default class CongratsScreen extends React.Component {
     return (
       <>
         <BackgroundGradient isRest={false}>
-          <View style={styles.top}>{/* <Header onPress={onPress} /> */}</View>
+          <View style={styles.top} />
           <View style={styles.middle}>
             <CongratsContainer onPress={goHome} />
           </View>

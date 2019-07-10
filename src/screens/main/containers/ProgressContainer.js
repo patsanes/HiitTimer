@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import { CircularProgressContainer } from '.';
+import CircularProgressContainer from './CircularProgressContainer';
 
 const styles = StyleSheet.create({
   container: {
@@ -52,5 +52,3 @@ ProgressContainer.propTypes = {
   backgroundColor: PropTypes.string.isRequired,
 };
 export default ProgressContainer;
-
-// export default inject('session')(observer(ProgressContainer));

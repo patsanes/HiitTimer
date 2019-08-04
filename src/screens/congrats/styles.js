@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   top: {
-    flex: 1,
+    flex: 0.2,
     justifyContent: 'flex-end',
     flexDirection: 'row',
   },
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   bottom: {
-    flex: 4,
+    flex: 4.8,
     flexDirection: 'row',
     justifyContent: 'space-around',
   },

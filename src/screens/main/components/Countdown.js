@@ -19,8 +19,7 @@ const styles = StyleSheet.create({
 const Countdown = props => {
   const { count, isRest, fill, fillComplete, _onFinish } = props;
   const backgroundColors = isRest ? colors.restGreen : colors.restBlue;
-  // const backgroundColorsOff = isRest ? '#1D4350' : '#1D4350';
-  const backgroundColorsOff = isRest ? colors.primaryLight : colors.primaryDark;
+  const backgroundColorsOff = isRest ? colors.restGreenDeep : colors.secondaryLight;
 
   Sound.setCategory('Playback');
 

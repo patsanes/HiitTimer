@@ -8,7 +8,7 @@ export const colors = {
   primaryLight: 'white',
   primaryDark: '#ECE9E6',
 
-  //   secondaryLight: 'black',
+  secondaryLight: '#bdc3c7',
   secondary: 'grey',
   secondaryDark: '#373B44',
 
@@ -21,6 +21,8 @@ export const colors = {
   countdownYellow: '#FDC830',
   countdownOrange: '#F37335',
   restGreen: '#38ef7d',
+  restGreenDeep: '#B0DAB9',
+
   restBlue: '#6DD5FA',
   progressPink: '#BB377D',
 };

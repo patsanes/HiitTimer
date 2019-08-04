@@ -37,7 +37,7 @@ Icons.propTypes = {
 };
 Icons.defaultProps = {
   size: fontSizes.xxSmall,
-  color: colors.neutral,
+  color: colors.secondaryDark,
 };
 
 export default Icons;

@@ -24,4 +24,5 @@ CompleteWorkoutContainer.propTypes = {
   session: PropTypes.object.isRequired,
 };
 
+// decorators
 export default inject('session')(observer(CompleteWorkoutContainer));

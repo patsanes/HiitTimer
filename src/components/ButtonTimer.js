@@ -2,25 +2,26 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { colors, fontSizes, space } from '../utils/theme';
 
 const styles = StyleSheet.create({
   button: {
-    paddingLeft: 15,
-    paddingRight: 15,
+    paddingLeft: space.large,
+    paddingRight: space.large,
     alignSelf: 'center',
     justifyContent: 'center',
-    color: 'white',
+    color: colors.secondaryDark,
     overflow: 'hidden',
-    height: 120,
-    width: 120,
-    borderRadius: 60,
+    height: space.jumbo,
+    width: space.jumbo,
+    borderRadius: space.xxLarge * 2,
   },
   iconDisabled: {
-    color: 'grey',
+    color: colors.secondary,
     alignSelf: 'center',
   },
   icon: {
-    color: 'white',
+    color: colors.secondaryDark,
     alignSelf: 'center',
   },
 });
@@ -32,9 +33,13 @@ const ButtonTimer = props => {
   return (
     <TouchableOpacity {...params}>
       {name === 'stop' ? (
-        <Icon name={name} size={40} style={disabled ? styles.iconDisabled : styles.icon} />
+        <Icon
+          name={name}
+          size={fontSizes.xlarge}
+          style={disabled ? styles.iconDisabled : styles.icon}
+        />
       ) : (
-        <Icon name={name} size={100} style={styles.icon} />
+        <Icon name={name} size={fontSizes.xxxLarge} style={styles.icon} />
       )}
     </TouchableOpacity>
   );

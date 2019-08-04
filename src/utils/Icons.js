@@ -5,15 +5,15 @@ import IconIonicons from 'react-native-vector-icons/Ionicons';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import PropTypes from 'prop-types';
+import { colors, fontSizes, space } from './theme';
 
 const styles = StyleSheet.create({
   iconList: {
     alignSelf: 'center',
-    marginRight: 10,
-    marginLeft: 10,
-    borderRadius: 3,
+    marginRight: space.medium,
+    marginLeft: space.medium,
+    borderRadius: space.xSmall + 1,
     borderWidth: 1,
-    // borderColor: 'white',
   },
 });
 const iconsSettings = {
@@ -36,8 +36,8 @@ Icons.propTypes = {
   color: PropTypes.string,
 };
 Icons.defaultProps = {
-  size: 16,
-  color: 'black',
+  size: fontSizes.xxSmall,
+  color: colors.neutral,
 };
 
 export default Icons;

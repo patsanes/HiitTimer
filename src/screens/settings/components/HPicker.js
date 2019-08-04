@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from '../../../utils/Icons';
+import { fontSizes, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,13 +21,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   headerValue: {
-    fontSize: 16,
+    fontSize: fontSizes.xxSmall,
     // color: 'white',
     flex: 0.45,
   },
   value: {
-    fontSize: 16,
-    color: 'grey',
+    fontSize: fontSizes.xxSmall,
+    color: colors.secondary,
     flex: 0.55,
     textAlign: 'right',
     marginRight: 8,
@@ -34,17 +35,17 @@ const styles = StyleSheet.create({
   modalContent: {
     justifyContent: 'flex-end',
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: colors.secondary,
     opacity: 0.8,
   },
   inner: {
     opacity: 0.98,
-    backgroundColor: 'black',
+    backgroundColor: colors.neutral,
     borderRadius: 20,
     borderWidth: 1,
   },
   modalTitle: {
-    fontSize: 25,
+    fontSize: fontSizes.small,
     fontWeight: 'bold',
     // color: 'white',
     alignSelf: 'center',

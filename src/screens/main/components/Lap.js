@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   cycles: {
@@ -9,11 +10,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   baseText: {
-    fontSize: 20,
+    fontSize: fontSizes.xSmall,
     fontWeight: 'bold',
-    fontFamily: 'League Gothic',
-
-    color: 'white',
+    fontFamily: fontFamilies.leagueGothic,
+    color: colors.secondaryDark,
   },
 });
 const Lap = props => {

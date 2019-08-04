@@ -1,17 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
+import { colors, fontSizes, space } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     borderColor: 'white',
-    height: 30,
-    width: 30,
-    borderRadius: 30 / 2,
-    borderWidth: 2,
-    marginBottom: 5,
+    height: space.xxLarge,
+    width: space.xxLarge,
+    borderRadius: space.xxLarge / 2,
+    borderWidth: space.xxSmall,
+    marginBottom: space.xSmall,
   },
 });
 
@@ -19,7 +20,7 @@ const InfoSpace = () => {
   return (
     <React.Fragment>
       <View style={styles.iconContainer}>
-        <Icon name="info" size={20} color="white" />
+        <Icon name="info" size={fontSizes.xSmall} color={colors.primaryLight} />
       </View>
       <Text>
         Pequenez lo lo abonados en el zorrilla contento. Paz sus pueblo ocioso restos dia caidas

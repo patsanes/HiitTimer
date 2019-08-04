@@ -6,6 +6,7 @@ import { observer, inject } from 'mobx-react';
 
 import { StartCountdownContainer } from './containers';
 import styles from './styles';
+import { colors } from '../../utils/theme';
 
 class CountdownScreen extends React.Component {
   goToHomeFromCountdown = () => {
@@ -24,7 +25,7 @@ class CountdownScreen extends React.Component {
           start={{ x: 0.0, y: 0.25 }}
           end={{ x: 0.5, y: 1.0 }}
           locations={[0, 0.5]}
-          colors={['#FDC830', '#F37335']}
+          colors={[colors.countdownYellow, colors.countdownOrange]}
           style={styles.linearGradient}
         >
           <View style={styles.middle}>

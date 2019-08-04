@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { fontSizes, fontFamilies, colors } from '../utils/theme';
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 20,
+    fontSize: fontSizes.xSmall,
     alignSelf: 'flex-start',
-    color: 'grey',
-    fontFamily: 'Permanent Marker',
+    color: colors.secondary,
+    fontFamily: fontFamilies.permanent,
   },
 });
 

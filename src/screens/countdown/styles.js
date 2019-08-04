@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { fontSizes, fontFamilies, colors, space } from '../../utils/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,16 +22,16 @@ const styles = StyleSheet.create({
   },
   linearGradient: {
     flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
+    paddingLeft: space.large,
+    paddingRight: space.large,
+    borderRadius: space.xSmall,
   },
   titleText: {
-    fontSize: 250,
+    fontSize: fontSizes.xxxxLarge,
     position: 'absolute',
-    fontFamily: 'League Gothic',
+    fontFamily: fontFamilies.leagueGothic,
     fontWeight: 'bold',
-    color: 'white',
+    color: colors.neutral,
     alignSelf: 'center',
   },
 });

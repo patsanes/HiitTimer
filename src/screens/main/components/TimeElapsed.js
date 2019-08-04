@@ -4,16 +4,17 @@ import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import TimerMachine from 'react-timer-machine';
 import PropTypes from 'prop-types';
+import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
-    fontSize: 40,
-    fontFamily: 'League Gothic',
+    fontSize: fontSizes.xlarge,
+    fontFamily: fontFamilies.leagueGothic,
     fontWeight: 'bold',
     alignSelf: 'center',
-    color: 'white',
+    color: colors.secondaryDark,
   },
 });
 

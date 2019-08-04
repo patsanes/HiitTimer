@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { colors, fontSizes } from '../utils/theme';
 
 const styles = StyleSheet.create({
   button: {
@@ -24,7 +25,7 @@ const ButtonConfig = props => {
   };
   return (
     <TouchableOpacity {...params}>
-      <Icon name={name} size={40} color="white" style={styles.icon} />
+      <Icon name={name} size={fontSizes.xlarge} color={colors.secondaryDark} style={styles.icon} />
     </TouchableOpacity>
   );
 };

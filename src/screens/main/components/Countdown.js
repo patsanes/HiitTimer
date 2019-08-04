@@ -3,22 +3,24 @@ import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
 import { ProgressContainer, TimerMachineContainer } from '../containers';
+import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   titleText: {
-    fontSize: 100,
+    fontSize: fontSizes.xxxLarge,
     position: 'absolute',
-    fontFamily: 'League Gothic',
+    fontFamily: fontFamilies.leagueGothic,
     fontWeight: 'bold',
-    color: 'white',
+    color: colors.secondaryDark,
     alignSelf: 'center',
   },
 });
 
 const Countdown = props => {
   const { count, isRest, fill, fillComplete, _onFinish } = props;
-  const backgroundColors = isRest ? '#38ef7d' : '#6DD5FA';
-  const backgroundColorsOff = isRest ? '#1D4350' : '#1D4350';
+  const backgroundColors = isRest ? colors.restGreen : colors.restBlue;
+  // const backgroundColorsOff = isRest ? '#1D4350' : '#1D4350';
+  const backgroundColorsOff = isRest ? colors.primaryLight : colors.primaryDark;
 
   Sound.setCategory('Playback');
 

@@ -34,5 +34,6 @@ module.exports = {
     'react-native/no-color-literals': 'off',
     'react/forbid-prop-types': 'off',
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['self'] }],
+    'import/no-unresolved': ['error', { ignore: ['HiitTimer'] }],
   },
 };

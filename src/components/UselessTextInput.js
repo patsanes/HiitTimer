@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { fontSizes, colors, space } from '../utils/theme';
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 20,
-    color: 'white',
-    marginRight: 10,
+    fontSize: fontSizes.xSmall,
+    color: colors.secondaryDark,
+    marginRight: space.medium,
   },
   textInput: {
     flex: 1,
-    fontSize: 20,
-    color: 'white',
+    fontSize: fontSizes.xSmall,
+    color: colors.secondaryDark,
   },
   container: {
     flexDirection: 'row',

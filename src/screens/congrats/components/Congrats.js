@@ -3,23 +3,24 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Icons from '../../../utils/Icons';
+import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   titleText: {
     fontSize: 35,
-    fontFamily: 'League Gothic',
-    color: 'white',
+    fontFamily: fontFamilies.leagueGothic,
+    color: colors.primaryLight,
   },
   titleCard: {
-    color: 'white',
+    color: colors.primaryLight,
   },
   text: {
-    fontSize: 25,
-    fontFamily: 'League Gothic',
-    color: 'white',
+    fontSize: fontSizes.small,
+    fontFamily: fontFamilies.leagueGothic,
+    color: colors.primaryLight,
   },
   card: {
-    backgroundColor: 'black',
+    backgroundColor: colors.neutral,
   },
 });
 

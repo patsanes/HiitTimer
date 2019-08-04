@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import CircularProgressContainer from './CircularProgressContainer';
+import { colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -27,8 +28,8 @@ class ProgressContainer extends React.Component {
           <CircularProgressContainer
             size={350}
             fill={fill}
-            tintColor="#ff4b2b"
-            backgroundColor="#1D4350"
+            tintColor={colors.progressPink}
+            backgroundColor={colors.secondary}
           />
         </View>
         {/* Countdown workout */}

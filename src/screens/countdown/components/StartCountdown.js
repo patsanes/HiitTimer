@@ -1,14 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   titleText: {
-    fontSize: 250,
+    fontSize: fontSizes.xxxxLarge,
     position: 'absolute',
-    fontFamily: 'League Gothic',
+    fontFamily: fontFamilies.leagueGothic,
     fontWeight: 'bold',
-    color: 'white',
+    color: colors.neutral,
     alignSelf: 'center',
   },
 });

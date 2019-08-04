@@ -2,6 +2,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { colors } from '../utils/theme';
 
 const styles = StyleSheet.create({
   linearGradient: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
 });
 const BackgroundGradient = props => {
   const { children } = props;
-  const backgroundColors = ['white', '#ECE9E6'];
+  const backgroundColors = [colors.primaryLight, colors.primaryDark];
 
   return (
     <LinearGradient

@@ -13,23 +13,33 @@ import {
 
 const styles = StyleSheet.create({
   middle: {
-    backgroundColor: '#16222A',
-    justifyContent: 'center',
-    alignContent: 'center',
+    borderColor: 'red',
+    borderWidth: 5,
+    justifyContent: 'space-between',
   },
   completeWorkout: {
     paddingTop: 5,
     paddingBottom: 10,
     paddingLeft: 8,
     paddingRight: 8,
+    borderColor: 'green',
+    borderWidth: 2,
+  },
+  container: {
+    borderColor: 'magenta',
+    borderWidth: 2,
+  },
+  item: {
+    borderColor: 'magenta',
+    borderWidth: 2,
   },
 });
 
 const SettingsSpace = () => {
   return (
-    <React.Fragment>
+    <View style={styles.container}>
       <View style={styles.middle}>
-        <PickerTrainingContainer />
+        <PickerTrainingContainer style={styles.item} />
         <PickerRestContainer />
         <PickerCycleContainer />
         <PickerSerieContainer />
@@ -39,7 +49,7 @@ const SettingsSpace = () => {
       <View style={styles.completeWorkout}>
         <CompleteWorkoutContainer />
       </View>
-    </React.Fragment>
+    </View>
   );
 };
 export default SettingsSpace;

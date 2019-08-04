@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 });
 const BackgroundGradient = props => {
   const { children } = props;
-  const backgroundColors = ['#373B44', '#232526'];
+  const backgroundColors = ['white', '#ECE9E6'];
 
   return (
     <LinearGradient

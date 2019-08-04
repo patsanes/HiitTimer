@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     borderRadius: 3,
     borderWidth: 1,
-    borderColor: 'white',
+    // borderColor: 'white',
   },
 });
 const iconsSettings = {
@@ -37,7 +37,7 @@ Icons.propTypes = {
 };
 Icons.defaultProps = {
   size: 16,
-  color: 'white',
+  color: 'black',
 };
 
 export default Icons;

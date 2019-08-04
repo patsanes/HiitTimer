@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   headerValue: {
     fontSize: 16,
-    color: 'white',
+    // color: 'white',
     flex: 0.45,
   },
   value: {
@@ -46,11 +46,13 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 25,
     fontWeight: 'bold',
-    color: 'white',
+    // color: 'white',
     alignSelf: 'center',
   },
   containerParent: {
     height: 30,
+    borderColor: 'magenta',
+    borderWidth: 2,
   },
 });
 
@@ -100,7 +102,7 @@ export default class HPicker extends Component {
                 <View style={styles.border} />
                 <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
                   {items.map((item, index) => (
-                    <Picker.Item key={index.id} color="white" label={item} value={item} />
+                    <Picker.Item key={index.id} label={item} value={item} />
                   ))}
                 </Picker>
               </View>

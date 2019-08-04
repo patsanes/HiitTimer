@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'black',
+    borderColor: 'white',
     height: 30,
     width: 30,
     borderRadius: 30 / 2,
@@ -19,7 +19,7 @@ const InfoSpace = () => {
   return (
     <React.Fragment>
       <View style={styles.iconContainer}>
-        <Icon name="info" size={20} color="black" />
+        <Icon name="info" size={20} color="white" />
       </View>
       <Text>
         Pequenez lo lo abonados en el zorrilla contento. Paz sus pueblo ocioso restos dia caidas

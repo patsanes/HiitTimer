@@ -33,14 +33,16 @@ const AppNavigator = createStackNavigator(
       navigationOptions: () => ({
         title: `SETTINGS`,
         headerStyle: {
-          backgroundColor: '#373B44',
-          fontFamily: 'Montserrat-Light',
+          // backgroundColor: '#373B44',
           height: height * 0.1,
           borderWidth: 1,
           borderColor: 'red',
         },
+        headerTitleStyle: {
+          fontSize: 20,
+          paddingHorizontal: 10,
+        },
         headerBackgroundTransitionPreset: 'translate',
-        headerTintColor: 'white',
       }),
     },
     CountdownScreen: {
@@ -61,7 +63,7 @@ const AppNavigator = createStackNavigator(
           height: height * 0.1,
         },
         headerTitleStyle: {
-          fontSize: 45,
+          fontSize: 40,
           fontFamily: 'Montserrat-Light',
           color: 'white',
           paddingHorizontal: 10,
@@ -72,7 +74,7 @@ const AppNavigator = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'MainScreen',
+    initialRouteName: 'ConfigScreen',
     headerMode: 'float',
   },
 );

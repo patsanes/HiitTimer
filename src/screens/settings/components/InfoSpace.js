@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: 'white',
+    borderColor: colors.secondaryDark,
     height: space.xxLarge,
     width: space.xxLarge,
     borderRadius: space.xxLarge / 2,
@@ -20,14 +20,13 @@ const InfoSpace = () => {
   return (
     <React.Fragment>
       <View style={styles.iconContainer}>
-        <Icon name="info" size={fontSizes.xSmall} color={colors.primaryLight} />
+        <Icon name="info" size={fontSizes.xSmall} color={colors.secondaryDark} />
       </View>
       <Text>
         Pequenez lo lo abonados en el zorrilla contento. Paz sus pueblo ocioso restos dia caidas
         una. El voluntad amenazas un debieran so. Del adulterio tio amenazaba templados aca
         envolvian. Le adulterino abofeteado un te reintegrar levantarse. Con gente suo fuego veces
-        pecho comia puede. Justicia oia entendia suo sus asi presento concebia hermanas estetica.
-        Pano por dado algo mal baja tan fue.
+        pecho comia puede.
       </Text>
     </React.Fragment>
   );

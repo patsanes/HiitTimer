@@ -25,6 +25,8 @@ export const colors = {
 
   restBlue: '#6DD5FA',
   progressPink: '#BB377D',
+
+  transparent: 'transparent',
 };
 
 // https://www.w3schools.com/cssref/pr_font_font-size.asp

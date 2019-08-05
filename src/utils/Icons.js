@@ -9,11 +9,10 @@ import { colors, fontSizes, space } from './theme';
 
 const styles = StyleSheet.create({
   iconList: {
-    alignSelf: 'center',
-    marginRight: space.medium,
-    marginLeft: space.medium,
-    borderRadius: space.xSmall + 1,
-    borderWidth: 1,
+    width: space.xxLarge,
+    textAlign: 'center',
+    // borderRadius: 15,
+    // borderWidth: 1,
   },
 });
 const iconsSettings = {

@@ -4,10 +4,9 @@ import { fontSizes, fontFamilies, colors } from '../utils/theme';
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: fontSizes.xSmall,
-    alignSelf: 'flex-start',
+    fontSize: fontSizes.xxxSmall,
     color: colors.secondary,
-    fontFamily: fontFamilies.permanent,
+    fontFamily: fontFamilies.montserrat,
   },
 });
 
@@ -15,7 +14,7 @@ export default class Header extends React.PureComponent {
   render() {
     return (
       <View>
-        <Text style={styles.title}>Training </Text>
+        <Text style={styles.title}> Enter the data you want for your workout:</Text>
       </View>
     );
   }

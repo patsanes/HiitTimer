@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Modal,
-  TouchableHighlight,
-  Picker,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
+import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from '../../../utils/Icons';
 import { fontSizes, colors } from '../../../utils/theme';
+import { HModal } from './index';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,38 +15,19 @@ const styles = StyleSheet.create({
   },
   headerValue: {
     fontSize: fontSizes.xxSmall,
-    // color: 'white',
-    flex: 0.45,
+    flex: 0.6,
   },
   value: {
     fontSize: fontSizes.xxSmall,
     color: colors.secondary,
-    flex: 0.55,
+    flex: 0.4,
     textAlign: 'right',
     marginRight: 8,
   },
-  modalContent: {
-    justifyContent: 'flex-end',
-    flex: 1,
-    backgroundColor: colors.secondary,
-    opacity: 0.8,
-  },
-  inner: {
-    opacity: 0.98,
-    backgroundColor: colors.neutral,
-    borderRadius: 20,
-    borderWidth: 1,
-  },
-  modalTitle: {
-    fontSize: fontSizes.small,
-    fontWeight: 'bold',
-    // color: 'white',
-    alignSelf: 'center',
-  },
   containerParent: {
     height: 30,
-    borderColor: 'magenta',
-    borderWidth: 2,
+    borderColor: colors.secondaryLight,
+    borderWidth: 0.2,
   },
 });
 
@@ -81,9 +55,11 @@ export default class HPicker extends Component {
       <View style={styles.containerParent}>
         <View style={styles.container}>
           <TouchableHighlight
+            underlayColor={colors.transparent}
             onPress={() => {
               this.setModalVisible(true);
             }}
+            style={styles.touch}
           >
             <View style={styles.valueContainer}>
               <Icons name={placeholder} />
@@ -93,22 +69,13 @@ export default class HPicker extends Component {
           </TouchableHighlight>
         </View>
         {!isVisiblePicker ? (
-          <Modal animationType="slide" transparent visible={modalVisible}>
-            <View style={styles.modalContent}>
-              <View style={styles.inner}>
-                <TouchableOpacity onPress={this.togglePicker}>
-                  <Icons name="chevron-up" size={30} />
-                  <Text style={styles.modalTitle}>{placeholder}</Text>
-                </TouchableOpacity>
-                <View style={styles.border} />
-                <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-                  {items.map((item, index) => (
-                    <Picker.Item key={index.id} label={item} value={item} />
-                  ))}
-                </Picker>
-              </View>
-            </View>
-          </Modal>
+          <HModal
+            onValueChange={onValueChange}
+            modalVisible={modalVisible}
+            togglePicker={this.togglePicker}
+            items={items}
+            placeholder={placeholder}
+          ></HModal>
         ) : null}
       </View>
     );

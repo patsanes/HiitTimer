@@ -14,7 +14,7 @@ class CompleteWorkoutContainer extends React.Component {
     const { endTime } = session;
     return (
       <View>
-        <Text>Tiempo completo de entrenamiento: {endTime}.</Text>
+        <Text>Complete workout time: {endTime}.</Text>
       </View>
     );
   }

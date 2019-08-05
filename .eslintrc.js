@@ -35,5 +35,11 @@ module.exports = {
     'react/forbid-prop-types': 'off',
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['self'] }],
     'import/no-unresolved': ['error', { ignore: ['HiitTimer'] }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+  },
+  globals: {
+    it: false,
+    describe: false,
+    expect: false,
   },
 };

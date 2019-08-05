@@ -7,7 +7,7 @@
     "run-ios": "yarn react-native run-ios",
     "run-android": "yarn react-native run-android",
     "info": "yarn react-native info",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "linter": "yarn eslint ./src",
     "upgrade-deps": "yarn upgrade-interactive --latest"
   },
@@ -55,7 +55,9 @@
     "metro-react-native-babel-preset": "0.53.0",
     "prettier": "^1.17.1",
     "prettier-eslint": "^8.8.2",
-    "react-test-renderer": "16.8.4"
+    "react-native-testing-library": "^1.11.1",
+    "react-test-renderer": "16.8.4",
+    "react-dom": "16.8.4"
   },
   "jest": {
     "preset": "react-native"

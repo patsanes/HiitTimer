@@ -64,6 +64,9 @@ export const SessionStore = types
         self.isStop = true;
         self.currentCycle = 0;
         self.currentSerie = 0;
+        self.currentTime = 0;
+        self.timePased = 0;
+
         self.inProgress = false;
       }
     },

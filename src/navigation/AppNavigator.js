@@ -42,6 +42,7 @@ const AppNavigator = createStackNavigator(
         headerTitleStyle: {
           fontSize: fontSizes.xSmall,
           color: colors.secondaryDark,
+          fontFamily: fontFamilies.montserrat,
           paddingHorizontal: space.medium,
         },
         headerBackgroundTransitionPreset: 'translate',
@@ -75,7 +76,7 @@ const AppNavigator = createStackNavigator(
     },
   },
   {
-    initialRouteName: CONGRATS_SCREEN,
+    initialRouteName: CONFIG_SCREEN,
     headerMode: 'float',
   },
 );

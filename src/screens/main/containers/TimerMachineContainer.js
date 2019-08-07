@@ -11,13 +11,14 @@ class TimerMachineContainer extends React.Component {
   render() {
     const { session, count, _onFinish } = this.props;
     const {
+      changeState,
       isPlay,
       isStop,
       increaseSerie,
-      currentTime,
       resetTime,
       inProgress,
       playSound,
+      currentTime,
     } = session;
     return (
       <>
@@ -37,19 +38,18 @@ class TimerMachineContainer extends React.Component {
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
             onStop={() => {
               // ChangeState
-              resetTime(false);
+              // setStop();/
+              changeState();
             }}
             onTick={() => {
-              if (currentTime <= -1) {
-                // ChangeState
-                resetTime(false);
-              } else {
-                // SaveState
-                resetTime(true);
-              }
+              console.log('onTick', currentTime);
+              resetTime();
             }}
             onComplete={() => {
+              console.log('onComplete', currentTime);
+              // setTimeout(() => {
               increaseSerie();
+              // }, 1000);
               playSound();
               _onFinish();
             }}

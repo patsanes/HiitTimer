@@ -33,6 +33,16 @@ export const SessionStore = types
       const endTime = moment(startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
       return endTime.format('H [horas] m [min y] s [seg]');
     },
+    get timePasedWorkout() {
+      const timePasedWorkout = (self.timePased / self.timeCompleteWorkout) * 100;
+      return timePasedWorkout;
+    },
+    get timePasedPerSerie() {
+      const count = self.isRest ? self.rest : self.training;
+      const fillTime = 100 - (self.currentTime / count) * 100;
+      // console.log({ 'Fill time:': fillTime });
+      return fillTime;
+    },
   }))
   .actions(self => ({
     playSound() {
@@ -64,17 +74,15 @@ export const SessionStore = types
         self.isStop = true;
         self.currentCycle = 0;
         self.currentSerie = 0;
-        self.currentTime = 0;
         self.timePased = 0;
-
         self.inProgress = false;
       }
     },
     increaseTime() {
-      self.timePased += 1;
+      self.timePased = self.timePased + 1;
     },
     saveTime() {
-      self.currentTime -= 1;
+      self.currentTime = self.currentTime - 1;
     },
     changeState() {
       if (self.isRest) {
@@ -83,11 +91,12 @@ export const SessionStore = types
         self.currentTime = self.training;
       }
     },
-    resetTime(saveOrChangeState) {
+    resetTime() {
+      const saveOrChangeState = self.currentTime <= -1;
       if (saveOrChangeState) {
-        self.saveTime();
-      } else {
         self.changeState();
+      } else {
+        self.saveTime();
       }
     },
     increaseSerie() {
@@ -100,7 +109,7 @@ export const SessionStore = types
         self.currentSerie += 1;
       }
       self.isRest = !self.isRest;
-      self.resetTime(false);
+      self.changeState();
     },
     increaseCycle() {
       if (self.currentCycle === self.cycle) {

@@ -11,34 +11,28 @@ const styles = StyleSheet.create({
     height: 20,
     justifyContent: 'center',
   },
-  secondContainer: {
-    position: 'absolute',
-    alignSelf: 'center',
-    height: 20,
-    justifyContent: 'center',
-  },
 });
 class ProgressContainer extends React.Component {
   render() {
     const { fill, fillComplete, tintColor, backgroundColor } = this.props;
     return (
       <>
-        {/* Complete workout */}
+        {/* Countdown workout */}
         <View style={styles.container}>
           <CircularProgressContainer
             size={350}
-            fill={fill}
+            fill={fillComplete}
             tintColor={colors.progressPink}
             backgroundColor={colors.secondary}
           />
         </View>
-        {/* Countdown workout */}
-        <View style={styles.secondContainer}>
+        {/* Complete workout */}
+        <View style={styles.container}>
           <CircularProgressContainer
             size={320}
-            fill={fillComplete}
+            fill={fill}
             tintColor={tintColor}
-            backgroundColor={backgroundColor}
+            backgroundColor={colors.secondaryLight}
           />
         </View>
       </>

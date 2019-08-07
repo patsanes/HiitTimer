@@ -33,6 +33,7 @@ module.exports = {
     'react-native/no-inline-styles': 'error',
     'react-native/no-color-literals': 'off',
     'react/forbid-prop-types': 'off',
+    'operator-assignment': 'off',
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['self'] }],
     'import/no-unresolved': ['error', { ignore: ['HiitTimer'] }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],

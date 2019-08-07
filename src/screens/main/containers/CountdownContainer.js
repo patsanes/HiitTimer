@@ -8,6 +8,7 @@ class CountdownContainer extends React.Component {
     const {
       session: { timeCompleteWorkout, timePased, setStop },
       goToCongratsFromHome,
+      // Reset progress
     } = this.props;
     if (timeCompleteWorkout === timePased) {
       setStop();
@@ -27,15 +28,16 @@ class CountdownContainer extends React.Component {
       currentTime,
       resetTime,
       setStop,
-      timePased,
+      timePasedWorkout,
       inProgress,
-      timeCompleteWorkout,
+      timePasedPerSerie,
       playSound,
     } = session;
 
     const count = isRest ? rest : training;
-    const fill = -((currentTime / count) * 100 - 100);
-    const fillComplete = (timePased / timeCompleteWorkout) * 100;
+    // console.log({ currentTime, count });
+
+    // console.log({ timePasedPerSerie, timePasedWorkout });
 
     return (
       <Countdown
@@ -48,8 +50,8 @@ class CountdownContainer extends React.Component {
         resetTime={resetTime}
         setStop={setStop}
         inProgress={inProgress}
-        fill={fill}
-        fillComplete={fillComplete}
+        fill={timePasedPerSerie}
+        fillComplete={timePasedWorkout}
         _onFinish={this.onFinish}
         playSound={playSound}
       />

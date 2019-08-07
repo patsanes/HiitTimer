@@ -9,7 +9,8 @@
     "info": "yarn react-native info",
     "test": "jest --detectOpenHandles",
     "linter": "yarn eslint ./src",
-    "upgrade-deps": "yarn upgrade-interactive --latest"
+    "upgrade-deps": "yarn upgrade-interactive --latest",
+    "mobx": "mobx-devtools"
   },
   "dependencies": {
     "lottie-react-native": "^2.6.1",

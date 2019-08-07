@@ -11,7 +11,7 @@ class TimerMachineContainer extends React.Component {
   render() {
     const { session, count, _onFinish } = this.props;
     const {
-      changeState,
+      finishWorkout,
       isPlay,
       isStop,
       increaseSerie,
@@ -37,9 +37,9 @@ class TimerMachineContainer extends React.Component {
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
             onStop={() => {
-              // ChangeState
-              // setStop();/
-              changeState();
+              console.log('onStop', currentTime);
+
+              // finishWorkout();
             }}
             onTick={() => {
               console.log('onTick', currentTime);
@@ -47,9 +47,7 @@ class TimerMachineContainer extends React.Component {
             }}
             onComplete={() => {
               console.log('onComplete', currentTime);
-              // setTimeout(() => {
               increaseSerie();
-              // }, 1000);
               playSound();
               _onFinish();
             }}

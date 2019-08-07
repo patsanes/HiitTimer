@@ -3,6 +3,7 @@ import moment from 'moment';
 // https://facebook.github.io/react-native/docs/vibration
 import { Vibration } from 'react-native';
 import Sound from 'react-native-sound';
+import firebase from 'react-native-firebase';
 
 Sound.setCategory('Playback');
 
@@ -40,12 +41,40 @@ export const SessionStore = types
     get timePasedPerSerie() {
       const count = self.isRest ? self.rest : self.training;
       const fillTime = 100 - (self.currentTime / count) * 100;
-      // console.log({ 'Fill time:': fillTime });
       return fillTime;
+    },
+    get isTimeToFinish() {
+      const isTime =
+        self.serie === self.currentSerie &&
+        self.cycle === self.currentCycle &&
+        self.timePased === self.timeCompleteWorkout;
+      if (isTime) {
+        return true;
+      }
+      return false;
     },
   }))
   .actions(self => ({
     playSound() {
+      // // Build notification
+      // const notification = new firebase.notifications.Notification()
+      //   .setNotificationId('notificationId')
+      //   .setTitle('Session')
+      //   .setBody('My hola pepep body')
+      //   .setData({
+      //     key1: 'value1',
+      //     key2: 'value2',
+      //   });
+      // // notification.ios.setBadge(2);
+      // // Schedule the notification for 1 minute in the future
+      // const date = new Date();
+      // // firebase.notifications().displayNotification(notification);
+      // date.setMinutes(date.getMinutes() + 1);
+
+      // firebase.notifications().scheduleNotification(notification, {
+      //   fireDate: date.getTime(),
+      // });
+
       Vibration.vibrate(DURATION);
 
       if (self.isRest) {
@@ -76,6 +105,8 @@ export const SessionStore = types
         self.currentSerie = 0;
         self.timePased = 0;
         self.inProgress = false;
+        self.changeState();
+        // Volver a valores iniciales.
       }
     },
     increaseTime() {
@@ -120,16 +151,6 @@ export const SessionStore = types
       } else {
         self.currentCycle += 1;
       }
-    },
-    isTimeToFinish() {
-      if (
-        self.serie === self.currentSerie &&
-        self.cycle === self.currentCycle &&
-        self.timePased === self.timeCompleteWorkout
-      ) {
-        return true;
-      }
-      return false;
     },
     finishWorkout() {
       self.setStop();

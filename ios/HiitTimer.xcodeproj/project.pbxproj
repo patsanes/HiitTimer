@@ -71,6 +71,7 @@
 		B97C3AA08A944EDB3CE75760 /* libPods-HiitTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F93EDCFABA2926B7123B29CA /* libPods-HiitTimer.a */; };
 		C01B756581724AB686C51939 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 375D155E37B648918A9B682E /* Montserrat-ExtraLight.ttf */; };
 		C167C496AB1A4DE9AB63EF58 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7935ACCEC7DF4F4881F4FB88 /* Montserrat-ExtraLightItalic.ttf */; };
+		C16FD6A922FA81C3001F572E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C16FD6A822FA81C3001F572E /* GoogleService-Info.plist */; };
 		C1A5F09822CBFC3D00CEAB44 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1A5F06522CBFC3D00CEAB44 /* GoogleService-Info.plist */; };
 		C1F224E022B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C1F224DF22B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 */; };
 		C1F2259922B832A500DA21CE /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F2254922B8322E00DA21CE /* Lottie.framework */; };
@@ -566,6 +567,8 @@
 		C017E2B4953C4B0A83FAC03B /* libRNSVG.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSVG.a; sourceTree = "<group>"; };
 		C073583316A44F99BEF6E254 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; };
 		C0D00F9E794A414780243FC1 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Italic.ttf"; path = "../assets/fonts/Montserrat/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		C16FD65C22FA7D30001F572E /* HiitTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HiitTimer.entitlements; path = HiitTimer/HiitTimer.entitlements; sourceTree = "<group>"; };
+		C16FD6A822FA81C3001F572E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "HiitTimer/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1A5F06522CBFC3D00CEAB44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1F224DF22B82EAA00DA21CE /* zapsplat_multimedia_alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = zapsplat_multimedia_alert.mp3; path = ../assets/sounds/zapsplat_multimedia_alert.mp3; sourceTree = "<group>"; };
 		C1F2259E22B8511600DA21CE /* single_note.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = single_note.mp3; path = ../assets/sounds/single_note.mp3; sourceTree = "<group>"; };
@@ -706,8 +709,10 @@
 		13B07FAE1A68108700A75B9A /* HiitTimer */ = {
 			isa = PBXGroup;
 			children = (
+				C16FD65C22FA7D30001F572E /* HiitTimer.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				C16FD6A822FA81C3001F572E /* GoogleService-Info.plist */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -1039,6 +1044,9 @@
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -1543,6 +1551,7 @@
 				40FABDFB3FD3497DAAF8C808 /* Bangers-Regular.ttf in Resources */,
 				CF78594EC16547E58E406E1B /* Pacifico-Regular.ttf in Resources */,
 				AE97BB25D00E41BA8E97F0FA /* PermanentMarker-Regular.ttf in Resources */,
+				C16FD6A922FA81C3001F572E /* GoogleService-Info.plist in Resources */,
 				DDCD2401102E4983B7827A1E /* icomoon.ttf in Resources */,
 				0F38EC2A82AC4337A7D0B121 /* Lato-Black.ttf in Resources */,
 				FDCD8ED4C4D746B79E70388E /* Lato-BlackItalic.ttf in Resources */,
@@ -1658,6 +1667,7 @@
 			baseConfigurationReference = 54F2353AA7D62BAB4CFAFF4A /* Pods-HiitTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiitTimer/HiitTimer.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -1696,6 +1706,7 @@
 			baseConfigurationReference = 1A79D8CD56672BEE82E75173 /* Pods-HiitTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HiitTimer/HiitTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;

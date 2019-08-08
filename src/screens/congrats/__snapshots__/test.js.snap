@@ -52,374 +52,372 @@ exports[`CongratsScreen renders correctly 1`] = `
       }
     }
   >
-    <View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
       <View
         style={
           Object {
-            "flex": 1,
+            "flex": 0.6,
           }
         }
       >
         <View
           style={
             Object {
-              "flex": 0.6,
+              "backgroundColor": "#ECE9E6",
+              "borderColor": "#e1e8ee",
+              "borderWidth": 1,
+              "margin": 15,
+              "marginBottom": 0,
+              "marginTop": 5,
+              "padding": 15,
+              "paddingBottom": 5,
+              "shadowColor": "rgba(0,0,0, .2)",
+              "shadowOffset": Object {
+                "height": 0,
+                "width": 0,
+              },
+              "shadowOpacity": 1,
+              "shadowRadius": 1,
             }
           }
         >
           <View
             style={
               Object {
-                "backgroundColor": "#ECE9E6",
-                "borderColor": "#e1e8ee",
-                "borderWidth": 1,
-                "margin": 15,
-                "marginBottom": 0,
-                "marginTop": 5,
-                "padding": 15,
-                "paddingBottom": 5,
-                "shadowColor": "rgba(0,0,0, .2)",
-                "shadowOffset": Object {
-                  "height": 0,
-                  "width": 0,
-                },
-                "shadowOpacity": 1,
-                "shadowRadius": 1,
+                "backgroundColor": "transparent",
               }
             }
           >
+            <View>
+              <Text
+                style={
+                  Object {
+                    "color": "#373B44",
+                    "fontSize": 17.5,
+                    "fontWeight": "bold",
+                    "marginBottom": 15,
+                    "textAlign": "center",
+                  }
+                }
+                testID="cardTitle"
+                theme={
+                  Object {
+                    "colors": Object {
+                      "disabled": "hsl(208, 8%, 90%)",
+                      "divider": "#bcbbc1",
+                      "error": "#ff190c",
+                      "grey0": "#393e42",
+                      "grey1": "#43484d",
+                      "grey2": "#5e6977",
+                      "grey3": "#86939e",
+                      "grey4": "#bdc6cf",
+                      "grey5": "#e1e8ee",
+                      "greyOutline": "#bbb",
+                      "platform": Object {
+                        "android": Object {
+                          "error": "#f44336",
+                          "primary": "#2196f3",
+                          "secondary": "#9C27B0",
+                          "success": "#4caf50",
+                          "warning": "#ffeb3b",
+                        },
+                        "ios": Object {
+                          "error": "#ff3b30",
+                          "primary": "#007aff",
+                          "secondary": "#5856d6",
+                          "success": "#4cd964",
+                          "warning": "#ffcc00",
+                        },
+                      },
+                      "primary": "#2089dc",
+                      "searchBg": "#303337",
+                      "secondary": "#8F0CE8",
+                      "success": "#52c41a",
+                      "warning": "#faad14",
+                    },
+                  }
+                }
+              >
+                DETAIL
+              </Text>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#bcbbc1",
+                    "height": 0.5,
+                    "marginBottom": 15,
+                  }
+                }
+              />
+            </View>
             <View
+              label={
+                Object {
+                  "data": 3,
+                  "name": "Countdown",
+                }
+              }
               style={
                 Object {
-                  "backgroundColor": "transparent",
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginTop": 5,
+                  "paddingBottom": 5,
+                }
+              }
+              value={
+                Object {
+                  "data": 3,
+                  "name": "Countdown",
                 }
               }
             >
-              <View>
-                <Text
-                  style={
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
                     Object {
                       "color": "#373B44",
-                      "fontSize": 17.5,
-                      "fontWeight": "bold",
-                      "marginBottom": 15,
+                      "fontSize": 16,
+                    },
+                    Object {
                       "textAlign": "center",
-                    }
-                  }
-                  testID="cardTitle"
-                  theme={
+                      "width": 30,
+                    },
                     Object {
-                      "colors": Object {
-                        "disabled": "hsl(208, 8%, 90%)",
-                        "divider": "#bcbbc1",
-                        "error": "#ff190c",
-                        "grey0": "#393e42",
-                        "grey1": "#43484d",
-                        "grey2": "#5e6977",
-                        "grey3": "#86939e",
-                        "grey4": "#bdc6cf",
-                        "grey5": "#e1e8ee",
-                        "greyOutline": "#bbb",
-                        "platform": Object {
-                          "android": Object {
-                            "error": "#f44336",
-                            "primary": "#2196f3",
-                            "secondary": "#9C27B0",
-                            "success": "#4caf50",
-                            "warning": "#ffeb3b",
-                          },
-                          "ios": Object {
-                            "error": "#ff3b30",
-                            "primary": "#007aff",
-                            "secondary": "#5856d6",
-                            "success": "#4cd964",
-                            "warning": "#ffcc00",
-                          },
-                        },
-                        "primary": "#2089dc",
-                        "searchBg": "#303337",
-                        "secondary": "#8F0CE8",
-                        "success": "#52c41a",
-                        "warning": "#faad14",
-                      },
-                    }
-                  }
-                >
-                  DETAIL
-                </Text>
-                <View
-                  style={
-                    Object {
-                      "backgroundColor": "#bcbbc1",
-                      "height": 0.5,
-                      "marginBottom": 15,
-                    }
-                  }
-                />
-              </View>
-              <View
-                label={
-                  Object {
-                    "data": 3,
-                    "name": "Countdown",
-                  }
+                      "fontFamily": "Ionicons",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
                 }
+              >
+                
+              </Text>
+              <Text
                 style={
                   Object {
-                    "backgroundColor": "#ECE9E6",
-                    "marginTop": 5,
-                    "paddingBottom": 5,
-                  }
-                }
-                value={
-                  Object {
-                    "data": 3,
-                    "name": "Countdown",
+                    "color": "#373B44",
+                    "fontFamily": "League Gothic",
+                    "fontSize": 25,
                   }
                 }
               >
-                <Text
-                  style={
+                Countdown
+                : 
+                3
+              </Text>
+            </View>
+            <View
+              label={
+                Object {
+                  "data": 2,
+                  "name": "Rest",
+                }
+              }
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginTop": 5,
+                  "paddingBottom": 5,
+                }
+              }
+              value={
+                Object {
+                  "data": 2,
+                  "name": "Rest",
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
                     Object {
                       "color": "#373B44",
-                      "fontFamily": "League Gothic",
-                      "fontSize": 25,
-                    }
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#373B44",
-                          "fontSize": 16,
-                        },
-                        Object {
-                          "textAlign": "center",
-                          "width": 30,
-                        },
-                        Object {
-                          "fontFamily": "Ionicons",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                   
-                  Countdown
-                  : 
-                  3
-                </Text>
-              </View>
-              <View
-                label={
-                  Object {
-                    "data": 2,
-                    "name": "Rest",
-                  }
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "textAlign": "center",
+                      "width": 30,
+                    },
+                    Object {
+                      "fontFamily": "anticon",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
                 }
+              >
+                
+              </Text>
+              <Text
                 style={
                   Object {
-                    "backgroundColor": "#ECE9E6",
-                    "marginTop": 5,
-                    "paddingBottom": 5,
-                  }
-                }
-                value={
-                  Object {
-                    "data": 2,
-                    "name": "Rest",
+                    "color": "#373B44",
+                    "fontFamily": "League Gothic",
+                    "fontSize": 25,
                   }
                 }
               >
-                <Text
-                  style={
+                Rest
+                : 
+                2
+              </Text>
+            </View>
+            <View
+              label={
+                Object {
+                  "data": 1,
+                  "name": "Cycle",
+                }
+              }
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginTop": 5,
+                  "paddingBottom": 5,
+                }
+              }
+              value={
+                Object {
+                  "data": 1,
+                  "name": "Cycle",
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
                     Object {
                       "color": "#373B44",
-                      "fontFamily": "League Gothic",
-                      "fontSize": 25,
-                    }
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#373B44",
-                          "fontSize": 16,
-                        },
-                        Object {
-                          "textAlign": "center",
-                          "width": 30,
-                        },
-                        Object {
-                          "fontFamily": "anticon",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                   
-                  Rest
-                  : 
-                  2
-                </Text>
-              </View>
-              <View
-                label={
-                  Object {
-                    "data": 1,
-                    "name": "Cycle",
-                  }
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "textAlign": "center",
+                      "width": 30,
+                    },
+                    Object {
+                      "fontFamily": "Entypo",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
                 }
+              >
+                
+              </Text>
+              <Text
                 style={
                   Object {
-                    "backgroundColor": "#ECE9E6",
-                    "marginTop": 5,
-                    "paddingBottom": 5,
-                  }
-                }
-                value={
-                  Object {
-                    "data": 1,
-                    "name": "Cycle",
+                    "color": "#373B44",
+                    "fontFamily": "League Gothic",
+                    "fontSize": 25,
                   }
                 }
               >
-                <Text
-                  style={
+                Cycle
+                : 
+                1
+              </Text>
+            </View>
+            <View
+              label={
+                Object {
+                  "data": 2,
+                  "name": "Serie",
+                }
+              }
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "marginTop": 5,
+                  "paddingBottom": 5,
+                }
+              }
+              value={
+                Object {
+                  "data": 2,
+                  "name": "Serie",
+                }
+              }
+            >
+              <Text
+                allowFontScaling={false}
+                style={
+                  Array [
                     Object {
                       "color": "#373B44",
-                      "fontFamily": "League Gothic",
-                      "fontSize": 25,
-                    }
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#373B44",
-                          "fontSize": 16,
-                        },
-                        Object {
-                          "textAlign": "center",
-                          "width": 30,
-                        },
-                        Object {
-                          "fontFamily": "Entypo",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                   
-                  Cycle
-                  : 
-                  1
-                </Text>
-              </View>
-              <View
-                label={
-                  Object {
-                    "data": 2,
-                    "name": "Serie",
-                  }
+                      "fontSize": 16,
+                    },
+                    Object {
+                      "textAlign": "center",
+                      "width": 30,
+                    },
+                    Object {
+                      "fontFamily": "FontAwesome",
+                      "fontStyle": "normal",
+                      "fontWeight": "normal",
+                    },
+                    Object {},
+                  ]
                 }
+              >
+                
+              </Text>
+              <Text
                 style={
                   Object {
-                    "backgroundColor": "#ECE9E6",
-                    "marginTop": 5,
-                    "paddingBottom": 5,
-                  }
-                }
-                value={
-                  Object {
-                    "data": 2,
-                    "name": "Serie",
+                    "color": "#373B44",
+                    "fontFamily": "League Gothic",
+                    "fontSize": 25,
                   }
                 }
               >
-                <Text
-                  style={
-                    Object {
-                      "color": "#373B44",
-                      "fontFamily": "League Gothic",
-                      "fontSize": 25,
-                    }
-                  }
-                >
-                  <Text
-                    allowFontScaling={false}
-                    style={
-                      Array [
-                        Object {
-                          "color": "#373B44",
-                          "fontSize": 16,
-                        },
-                        Object {
-                          "textAlign": "center",
-                          "width": 30,
-                        },
-                        Object {
-                          "fontFamily": "FontAwesome",
-                          "fontStyle": "normal",
-                          "fontWeight": "normal",
-                        },
-                        Object {},
-                      ]
-                    }
-                  >
-                    
-                  </Text>
-                   
-                  Serie
-                  : 
-                  2
-                </Text>
-              </View>
+                Serie
+                : 
+                2
+              </Text>
             </View>
           </View>
         </View>
-        <View
+      </View>
+      <View
+        style={
+          Object {
+            "flex": 0.4,
+            "justifyContent": "center",
+            "marginLeft": 15,
+            "marginRight": 15,
+          }
+        }
+      >
+        <Text
           style={
             Object {
-              "flex": 0.4,
-              "justifyContent": "center",
-              "marginLeft": 15,
-              "marginRight": 15,
+              "color": "grey",
+              "fontFamily": "Montserrat-Light",
+              "fontSize": 25,
             }
           }
         >
-          <Text
-            style={
-              Object {
-                "color": "grey",
-                "fontFamily": "Montserrat-Light",
-                "fontSize": 25,
-              }
-            }
-          >
-            You have completed a session in 
-            0 horas 0 min y 10 seg
-             time.
-          </Text>
-        </View>
+          You have completed a session in 
+          0 horas 0 min y 10 seg
+           time.
+        </Text>
       </View>
     </View>
   </View>

@@ -11,36 +11,39 @@ import { goToCountdown, goToCongrats } from '../../navigation/actions';
 
 import styles from './styles';
 
-firebase.notifications().onNotificationOpened(_notification => {
-  // firebase.notifications().onNotification(_notification => {
-  // firebase.notifications().onNotificationDisplayed(_notification => {
-  // console.log(notification);
-  const notification = new firebase.notifications.Notification()
-    .setNotificationId('notificationId')
-    .setTitle('Zuritssssitititi')
-    .setBody('My ,,,,')
-    .setData({
-      key1: 'value1',
-      key2: 'value2',
-    });
-  console.log(notification);
-
-  // Schedule the notification for 1 minute in the future
-  const date = new Date();
-  date.setSeconds(date.getSeconds() + 3);
-  // firebase.notifications().displayNotification(notification);
-
-  firebase.notifications().scheduleNotification(notification, {
-    fireDate: date.getTime(),
-  });
-});
 class MainScreen extends React.Component {
   componentDidMount() {
     AppState.addEventListener('change', this.handlePushNotifications);
+
+    this.notificationListener = firebase.notifications().onNotificationOpened(_notification => {
+      // this.notificationListener = firebase.notifications().onNotificationOpened(_notification => {
+      // firebase.notifications().onNotification(_notification => {
+      // firebase.notifications().onNotificationDisplayed(_notification => {
+      // console.log(notification);
+      const notification = new firebase.notifications.Notification()
+        .setNotificationId('notificationId')
+        .setTitle('Zuritssssitititi')
+        .setBody('My ,,,,')
+        .setData({
+          key1: 'value1',
+          key2: 'value2',
+        });
+      console.log('notification', _notification);
+
+      // Schedule the notification for 1 minute in the future
+      const date = new Date();
+      date.setSeconds(date.getSeconds() + 3);
+      // firebase.notifications().displayNotification(notification);
+
+      firebase.notifications().scheduleNotification(notification, {
+        fireDate: date.getTime(),
+      });
+    });
   }
 
   componentWillUnmount() {
     AppState.removeEventListener('change', this.handlePushNotifications);
+    this.notificationListener();
   }
 
   handlePushNotifications = nextAppState => {

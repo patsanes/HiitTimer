@@ -5,7 +5,7 @@ import IconIonicons from 'react-native-vector-icons/Ionicons';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import PropTypes from 'prop-types';
-import { colors, fontSizes, space } from './theme';
+import { colors, fontSizes, space } from '../theme';
 
 const styles = StyleSheet.create({
   iconList: {

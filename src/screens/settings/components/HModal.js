@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Picker, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import Icons from '../../../utils/Icons';
+import Icons from 'HiitTimer/src/utils/Icons';
 import { fontSizes, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({

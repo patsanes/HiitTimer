@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import Icons from '../../../utils/Icons';
+import Icons from 'HiitTimer/src/utils/Icons';
 import { fontSizes, colors } from '../../../utils/theme';
 import { HModal } from './index';
 

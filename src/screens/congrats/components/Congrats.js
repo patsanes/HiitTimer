@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
-import Icons from '../../../utils/Icons';
+import Icons from 'HiitTimer/src/utils/Icons';
 import { fontSizes, fontFamilies, colors, space } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
     paddingBottom: space.xSmall,
     marginTop: space.xSmall,
   },
+  cardItem: {
+    paddingBottom: space.xSmall,
+    marginTop: space.xSmall,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
 
 const Congrats = props => {
@@ -65,9 +71,10 @@ const Congrats = props => {
         <View style={styles.containerCard}>
           <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
             {details.map((item, index) => (
-              <View key={item.name} label={item} value={item} style={styles.card}>
+              <View key={item.name} label={item} value={item} style={styles.cardItem}>
+                <Icons name={item.name} />
                 <Text key={index.id} style={styles.text}>
-                  <Icons name={item.name} /> {item.name}: {item.data}
+                  {item.name}: {item.data}
                 </Text>
               </View>
             ))}

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 
 import { observer, inject } from 'mobx-react';
-import moment from 'moment';
-import momentDurationFormatSetup from 'moment-duration-format';
+// import moment from 'moment';
+// import momentDurationFormatSetup from 'moment-duration-format';
 import { Congrats } from '../components';
 
-momentDurationFormatSetup(moment);
+// momentDurationFormatSetup(moment);
 
 class CongratsContainer extends React.Component {
   render() {

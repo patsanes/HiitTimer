@@ -17,33 +17,34 @@ const styles = StyleSheet.create({
 });
 
 const Countdown = props => {
-  const { count, isRest, fill, fillComplete, _onFinish } = props;
-  const backgroundColors = isRest ? colors.restGreen : colors.restBlue;
-  const backgroundColorsOff = isRest ? colors.restGreenDeep : colors.secondaryLight;
+  const { fill, fillComplete, _onFinish, currentCircleColor } = props;
+  // const backgroundColors = isRest ? colors.restGreen : colors.restBlue;
+  // const backgroundColorsOff = isRest ? colors.restGreenDeep : colors.secondaryLight;
 
   Sound.setCategory('Playback');
 
   return (
     <React.Fragment>
       <Text style={styles.titleText}>
-        <TimerMachineContainer count={count} _onFinish={_onFinish} />
+        <TimerMachineContainer _onFinish={_onFinish} />
       </Text>
       <ProgressContainer
         fill={fill}
         fillComplete={fillComplete}
-        tintColor={backgroundColors}
-        backgroundColor={backgroundColorsOff}
+        tintColor={currentCircleColor}
+        // backgroundColor={backgroundColorsOff}
       />
     </React.Fragment>
   );
 };
 
 Countdown.propTypes = {
-  count: PropTypes.number.isRequired,
-  isRest: PropTypes.bool.isRequired,
+  // count: PropTypes.number.isRequired,
+  // isRest: PropTypes.bool.isRequired,
   fill: PropTypes.number.isRequired,
   fillComplete: PropTypes.number.isRequired,
   _onFinish: PropTypes.func.isRequired,
+  currentCircleColor: PropTypes.string.isRequired,
 };
 
 Countdown.defaultProps = {};

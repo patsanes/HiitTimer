@@ -70,7 +70,7 @@ class MainScreen extends React.Component {
   render() {
     const { session, navigation } = this.props;
     const { dispatch } = navigation;
-    const { inProgress, isRest } = session;
+    const { isRest } = session;
 
     const onPressPlay = () => {
       dispatch(goToCountdown());
@@ -93,7 +93,7 @@ class MainScreen extends React.Component {
         <BackgroundGradient isRest={isRest}>
           <View style={styles.top} />
           <View style={styles.middle}>
-            <WorkoutSpace inProgress={inProgress} goToCongratsFromHome={goToCongratsFromHome} />
+            <WorkoutSpace goToCongratsFromHome={goToCongratsFromHome} />
           </View>
           <View style={styles.bottom}>
             <PlayPauseContainer onPress={onPressPlay} />

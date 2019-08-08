@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 });
 class ProgressContainer extends React.Component {
   render() {
-    const { fill, fillComplete, tintColor, backgroundColor } = this.props;
+    const { fill, fillComplete, tintColor } = this.props;
     return (
       <>
         {/* Countdown workout */}
@@ -44,6 +44,6 @@ ProgressContainer.propTypes = {
   fill: PropTypes.number.isRequired,
   fillComplete: PropTypes.number.isRequired,
   tintColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
+  // backgroundColor: PropTypes.string.isRequired,
 };
 export default ProgressContainer;

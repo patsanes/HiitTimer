@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
-import momentDurationFormatSetup from 'moment-duration-format';
+// import momentDurationFormatSetup from 'moment-duration-format';
 import TimerMachine from 'react-timer-machine';
 import PropTypes from 'prop-types';
 import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
-momentDurationFormatSetup(moment);
+// momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {

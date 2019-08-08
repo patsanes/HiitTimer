@@ -3,22 +3,46 @@ import moment from 'moment';
 // https://facebook.github.io/react-native/docs/vibration
 import { Vibration } from 'react-native';
 import Sound from 'react-native-sound';
-import firebase from 'react-native-firebase';
+// import firebase from 'react-native-firebase';
 
 Sound.setCategory('Playback');
 
 const DURATION = 1000;
 
+const getInitialState = () => {
+  const state = {
+    startCountdown: 3,
+    training: 3,
+    rest: 2,
+    restBetween: 2,
+    serie: 2,
+    cycle: 1,
+    currentSerie: 0,
+    currentCycle: 0,
+    isPlay: false,
+    isStop: true,
+    isRest: false,
+    inProgress: false,
+    timePased: 0,
+  };
+  const trainingDelay = state.training + 1;
+  const restDelay = state.rest + 1;
+  const completeTraining = restDelay + trainingDelay;
+  state.currentTime = state.training;
+  state.timeCompleteWorkout = completeTraining * state.serie * state.cycle;
+  return state;
+};
+
 export const SessionStore = types
   .model('SessionStore', {
-    training: types.number, // seconds for training
-    rest: types.number, // seconds for resting
+    training: types.number,
+    rest: types.number,
     restBetween: types.number, // seconds for resting ADD THIS LATER ON
     serie: types.number,
     currentSerie: types.number,
     cycle: types.number,
     currentCycle: types.number,
-    startCountdown: types.number, // countdown para arrancar
+    startCountdown: types.number,
     timeCompleteWorkout: types.number,
     isPlay: types.boolean,
     isStop: types.boolean,
@@ -92,6 +116,7 @@ export const SessionStore = types
     },
     setPause() {
       self.isPlay = false;
+      self.isStop = false;
     },
     setPlay() {
       self.isPlay = true;
@@ -105,9 +130,28 @@ export const SessionStore = types
         self.currentSerie = 0;
         self.timePased = 0;
         self.inProgress = false;
-        self.changeState();
-        // Volver a valores iniciales.
+        self.currentTime = self.training;
+        self.isRest = false;
       }
+    },
+    resetState() {
+      // eslint-disable-next-line no-param-reassign
+      const nextState = getInitialState();
+      self.serie = nextState.serie;
+      self.currentSerie = nextState.currentSerie;
+      self.cycle = nextState.cycle;
+      self.currentCycle = nextState.currentCycle;
+      self.training = nextState.training;
+      self.rest = nextState.rest;
+      self.restBetween = nextState.restBetween;
+      self.startCountdown = nextState.startCountdown;
+      self.isPlay = nextState.isPlay;
+      self.isStop = nextState.isStop;
+      self.isRest = nextState.isRest;
+      self.inProgress = nextState.inProgress;
+      self.timePased = nextState.timePased;
+      self.currentTime = nextState.currentTime;
+      self.timeCompleteWorkout = nextState.timeCompleteWorkout;
     },
     increaseTime() {
       self.timePased = self.timePased + 1;
@@ -123,12 +167,7 @@ export const SessionStore = types
       }
     },
     resetTime() {
-      const saveOrChangeState = self.currentTime <= -1;
-      if (saveOrChangeState) {
-        self.changeState();
-      } else {
-        self.saveTime();
-      }
+      self.currentTime = self.currentTime - 1;
     },
     increaseSerie() {
       if (!self.isRest) {
@@ -145,7 +184,7 @@ export const SessionStore = types
     increaseCycle() {
       if (self.currentCycle === self.cycle) {
         self.setPause();
-        if (self.isTimeToFinish()) {
+        if (self.isTimeToFinish) {
           self.finishWorkout();
         }
       } else {
@@ -153,7 +192,7 @@ export const SessionStore = types
       }
     },
     finishWorkout() {
-      self.setStop();
+      self.resetState();
     },
     updateTraining(newValue) {
       self.training = Number(newValue);
@@ -175,23 +214,6 @@ export const SessionStore = types
     },
   }));
 
-const initialState = {
-  serie: 2,
-  currentSerie: 0,
-  cycle: 1,
-  currentCycle: 0,
-  training: 3, // seconds for training
-  rest: 2, // seconds for resting
-  restBetween: 2, // seconds for resting
-  startCountdown: 3, // seconds for resting
-  isPlay: false,
-  isStop: true,
-  isRest: false,
-  inProgress: false,
-  timePased: 0,
-};
-initialState.currentTime = initialState.training;
-initialState.timeCompleteWorkout =
-  (initialState.training + initialState.rest) * initialState.serie * initialState.cycle;
+const initialState = getInitialState();
 
 export { initialState };

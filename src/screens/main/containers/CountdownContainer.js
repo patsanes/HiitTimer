@@ -21,17 +21,8 @@ class CountdownContainer extends React.Component {
   render() {
     const { session } = this.props;
     const {
-      // training,
-      // rest,
       isRest,
-      // isPlay,
-      // isStop,
-      // increaseSerie,
-      // currentTime,
-      // resetTime,
-      // setStop,
       timePasedWorkout,
-      // inProgress,
       timePasedPerSerie,
       // playSound,
     } = session;
@@ -45,15 +36,6 @@ class CountdownContainer extends React.Component {
     return (
       <Countdown
         currentCircleColor={currentCircleColor}
-        // count={count}
-        // isRest={isRest}
-        // isPlay={isPlay}
-        // isStop={isStop}
-        // increaseSerie={increaseSerie}
-        // currentTime={currentTime}
-        // resetTime={resetTime}
-        // setStop={setStop}
-        // inProgress={inProgress}
         fill={timePasedPerSerie}
         fillComplete={timePasedWorkout}
         _onFinish={this.onFinish}

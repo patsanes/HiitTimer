@@ -153,9 +153,6 @@ export const SessionStore = types
       self.currentTime = nextState.currentTime;
       self.timeCompleteWorkout = nextState.timeCompleteWorkout;
     },
-    increaseTime() {
-      self.timePased = self.timePased + 1;
-    },
     saveTime() {
       self.currentTime = self.currentTime - 1;
     },
@@ -166,7 +163,8 @@ export const SessionStore = types
         self.currentTime = self.training;
       }
     },
-    resetTime() {
+    increaseTime() {
+      self.timePased = self.timePased + 1;
       self.currentTime = self.currentTime - 1;
     },
     increaseSerie() {

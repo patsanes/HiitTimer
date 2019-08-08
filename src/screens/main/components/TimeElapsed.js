@@ -1,12 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
-// import momentDurationFormatSetup from 'moment-duration-format';
-import TimerMachine from 'react-timer-machine';
 import PropTypes from 'prop-types';
 import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
-
-// momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   baseText: {
@@ -19,22 +15,33 @@ const styles = StyleSheet.create({
 });
 
 const TimeElapsed = props => {
-  const { isPlay, isStop, increaseTime, timePased } = props;
+  const { isPlay, isStop } = props;
+  const [count, setCount] = React.useState(0);
+
+  // eslint-disable-next-line consistent-return
+  React.useEffect(() => {
+    let unMount;
+    if (isPlay) {
+      const onTick = () => {
+        setCount(count + 1);
+      };
+      const timerID = setInterval(() => onTick(), 1000);
+
+      unMount = () => {
+        clearInterval(timerID);
+      };
+      return unMount;
+    }
+  }, [count, isPlay]);
+
+  const now = moment();
+  const then = moment().add(count, 'seconds');
+
+  const countdown = !isStop ? moment.utc(then.diff(now)).format('mm:ss') : '00:00';
+
   return (
     <View style={styles.container}>
-      <Text style={styles.baseText}>
-        <TimerMachine
-          timeStart={timePased * 1000} // empieza a los 20 segundos
-          paused={!isPlay}
-          started={!isStop}
-          countdown={false}
-          interval={1000}
-          formatTimer={time => moment(time).format('HH:mm:ss')}
-          onTick={() => {
-            increaseTime();
-          }}
-        />{' '}
-      </Text>
+      <Text style={styles.baseText}>{countdown}</Text>
     </View>
   );
 };
@@ -42,8 +49,6 @@ const TimeElapsed = props => {
 TimeElapsed.propTypes = {
   isPlay: PropTypes.bool.isRequired,
   isStop: PropTypes.bool.isRequired,
-  increaseTime: PropTypes.func.isRequired,
-  timePased: PropTypes.number.isRequired,
 };
 
 TimeElapsed.defaultProps = {};

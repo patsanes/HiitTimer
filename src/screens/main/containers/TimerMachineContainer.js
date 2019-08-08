@@ -14,7 +14,7 @@ class TimerMachineContainer extends React.Component {
       isPlay,
       isStop,
       increaseSerie,
-      resetTime,
+      increaseTime,
       inProgress,
       playSound,
       rest,
@@ -43,7 +43,7 @@ class TimerMachineContainer extends React.Component {
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
             onTick={() => {
-              resetTime();
+              increaseTime();
             }}
             onComplete={() => {
               increaseSerie();

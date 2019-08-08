@@ -18,7 +18,7 @@ module.exports = {
     //   sourceType: 'module',
   },
 
-  plugins: ['react', 'react-native', 'prettier'],
+  plugins: ['react', 'react-native', 'prettier', 'react-hooks'],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
@@ -37,6 +37,8 @@ module.exports = {
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['self'] }],
     'import/no-unresolved': ['error', { ignore: ['HiitTimer'] }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
   globals: {
     it: false,

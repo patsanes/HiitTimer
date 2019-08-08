@@ -3,7 +3,8 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: ['airbnb', 'prettier', 'prettier/react', 'eslint:recommended'],
+  root: true,
+  extends: ['@react-native-community', 'airbnb', 'prettier', 'prettier/react', 'eslint:recommended'],
   parser: 'babel-eslint',
   // globals: {
   //   Atomics: 'readonly',

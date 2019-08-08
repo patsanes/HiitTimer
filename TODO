@@ -1,0 +1,19 @@
+remove moment-duration-format (is it neccesary?)
+upgrade RN (react-native-git-upgrade ours theirs) ??? 
+* upgrade libraries (yarn upgrade-interactive --latest)
+*? use git hooks to run eslint command (https://github.com/observing/pre-commit)
+create a command on package.json that run eslint (yarn eslint ./src) (https://eslint.org/docs/3.0.0/user-guide/command-line-interface)
+move all the logic of moment into a different folder (utils) eg: getTodayTime (12:04:02)  -- TimeMoment.js
+* move all the `this.timerID = setInterval(() => this.tick(), 1000);` to a different component
+* App.js only loads one component (MainScreen.js)
+mobx
+
+
+
+import using the index.js file
+
+
+
+
+React.Component vs PureComponent
+* shouldComponentUpdate

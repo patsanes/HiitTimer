@@ -41,20 +41,22 @@ target 'HiitTimer' do
   # pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
 
-  target 'HiitTimerTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
+  # target 'HiitTimerTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
 
   use_native_modules!
 end
 
-target 'HiitTimer-tvOS' do
-  # Pods for HiitTimer-tvOS
+# target 'HiitTimer-tvOS' do
+#   # Pods for HiitTimer-tvOS
 
-  target 'HiitTimer-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+#   target 'HiitTimer-tvOSTests' do
+#     inherit! :search_paths
+#     # Pods for testing
+#   end
 
-end
+# end

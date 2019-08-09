@@ -38,7 +38,6 @@ target 'HiitTimer' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
-  # pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
   pod 'RNFirebase', :path => '../node_modules/react-native-firebase/ios'
   pod 'Firebase/Messaging', '~> 6.3.0'
 

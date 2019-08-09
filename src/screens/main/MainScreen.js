@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, AppState } from 'react-native';
 import PropTypes from 'prop-types';
-// import firebase from 'react-native-firebase';
+import firebase from 'react-native-firebase';
 
 import { observer, inject } from 'mobx-react';
 import { PlayPauseContainer } from './containers';
@@ -58,12 +58,10 @@ class MainScreen extends React.Component {
       // //   key2: 'value2',
       // // });
       // console.log(notification);
-
       // // Schedule the notification for 1 minute in the future
       // const date = new Date();
       // date.setSeconds(date.getSeconds() + 3);
       // // firebase.notifications().displayNotification(notification);
-
       // firebase.notifications().scheduleNotification(notification, {
       //   fireDate: date.getTime(),
       // });
@@ -79,15 +77,30 @@ class MainScreen extends React.Component {
       dispatch(goToCountdown());
 
       // https://rnfirebase.io/docs/v5.x.x/messaging/receiving-messages#2)-Request-permissions
-      // firebase
-      //   .messaging()
-      //   .requestPermission()
-      //   .then(() => {
-      //     // User has authorised
-      //   })
-      //   .catch(error => {
-      //     // User has rejected permissions
-      //   });
+      firebase.messaging().requestPermission();
+      // .then(() => {
+      //   // User has authorised
+      // })
+      // .catch(error => {
+      //   // User has rejected permissions
+      // });
+
+      // Build notification
+      const notification = new firebase.notifications.Notification()
+        .setNotificationId('notificationId')
+        .setTitle('HiitTimer')
+        .setBody('Timer in background...');
+      // .setData({
+      //   key1: 'value1',
+      //   key2: 'value2',
+      // });
+      // Schedule the notification for 1 minute in the future
+      const date = new Date();
+      date.setSeconds(date.getSeconds() + 10);
+
+      firebase.notifications().scheduleNotification(notification, {
+        fireDate: date.getTime(),
+      });
     };
     const goToCongratsFromHome = () => dispatch(goToCongrats());
 

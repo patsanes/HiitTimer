@@ -56,6 +56,7 @@
 		BA1B0E28ABC94881885F318B /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7ACA920B75B04834BF47709E /* Montserrat-Bold.ttf */; };
 		BDB176EBB02F4D8082097B4D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9B485E502F2455A9378805C /* Montserrat-SemiBoldItalic.ttf */; };
 		BF14B571086640A58778AB1B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A80A31BEF23483DA8ADDA57 /* Lato-Black.ttf */; };
+		C191870A22FCFCDC0048C385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C191870922FCFCDC0048C385 /* GoogleService-Info.plist */; };
 		C1FE4DD622FCE54E002438EC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE4DD522FCE54E002438EC /* File.swift */; };
 		C5B866FE1DF14C2AAAC5B25D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113A19259FDE4A83B4655D5D /* Montserrat-Light.ttf */; };
 		CE9F619F88A14AE8A5C3688A /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88B18AB7DE6344418F59BBDF /* Lato-Light.ttf */; };
@@ -126,6 +127,8 @@
 		BCFCDE689FF34DA1AB7FB87E /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-ExtraLight.ttf"; path = "../assets/fonts/Montserrat/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		BE25DE870D166E1EC70088CF /* Pods-HiitTimer-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiitTimer-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-HiitTimer-tvOSTests/Pods-HiitTimer-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		C17EB1ADA2444209B2E9A5A7 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Bangers-Regular.ttf"; path = "../assets/fonts/Bangers/Bangers-Regular.ttf"; sourceTree = "<group>"; };
+		C191870822FCFA590048C385 /* HiitTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HiitTimer.entitlements; path = HiitTimer/HiitTimer.entitlements; sourceTree = "<group>"; };
+		C191870922FCFCDC0048C385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C1FE4DD422FCE54E002438EC /* HiitTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiitTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		C1FE4DD522FCE54E002438EC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C2566BD0E5274A91A9F30929 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-MediumItalic.ttf"; path = "../assets/fonts/Montserrat/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 		13B07FAE1A68108700A75B9A /* HiitTimer */ = {
 			isa = PBXGroup;
 			children = (
+				C191870922FCFCDC0048C385 /* GoogleService-Info.plist */,
+				C191870822FCFA590048C385 /* HiitTimer.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -348,6 +353,14 @@
 						DevelopmentTeam = 7BW52MJS9W;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -427,6 +440,7 @@
 				9850A8E7AF28430BBC30B088 /* MaterialCommunityIcons.ttf in Resources */,
 				2FBF3146524E4D5C846E41BB /* MaterialIcons.ttf in Resources */,
 				6134A961F10E48F2A372E7C7 /* Octicons.ttf in Resources */,
+				C191870A22FCFCDC0048C385 /* GoogleService-Info.plist in Resources */,
 				9DA643776A2A4D14B7ECAAA3 /* SimpleLineIcons.ttf in Resources */,
 				2841A65ABAF344A8BD59F0B3 /* Zocial.ttf in Resources */,
 			);
@@ -572,6 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HiitTimer/HiitTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -640,6 +655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = HiitTimer/HiitTimer.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

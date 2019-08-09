@@ -80,25 +80,6 @@ export const SessionStore = types
   }))
   .actions(self => ({
     playSound() {
-      // // Build notification
-      // const notification = new firebase.notifications.Notification()
-      //   .setNotificationId('notificationId')
-      //   .setTitle('Session')
-      //   .setBody('My hola pepep body')
-      //   .setData({
-      //     key1: 'value1',
-      //     key2: 'value2',
-      //   });
-      // // notification.ios.setBadge(2);
-      // // Schedule the notification for 1 minute in the future
-      // const date = new Date();
-      // // firebase.notifications().displayNotification(notification);
-      // date.setMinutes(date.getMinutes() + 1);
-
-      // firebase.notifications().scheduleNotification(notification, {
-      //   fireDate: date.getTime(),
-      // });
-
       Vibration.vibrate(DURATION);
 
       if (self.isRest) {

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CountdownScreen renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <BVLinearGradient
+    colors={
+      Array [
+        4294821936,
+        4294144821,
+      ]
+    }
+    endPoint={
+      Object {
+        "x": 0.5,
+        "y": 1,
+      }
+    }
+    locations={
+      Array [
+        0,
+        0.5,
+      ]
+    }
+    startPoint={
+      Object {
+        "x": 0,
+        "y": 0.25,
+      }
+    }
+    style={
+      Object {
+        "borderRadius": 5,
+        "flex": 1,
+        "paddingLeft": 15,
+        "paddingRight": 15,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 7,
+          "flexDirection": "row",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "black",
+            "fontFamily": "League Gothic",
+            "fontSize": 250,
+            "fontWeight": "bold",
+            "position": "absolute",
+          }
+        }
+      >
+        3
+      </Text>
+    </View>
+  </BVLinearGradient>
+</View>
+`;

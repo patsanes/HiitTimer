@@ -1,40 +1,29 @@
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import ButtonTimer from './src/components/Button';
+import React from 'react';
+import { Provider } from 'mobx-react';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n Shake or press menu button for dev menu',
-});
+import makeInspectable from 'mobx-devtools-mst';
+import { connectToDevTools } from 'mobx-devtools/lib/mobxDevtoolsBackend';
+import { initialState, SessionStore } from './src/stores/SessionStore';
+import AppNavigator from './src/navigation/AppNavigator';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+// https://github.com/mobxjs/mobx-devtools/issues/16
 
-export default class App extends Component {
+// 1. Connect to devtools (what ever mobx-devtools standalone app tells you to put in)
+connectToDevTools({ host: 'localhost', port: '8098' });
+
+const session = SessionStore.create(initialState);
+// 2b. If you don't use RNN you need a way to know when the devtools are connected, so
+// for the time being, use a timeout or other event handler you know works.
+setTimeout(() => {
+  makeInspectable(session);
+}, 1000);
+
+export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native Patricia Sanes!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-        <ButtonTimer />
-      </View>
+      <Provider session={session}>
+        <AppNavigator />
+      </Provider>
     );
   }
 }

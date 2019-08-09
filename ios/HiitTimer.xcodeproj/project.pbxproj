@@ -57,6 +57,9 @@
 		BDB176EBB02F4D8082097B4D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9B485E502F2455A9378805C /* Montserrat-SemiBoldItalic.ttf */; };
 		BF14B571086640A58778AB1B /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A80A31BEF23483DA8ADDA57 /* Lato-Black.ttf */; };
 		C191870A22FCFCDC0048C385 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C191870922FCFCDC0048C385 /* GoogleService-Info.plist */; };
+		C191871022FD00B40048C385 /* light_applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C191870D22FD00B40048C385 /* light_applause.mp3 */; };
+		C191871122FD00B40048C385 /* single_note.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C191870E22FD00B40048C385 /* single_note.mp3 */; };
+		C191871222FD00B40048C385 /* zapsplat_multimedia_alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C191870F22FD00B40048C385 /* zapsplat_multimedia_alert.mp3 */; };
 		C1FE4DD622FCE54E002438EC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FE4DD522FCE54E002438EC /* File.swift */; };
 		C5B866FE1DF14C2AAAC5B25D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 113A19259FDE4A83B4655D5D /* Montserrat-Light.ttf */; };
 		CE9F619F88A14AE8A5C3688A /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88B18AB7DE6344418F59BBDF /* Lato-Light.ttf */; };
@@ -129,6 +132,9 @@
 		C17EB1ADA2444209B2E9A5A7 /* Bangers-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Bangers-Regular.ttf"; path = "../assets/fonts/Bangers/Bangers-Regular.ttf"; sourceTree = "<group>"; };
 		C191870822FCFA590048C385 /* HiitTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HiitTimer.entitlements; path = HiitTimer/HiitTimer.entitlements; sourceTree = "<group>"; };
 		C191870922FCFCDC0048C385 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C191870D22FD00B40048C385 /* light_applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = light_applause.mp3; path = ../assets/sounds/light_applause.mp3; sourceTree = "<group>"; };
+		C191870E22FD00B40048C385 /* single_note.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = single_note.mp3; path = ../assets/sounds/single_note.mp3; sourceTree = "<group>"; };
+		C191870F22FD00B40048C385 /* zapsplat_multimedia_alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = zapsplat_multimedia_alert.mp3; path = ../assets/sounds/zapsplat_multimedia_alert.mp3; sourceTree = "<group>"; };
 		C1FE4DD422FCE54E002438EC /* HiitTimer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HiitTimer-Bridging-Header.h"; sourceTree = "<group>"; };
 		C1FE4DD522FCE54E002438EC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		C2566BD0E5274A91A9F30929 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-MediumItalic.ttf"; path = "../assets/fonts/Montserrat/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -278,6 +284,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				C191870D22FD00B40048C385 /* light_applause.mp3 */,
+				C191870E22FD00B40048C385 /* single_note.mp3 */,
+				C191870F22FD00B40048C385 /* zapsplat_multimedia_alert.mp3 */,
 				C1FE4DD522FCE54E002438EC /* File.swift */,
 				13B07FAE1A68108700A75B9A /* HiitTimer */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -422,16 +431,19 @@
 				1D209AE9D0E340F5BC7199DB /* Montserrat-Medium.ttf in Resources */,
 				12D78F45E2854C8E81F184CD /* Montserrat-MediumItalic.ttf in Resources */,
 				84774623B6AF42B083BF5F68 /* Montserrat-Regular.ttf in Resources */,
+				C191871022FD00B40048C385 /* light_applause.mp3 in Resources */,
 				50B1535951AB4C84A7B660ED /* Montserrat-SemiBold.ttf in Resources */,
 				BDB176EBB02F4D8082097B4D /* Montserrat-SemiBoldItalic.ttf in Resources */,
 				21C3F02362194E5B974E95FC /* Montserrat-Thin.ttf in Resources */,
 				F3EE1341D21049B5A169E22E /* Montserrat-ThinItalic.ttf in Resources */,
+				C191871222FD00B40048C385 /* zapsplat_multimedia_alert.mp3 in Resources */,
 				1842B78567304F16A44A8456 /* AntDesign.ttf in Resources */,
 				84A0ED71507049DC975D3569 /* Entypo.ttf in Resources */,
 				52D42A249F874634A9858216 /* EvilIcons.ttf in Resources */,
 				DD6DBBA15B014700A1133D87 /* Feather.ttf in Resources */,
 				775CA35B5EA748DDB153C490 /* FontAwesome.ttf in Resources */,
 				5C9DC9B2319E4CA99046C1D2 /* FontAwesome5_Brands.ttf in Resources */,
+				C191871122FD00B40048C385 /* single_note.mp3 in Resources */,
 				FE6C5E33387F4DF99B1F37DE /* FontAwesome5_Regular.ttf in Resources */,
 				8AC9AD2E9D4A4203BE56154B /* FontAwesome5_Solid.ttf in Resources */,
 				3248BAE89E6549F5BAADDC46 /* Fontisto.ttf in Resources */,

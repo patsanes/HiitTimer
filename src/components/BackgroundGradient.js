@@ -2,20 +2,19 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+import { colors } from '../utils/theme';
 
 const styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
     paddingLeft: 15,
     paddingRight: 15,
-    // borderRadius: 5,
   },
 });
 const BackgroundGradient = props => {
-  const { children, isRest } = props;
-  const backgroundColors = ['#373B44', '#232526'];
+  const { children } = props;
+  const backgroundColors = [colors.primaryLight, colors.primaryDark];
 
-  // const backgroundColors = isRest ? ['#373B44', '#11998e'] : ['#373B44', '#232526'];
   return (
     <LinearGradient
       start={{ x: 0.0, y: 0.25 }}
@@ -31,7 +30,6 @@ const BackgroundGradient = props => {
 
 BackgroundGradient.propTypes = {
   children: PropTypes.node.isRequired,
-  isRest: PropTypes.bool.isRequired,
 };
 
 export default BackgroundGradient;

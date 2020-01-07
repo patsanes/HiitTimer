@@ -1,26 +1,21 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { fontSizes, fontFamilies, colors } from '../utils/theme';
 
 const styles = StyleSheet.create({
-  container: {
-    // marginBottom: '0,2%',
-  },
   title: {
-    fontSize: 20,
-    alignSelf: 'flex-start',
-    color: 'grey',
-    fontFamily: 'Permanent Marker',
+    fontSize: fontSizes.xxxSmall,
+    color: colors.secondary,
+    fontFamily: fontFamilies.montserrat,
   },
 });
 
 export default class Header extends React.PureComponent {
   render() {
     return (
-      <>
-        <View style={styles.container}>
-          <Text style={styles.title}>Training </Text>
-        </View>
-      </>
+      <View>
+        <Text style={styles.title}> Enter the data you want for your workout:</Text>
+      </View>
     );
   }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import { CircularProgressContainer } from '.';
+import CircularProgressContainer from './CircularProgressContainer';
+import { colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,34 +11,28 @@ const styles = StyleSheet.create({
     height: 20,
     justifyContent: 'center',
   },
-  secondContainer: {
-    position: 'absolute',
-    alignSelf: 'center',
-    height: 20,
-    justifyContent: 'center',
-  },
 });
 class ProgressContainer extends React.Component {
   render() {
-    const { fill, fillComplete, tintColor, backgroundColor } = this.props;
+    const { fill, fillComplete, tintColor } = this.props;
     return (
       <>
-        {/* Complete workout */}
+        {/* Countdown workout */}
         <View style={styles.container}>
           <CircularProgressContainer
             size={350}
-            fill={fill}
-            tintColor="#ff4b2b"
-            backgroundColor="#1D4350"
+            fill={fillComplete}
+            tintColor={colors.progressPink}
+            backgroundColor={colors.secondary}
           />
         </View>
-        {/* Countdown workout */}
-        <View style={styles.secondContainer}>
+        {/* Complete workout */}
+        <View style={styles.container}>
           <CircularProgressContainer
             size={320}
-            fill={fillComplete}
+            fill={fill}
             tintColor={tintColor}
-            backgroundColor={backgroundColor}
+            backgroundColor={colors.secondaryLight}
           />
         </View>
       </>
@@ -49,8 +44,6 @@ ProgressContainer.propTypes = {
   fill: PropTypes.number.isRequired,
   fillComplete: PropTypes.number.isRequired,
   tintColor: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
+  // backgroundColor: PropTypes.string.isRequired,
 };
 export default ProgressContainer;
-
-// export default inject('session')(observer(ProgressContainer));

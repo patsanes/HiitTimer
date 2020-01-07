@@ -12,12 +12,11 @@ import {
 } from '../containers';
 
 const styles = StyleSheet.create({
-  middle: {
-    backgroundColor: '#16222A',
-    justifyContent: 'center',
-    alignContent: 'center',
+  container: {},
+  top: {
+    justifyContent: 'space-between',
   },
-  completeWorkout: {
+  middle: {
     paddingTop: 5,
     paddingBottom: 10,
     paddingLeft: 8,
@@ -27,8 +26,8 @@ const styles = StyleSheet.create({
 
 const SettingsSpace = () => {
   return (
-    <React.Fragment>
-      <View style={styles.middle}>
+    <View style={styles.container}>
+      <View style={styles.top}>
         <PickerTrainingContainer />
         <PickerRestContainer />
         <PickerCycleContainer />
@@ -36,10 +35,10 @@ const SettingsSpace = () => {
         <PickerRestBetweenCyclesContainer />
         <PickerStartCountdownContainer />
       </View>
-      <View style={styles.completeWorkout}>
+      <View style={styles.middle}>
         <CompleteWorkoutContainer />
       </View>
-    </React.Fragment>
+    </View>
   );
 };
 export default SettingsSpace;

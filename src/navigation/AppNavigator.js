@@ -2,48 +2,53 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import { Dimensions } from 'react-native';
 import React from 'react';
 
-import { ConfigScreen, MainScreen, CountdownScreen, CongratsScreen } from '../screens';
-import { ButtonConfigContainer } from '../containers';
+import { fontSizes, fontFamilies, colors, space } from 'HiitTimer/src/utils/theme';
+import { ConfigScreen, MainScreen, CountdownScreen, CongratsScreen } from 'HiitTimer/src/screens';
+import { ButtonConfigContainer } from 'HiitTimer/src/containers';
+import { MAIN_SCREEN, COUNTDOWN_SCREEN, CONGRATS_SCREEN, CONFIG_SCREEN } from './constants';
 
 const { height } = Dimensions.get('window');
 
 const AppNavigator = createStackNavigator(
   {
-    MainScreen: {
+    [MAIN_SCREEN]: {
       screen: MainScreen,
       navigationOptions: ({ navigation }) => ({
         title: `HiiTimer`,
         headerStyle: {
-          backgroundColor: '#373B44',
+          backgroundColor: colors.primaryLight,
           height: height * 0.1,
         },
         headerTitleStyle: {
-          fontSize: 30,
-          fontFamily: 'Montserrat-Light',
-          color: 'white',
-          paddingHorizontal: 10,
+          fontSize: fontSizes.medium,
+          fontFamily: fontFamilies.montserrat,
+          color: colors.secondaryDark,
+          paddingHorizontal: space.medium,
         },
         headerBackgroundTransitionPreset: 'translate',
         headerRight: <ButtonConfigContainer dispatch={navigation.dispatch} />,
       }),
     },
-    ConfigScreen: {
+    [CONFIG_SCREEN]: {
       screen: ConfigScreen,
       headerBackTitleVisible: false,
       navigationOptions: () => ({
         title: `SETTINGS`,
         headerStyle: {
-          backgroundColor: '#373B44',
-          fontFamily: 'Montserrat-Light',
           height: height * 0.1,
           borderWidth: 1,
           borderColor: 'red',
         },
+        headerTitleStyle: {
+          fontSize: fontSizes.xSmall,
+          color: colors.secondaryDark,
+          fontFamily: fontFamilies.montserrat,
+          paddingHorizontal: space.medium,
+        },
         headerBackgroundTransitionPreset: 'translate',
-        headerTintColor: 'white',
       }),
     },
-    CountdownScreen: {
+    [COUNTDOWN_SCREEN]: {
       screen: CountdownScreen,
       headerMode: 'none',
       navigationOptions: () => ({
@@ -51,28 +56,27 @@ const AppNavigator = createStackNavigator(
         header: null,
       }),
     },
-    CongratsScreen: {
+    [CONGRATS_SCREEN]: {
       screen: CongratsScreen,
       headerMode: 'float',
       navigationOptions: () => ({
         title: `Well done!`,
         headerStyle: {
-          backgroundColor: '#373B44',
+          backgroundColor: colors.primaryLight,
           height: height * 0.1,
         },
         headerTitleStyle: {
-          fontSize: 45,
-          fontFamily: 'Montserrat-Light',
-          color: 'white',
-          paddingHorizontal: 10,
+          fontSize: fontSizes.large,
+          fontFamily: fontFamilies.montserrat,
+          color: colors.secondaryDark,
+          paddingHorizontal: space.medium,
         },
         headerBackgroundTransitionPreset: 'translate',
-        headerTintColor: 'white',
       }),
     },
   },
   {
-    initialRouteName: 'MainScreen',
+    initialRouteName: MAIN_SCREEN,
     headerMode: 'float',
   },
 );

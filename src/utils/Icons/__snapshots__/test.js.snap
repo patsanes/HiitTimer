@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icons renders correctly 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "white",
+        "fontSize": 30,
+      },
+      Object {
+        "textAlign": "center",
+        "width": 30,
+      },
+      Object {
+        "fontFamily": "FontAwesome",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`Icons renders correctly using default color 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "#373B44",
+        "fontSize": 30,
+      },
+      Object {
+        "textAlign": "center",
+        "width": 30,
+      },
+      Object {
+        "fontFamily": "FontAwesome",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;
+
+exports[`Icons renders correctly using default size 1`] = `
+<Text
+  allowFontScaling={false}
+  style={
+    Array [
+      Object {
+        "color": "white",
+        "fontSize": 16,
+      },
+      Object {
+        "textAlign": "center",
+        "width": 30,
+      },
+      Object {
+        "fontFamily": "FontAwesome",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+      },
+      Object {},
+    ]
+  }
+>
+  
+</Text>
+`;

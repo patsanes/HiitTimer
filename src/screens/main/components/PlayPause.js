@@ -7,17 +7,14 @@ const styles = StyleSheet.create({
   container: { display: 'flex', flex: 1, flexDirection: 'row' },
   left: {
     flex: 3,
-    // borderWidth: 3,
     borderColor: 'green',
   },
   center: {
     flex: 4,
-    // borderWidth: 3,
     borderColor: 'red',
   },
   right: {
     flex: 3,
-    // borderWidth: 3,
     borderColor: 'green',
   },
 });

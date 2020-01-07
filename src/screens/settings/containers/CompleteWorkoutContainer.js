@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
 
 import { observer, inject } from 'mobx-react';
-import moment from 'moment';
-import momentDurationFormatSetup from 'moment-duration-format';
+// import moment from 'moment';
+// import momentDurationFormatSetup from 'moment-duration-format';
 
-momentDurationFormatSetup(moment);
+// momentDurationFormatSetup(moment);
 
 class CompleteWorkoutContainer extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class CompleteWorkoutContainer extends React.Component {
     const { endTime } = session;
     return (
       <View>
-        <Text>Tiempo completo de entrenamiento: {endTime}.</Text>
+        <Text>Complete workout time: {endTime}.</Text>
       </View>
     );
   }
@@ -24,4 +24,5 @@ CompleteWorkoutContainer.propTypes = {
   session: PropTypes.object.isRequired,
 };
 
+// decorators
 export default inject('session')(observer(CompleteWorkoutContainer));

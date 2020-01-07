@@ -1,39 +1,47 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
-import momentDurationFormatSetup from 'moment-duration-format';
-import TimerMachine from 'react-timer-machine';
 import PropTypes from 'prop-types';
-
-momentDurationFormatSetup(moment);
+import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   baseText: {
-    fontSize: 40,
-    fontFamily: 'League Gothic',
+    fontSize: fontSizes.xlarge,
+    fontFamily: fontFamilies.leagueGothic,
     fontWeight: 'bold',
     alignSelf: 'center',
-    color: 'white',
+    color: colors.secondaryDark,
   },
 });
 
 const TimeElapsed = props => {
-  const { isPlay, isStop, increaseTime } = props;
+  const { isPlay, isStop } = props;
+  const [count, setCount] = React.useState(0);
+
+  // eslint-disable-next-line consistent-return
+  React.useEffect(() => {
+    let unMount;
+    if (isPlay) {
+      const onTick = () => {
+        setCount(count + 1);
+      };
+      const timerID = setInterval(() => onTick(), 1000);
+
+      unMount = () => {
+        clearInterval(timerID);
+      };
+      return unMount;
+    }
+  }, [count, isPlay]);
+
+  const now = moment();
+  const then = moment().add(count, 'seconds');
+
+  const countdown = !isStop ? moment.utc(then.diff(now)).format('mm:ss') : '00:00';
+
   return (
     <View style={styles.container}>
-      <Text style={styles.baseText}>
-        <TimerMachine
-          timeStart={1000} // empieza a los 20 segundos
-          paused={!isPlay}
-          started={!isStop}
-          countdown={false}
-          interval={1000}
-          formatTimer={time => moment(time).format('HH:mm:ss')}
-          onTick={() => {
-            increaseTime();
-          }}
-        />{' '}
-      </Text>
+      <Text style={styles.baseText}>{countdown}</Text>
     </View>
   );
 };
@@ -41,7 +49,6 @@ const TimeElapsed = props => {
 TimeElapsed.propTypes = {
   isPlay: PropTypes.bool.isRequired,
   isStop: PropTypes.bool.isRequired,
-  increaseTime: PropTypes.func.isRequired,
 };
 
 TimeElapsed.defaultProps = {};

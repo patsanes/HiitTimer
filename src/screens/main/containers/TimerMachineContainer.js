@@ -9,16 +9,22 @@ momentDurationFormatSetup(moment);
 
 class TimerMachineContainer extends React.Component {
   render() {
-    const { session, count, _onFinish } = this.props;
+    const { session, _onFinish } = this.props;
     const {
       isPlay,
       isStop,
       increaseSerie,
-      currentTime,
-      resetTime,
+      increaseTime,
       inProgress,
       playSound,
+      rest,
+      training,
+      isRest,
     } = session;
+
+    const count = isRest ? rest : training;
+
+    // console.log({ inProgress });
     return (
       <>
         {!inProgress ? (
@@ -30,23 +36,14 @@ class TimerMachineContainer extends React.Component {
         ) : (
           <TimerMachine
             timeStart={count * 1000} // empieza a los 20 segundos
+            timeEnd={-1 * 1000}
             paused={!isPlay}
             started={!isStop}
             countdown
             interval={1000}
             formatTimer={(time, ms) => moment.duration(ms, 'milliseconds').format('h, m, s')}
-            onStop={() => {
-              //ChangeState
-              resetTime(false);
-            }}
             onTick={() => {
-              if (currentTime <= -1) {
-                //ChangeState
-                resetTime(false);
-              } else {
-                //SaveState
-                resetTime(true);
-              }
+              increaseTime();
             }}
             onComplete={() => {
               increaseSerie();
@@ -62,7 +59,7 @@ class TimerMachineContainer extends React.Component {
 
 TimerMachineContainer.propTypes = {
   session: PropTypes.object.isRequired,
-  count: PropTypes.number.isRequired,
+  // count: PropTypes.number.isRequired,
   _onFinish: PropTypes.func.isRequired,
 };
 

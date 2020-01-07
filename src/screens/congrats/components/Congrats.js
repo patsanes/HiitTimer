@@ -1,35 +1,51 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Card, Button } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
-import Icons from '../../../utils/Icons';
-// import { goToHome } from '../../../navigation/actions';
+import Icons from 'HiitTimer/src/utils/Icons';
+import { fontSizes, fontFamilies, colors, space } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
-  titleText: {
-    fontSize: 35,
-    fontFamily: 'League Gothic',
-    color: 'white',
+  container: {
+    flex: 1,
+  },
+  containerCard: {
+    flex: 0.6,
+  },
+  containerText: {
+    flex: 0.4,
+    justifyContent: 'center',
+    marginLeft: space.large,
+    marginRight: space.large,
+  },
+  textCompletedIn: {
+    fontSize: fontSizes.small,
+    fontFamily: fontFamilies.montserrat,
+    color: colors.secondary,
   },
   titleCard: {
-    color: 'white',
+    color: colors.secondaryDark,
   },
   text: {
-    fontSize: 25,
-    fontFamily: 'League Gothic',
-    color: 'white',
+    fontSize: fontSizes.small,
+    fontFamily: fontFamilies.leagueGothic,
+    color: colors.secondaryDark,
   },
   card: {
-    backgroundColor: 'black',
+    backgroundColor: colors.primaryDark,
+    paddingBottom: space.xSmall,
+    marginTop: space.xSmall,
   },
-  container: {
-    // borderWidth: 2,
-    // borderColor: 'green',
+  cardItem: {
+    paddingBottom: space.xSmall,
+    marginTop: space.xSmall,
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
 
 const Congrats = props => {
-  const { training, rest, cycle, serie, endTime, onPress } = props;
+  const { training, rest, cycle, serie, endTime } = props;
   const details = [
     {
       name: 'Countdown',
@@ -52,19 +68,23 @@ const Congrats = props => {
   return (
     <React.Fragment>
       <View style={styles.container}>
-        <Text style={styles.titleText}>
-          You have completed a session of {cycle} cycles with {serie} series in {endTime} time.
-        </Text>
-        <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
-          {details.map((item, index) => (
-            <View key={item.name} label={item} value={item} style={styles.card}>
-              <Text key={index.id} style={styles.text}>
-                <Icons name={item.name} /> {item.name}: {item.data}
-              </Text>
-            </View>
-          ))}
-        </Card>
-        <View>{/* <Button title="Go back" type="clear" onPress={onPress} /> */}</View>
+        <View style={styles.containerCard}>
+          <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
+            {details.map((item, index) => (
+              <View key={item.name} label={item} value={item} style={styles.cardItem}>
+                <Icons name={item.name} />
+                <Text key={index.id} style={styles.text}>
+                  {item.name}: {item.data}
+                </Text>
+              </View>
+            ))}
+          </Card>
+        </View>
+        <View style={styles.containerText}>
+          <Text style={styles.textCompletedIn}>
+            You have completed a session in {endTime} time.
+          </Text>
+        </View>
       </View>
     </React.Fragment>
   );
@@ -76,6 +96,5 @@ Congrats.propTypes = {
   cycle: PropTypes.number.isRequired,
   serie: PropTypes.number.isRequired,
   endTime: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
 };
 export default Congrats;

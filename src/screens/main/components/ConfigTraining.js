@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { ButtonConfig } from '../../../components';
+import { fontSizes, fontFamilies, colors, space } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   button: {
     alignSelf: 'center',
     justifyContent: 'center',
-    color: 'white',
+    color: colors.neutral,
     flexDirection: 'column',
   },
   topLeft: {
@@ -23,11 +24,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   titleText: {
-    paddingHorizontal: 10,
-    fontSize: 70,
-    color: 'white',
+    paddingHorizontal: space.medium,
+    fontSize: fontSizes.xxLarge,
+    color: colors.neutral,
     alignSelf: 'center',
-    fontFamily: 'Permanent Marker',
+    fontFamily: fontFamilies.permanent,
   },
 });
 

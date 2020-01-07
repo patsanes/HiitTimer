@@ -1,64 +1,33 @@
 import React, { Component } from 'react';
-import {
-  Modal,
-  TouchableHighlight,
-  Picker,
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-} from 'react-native';
-
+import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import Icons from '../../../utils/Icons';
+import Icons from 'HiitTimer/src/utils/Icons';
+import { fontSizes, colors } from '../../../utils/theme';
+import { HModal } from './index';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-
-    // borderWidth: 1,
-    // borderColor: 'grey',
   },
   valueContainer: {
     flexDirection: 'row',
   },
   headerValue: {
-    fontSize: 16,
-    color: 'white',
-    flex: 0.45,
+    fontSize: fontSizes.xxSmall,
+    flex: 0.6,
   },
   value: {
-    fontSize: 16,
-    color: 'grey',
-    flex: 0.55,
+    fontSize: fontSizes.xxSmall,
+    color: colors.secondary,
+    flex: 0.4,
     textAlign: 'right',
     marginRight: 8,
   },
-  modalContent: {
-    justifyContent: 'flex-end',
-    flex: 1,
-    backgroundColor: 'grey',
-    opacity: 0.8,
-  },
-  inner: {
-    opacity: 0.98,
-    backgroundColor: 'black',
-    borderRadius: 20,
-    borderWidth: 1,
-  },
-  icon: {
-    alignSelf: 'center',
-  },
-  modalTitle: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'white',
-    alignSelf: 'center',
-  },
   containerParent: {
     height: 30,
+    borderColor: colors.secondaryLight,
+    borderWidth: 0.2,
   },
 });
 
@@ -67,10 +36,12 @@ export default class HPicker extends Component {
     isVisiblePicker: false,
     modalVisible: false,
   };
+
   setModalVisible(visible) {
     this.setState({ modalVisible: visible });
   }
-  _togglePicker = () => {
+
+  togglePicker = () => {
     const { isVisiblePicker } = this.state;
     this.setState({ isVisiblePicker: !isVisiblePicker });
     this.setModalVisible(isVisiblePicker);
@@ -84,10 +55,11 @@ export default class HPicker extends Component {
       <View style={styles.containerParent}>
         <View style={styles.container}>
           <TouchableHighlight
+            underlayColor={colors.transparent}
             onPress={() => {
-              this._togglePicker;
               this.setModalVisible(true);
             }}
+            style={styles.touch}
           >
             <View style={styles.valueContainer}>
               <Icons name={placeholder} />
@@ -97,28 +69,13 @@ export default class HPicker extends Component {
           </TouchableHighlight>
         </View>
         {!isVisiblePicker ? (
-          <Modal animationType="slide" transparent visible={modalVisible}>
-            <View style={styles.modalContent}>
-              <View style={styles.inner}>
-                <TouchableOpacity>
-                  <Icon
-                    name="chevron-up"
-                    size={30}
-                    color="white"
-                    style={styles.icon}
-                    onPress={this._togglePicker}
-                  />
-                  <Text style={styles.modalTitle}>{placeholder}</Text>
-                </TouchableOpacity>
-                <View style={styles.border} />
-                <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-                  {items.map((item, index) => (
-                    <Picker.Item key={index.id} color="white" label={item} value={item} />
-                  ))}
-                </Picker>
-              </View>
-            </View>
-          </Modal>
+          <HModal
+            onValueChange={onValueChange}
+            modalVisible={modalVisible}
+            togglePicker={this.togglePicker}
+            items={items}
+            placeholder={placeholder}
+          ></HModal>
         ) : null}
       </View>
     );

@@ -6,6 +6,7 @@ import LottieView from 'lottie-react-native';
 import styles from './styles';
 import { BackgroundGradient } from '../../components';
 import { CongratsContainer } from './containers';
+import { source } from '../../../assets/animations/check_orange.json';
 
 import { goToHome } from '../../navigation/actions';
 
@@ -17,16 +18,12 @@ export default class CongratsScreen extends React.Component {
     return (
       <>
         <BackgroundGradient isRest={false}>
-          <View style={styles.top}>{/* <Header onPress={onPress} /> */}</View>
+          <View style={styles.top} />
           <View style={styles.middle}>
             <CongratsContainer onPress={goHome} />
           </View>
           <View style={styles.bottom}>
-            <LottieView
-              source={require('../../../assets/animations/check_orange.json')}
-              autoPlay
-              loop={false}
-            />
+            <LottieView source={source} autoPlay loop={false} />
           </View>
         </BackgroundGradient>
       </>

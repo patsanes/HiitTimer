@@ -15,14 +15,14 @@ export default class ConfigScreen extends React.Component {
     const onPress = () => dispatch(goToHome());
     return (
       <BackgroundGradient isRest={false}>
-        <View style={styles.top}>
-          <Header onPress={onPress} />
-        </View>
-        <View style={styles.middle}>
-          <SettingsSpace />
-        </View>
-        <View style={styles.bottom}>
-          <InfoSpace />
+        <View style={styles.container}>
+          <View style={styles.top}>{<Header onPress={onPress} />}</View>
+          <View style={styles.middle}>
+            <SettingsSpace />
+          </View>
+          <View style={styles.bottom}>
+            <InfoSpace />
+          </View>
         </View>
       </BackgroundGradient>
     );

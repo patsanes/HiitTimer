@@ -8,14 +8,7 @@ class TextInputCountDownContainer extends React.Component {
   render() {
     const { session } = this.props;
     const { updateTraining, training } = session;
-    return (
-      <UselessTextInput
-        placeholder="CountDown"
-        value={training}
-        // onChange={newvalue => updateTraining(newvalue)}
-        onChange={updateTraining}
-      />
-    );
+    return <UselessTextInput placeholder="CountDown" value={training} onChange={updateTraining} />;
   }
 }
 

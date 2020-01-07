@@ -2,23 +2,47 @@ import { types } from 'mobx-state-tree';
 import moment from 'moment';
 // https://facebook.github.io/react-native/docs/vibration
 import { Vibration } from 'react-native';
-
-var Sound = require('react-native-sound');
+import Sound from 'react-native-sound';
+// import firebase from 'react-native-firebase';
 
 Sound.setCategory('Playback');
 
 const DURATION = 1000;
 
+const getInitialState = () => {
+  const state = {
+    startCountdown: 3,
+    training: 3,
+    rest: 2,
+    restBetween: 2,
+    serie: 2,
+    cycle: 1,
+    currentSerie: 0,
+    currentCycle: 0,
+    isPlay: false,
+    isStop: true,
+    isRest: false,
+    inProgress: false,
+    timePased: 0,
+  };
+  const trainingDelay = state.training + 1;
+  const restDelay = state.rest + 1;
+  const completeTraining = restDelay + trainingDelay;
+  state.currentTime = state.training;
+  state.timeCompleteWorkout = completeTraining * state.serie * state.cycle;
+  return state;
+};
+
 export const SessionStore = types
   .model('SessionStore', {
-    training: types.number, // seconds for training
-    rest: types.number, // seconds for resting
+    training: types.number,
+    rest: types.number,
     restBetween: types.number, // seconds for resting ADD THIS LATER ON
     serie: types.number,
     currentSerie: types.number,
     cycle: types.number,
     currentCycle: types.number,
-    startCountdown: types.number, // countdown para arrancar
+    startCountdown: types.number,
     timeCompleteWorkout: types.number,
     isPlay: types.boolean,
     isStop: types.boolean,
@@ -34,17 +58,55 @@ export const SessionStore = types
       const endTime = moment(startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
       return endTime.format('H [horas] m [min y] s [seg]');
     },
+    get timePasedWorkout() {
+      const timePasedWorkout = (self.timePased / self.timeCompleteWorkout) * 100;
+      return timePasedWorkout;
+    },
+    get timePasedPerSerie() {
+      const count = self.isRest ? self.rest : self.training;
+      const fillTime = 100 - (self.currentTime / count) * 100;
+      return fillTime;
+    },
+    get isTimeToFinish() {
+      const isTime =
+        self.serie === self.currentSerie &&
+        self.cycle === self.currentCycle &&
+        self.timePased === self.timeCompleteWorkout;
+      if (isTime) {
+        return true;
+      }
+      return false;
+    },
   }))
   .actions(self => ({
     playSound() {
+      // // Build notification
+      // const notification = new firebase.notifications.Notification()
+      //   .setNotificationId('notificationId')
+      //   .setTitle('Session')
+      //   .setBody('My hola pepep body')
+      //   .setData({
+      //     key1: 'value1',
+      //     key2: 'value2',
+      //   });
+      // // notification.ios.setBadge(2);
+      // // Schedule the notification for 1 minute in the future
+      // const date = new Date();
+      // // firebase.notifications().displayNotification(notification);
+      // date.setMinutes(date.getMinutes() + 1);
+
+      // firebase.notifications().scheduleNotification(notification, {
+      //   fireDate: date.getTime(),
+      // });
+
       Vibration.vibrate(DURATION);
 
       if (self.isRest) {
-        var restSound = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, error => {
+        const restSound = new Sound('zapsplat_multimedia_alert.mp3', Sound.MAIN_BUNDLE, () => {
           restSound.play();
         });
       } else {
-        var countSound = new Sound('single_note.mp3', Sound.MAIN_BUNDLE, error => {
+        const countSound = new Sound('single_note.mp3', Sound.MAIN_BUNDLE, () => {
           countSound.play();
         });
       }
@@ -54,6 +116,7 @@ export const SessionStore = types
     },
     setPause() {
       self.isPlay = false;
+      self.isStop = false;
     },
     setPlay() {
       self.isPlay = true;
@@ -65,14 +128,33 @@ export const SessionStore = types
         self.isStop = true;
         self.currentCycle = 0;
         self.currentSerie = 0;
+        self.timePased = 0;
         self.inProgress = false;
+        self.currentTime = self.training;
+        self.isRest = false;
       }
     },
-    increaseTime() {
-      self.timePased = self.timePased + 1;
+    resetState() {
+      // eslint-disable-next-line no-param-reassign
+      const nextState = getInitialState();
+      self.serie = nextState.serie;
+      self.currentSerie = nextState.currentSerie;
+      self.cycle = nextState.cycle;
+      self.currentCycle = nextState.currentCycle;
+      self.training = nextState.training;
+      self.rest = nextState.rest;
+      self.restBetween = nextState.restBetween;
+      self.startCountdown = nextState.startCountdown;
+      self.isPlay = nextState.isPlay;
+      self.isStop = nextState.isStop;
+      self.isRest = nextState.isRest;
+      self.inProgress = nextState.inProgress;
+      self.timePased = nextState.timePased;
+      self.currentTime = nextState.currentTime;
+      self.timeCompleteWorkout = nextState.timeCompleteWorkout;
     },
     saveTime() {
-      self.currentTime -= 1;
+      self.currentTime = self.currentTime - 1;
     },
     changeState() {
       if (self.isRest) {
@@ -81,12 +163,9 @@ export const SessionStore = types
         self.currentTime = self.training;
       }
     },
-    resetTime(saveOrChangeState) {
-      if (saveOrChangeState) {
-        self.saveTime();
-      } else {
-        self.changeState();
-      }
+    increaseTime() {
+      self.timePased = self.timePased + 1;
+      self.currentTime = self.currentTime - 1;
     },
     increaseSerie() {
       if (!self.isRest) {
@@ -98,30 +177,20 @@ export const SessionStore = types
         self.currentSerie += 1;
       }
       self.isRest = !self.isRest;
-      self.resetTime(false);
+      self.changeState();
     },
     increaseCycle() {
       if (self.currentCycle === self.cycle) {
         self.setPause();
-        if (self.isTimeToFinish()) {
+        if (self.isTimeToFinish) {
           self.finishWorkout();
         }
       } else {
         self.currentCycle += 1;
       }
     },
-    isTimeToFinish() {
-      if (
-        self.serie == self.currentSerie &&
-        self.cycle == self.currentCycle &&
-        self.timePased == self.timeCompleteWorkout
-      ) {
-        return true;
-      }
-      return false;
-    },
     finishWorkout() {
-      self.setStop();
+      self.resetState();
     },
     updateTraining(newValue) {
       self.training = Number(newValue);
@@ -143,23 +212,6 @@ export const SessionStore = types
     },
   }));
 
-const initialState = {
-  serie: 2,
-  currentSerie: 0,
-  cycle: 1,
-  currentCycle: 0,
-  training: 3, // seconds for training
-  rest: 2, // seconds for resting
-  restBetween: 2, // seconds for resting
-  startCountdown: 3, // seconds for resting
-  isPlay: false,
-  isStop: true,
-  isRest: false,
-  inProgress: false,
-  timePased: 0,
-};
-initialState.currentTime = initialState.training;
-initialState.timeCompleteWorkout =
-  (initialState.training + initialState.rest) * initialState.serie * initialState.cycle;
+const initialState = getInitialState();
 
 export { initialState };

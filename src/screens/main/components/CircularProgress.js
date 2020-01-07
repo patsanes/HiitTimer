@@ -14,6 +14,7 @@ const CircularProgress = props => {
       backgroundColor={backgroundColor}
       lineCap="round"
       rotation={0}
+      style={{ transform: [{ scaleX: -1 }] }}
     />
   );
 };

@@ -3,7 +3,7 @@ import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/utils/Icons';
 import { fontSizes, colors } from '../../../utils/theme';
-import { HModal } from './index';
+import HModal from './HModal';
 
 const styles = StyleSheet.create({
   container: {

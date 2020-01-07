@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "run-ios": "yarn react-native run-ios",
+    "run-ios": "yarn react-native run-ios --simulator='iPhone 11'",
     "run-android": "yarn react-native run-android",
     "info": "yarn react-native info",
     "test": "jest --detectOpenHandles",

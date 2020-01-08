@@ -94,6 +94,7 @@ const Congrats = props => {
     </React.Fragment>
   );
 };
+export default Congrats;
 
 Congrats.propTypes = {
   training: PropTypes.number.isRequired,
@@ -102,4 +103,3 @@ Congrats.propTypes = {
   serie: PropTypes.number.isRequired,
   endTime: PropTypes.string.isRequired,
 };
-export default Congrats;

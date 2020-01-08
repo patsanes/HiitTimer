@@ -7,26 +7,26 @@ import { goToHome } from 'HiitTimer/src/navigation/actions';
 import styles from './styles';
 import { SettingsSpace, InfoSpace } from './components';
 
-export default class ConfigScreen extends React.Component {
-  render() {
-    const { navigation } = this.props;
-    const { dispatch } = navigation;
-    const onPress = () => dispatch(goToHome());
-    return (
-      <BackgroundGradient isRest={false}>
-        <View style={styles.container}>
-          <View style={styles.top}>{<Header onPress={onPress} />}</View>
-          <View style={styles.middle}>
-            <SettingsSpace />
-          </View>
-          <View style={styles.bottom}>
-            <InfoSpace />
-          </View>
+const ConfigScreen = props => {
+  const { navigation } = props;
+  const { dispatch } = navigation;
+  const onPress = () => dispatch(goToHome());
+  return (
+    <BackgroundGradient isRest={false}>
+      <View style={styles.container}>
+        <View style={styles.top}>{<Header onPress={onPress} />}</View>
+        <View style={styles.middle}>
+          <SettingsSpace />
         </View>
-      </BackgroundGradient>
-    );
-  }
-}
+        <View style={styles.bottom}>
+          <InfoSpace />
+        </View>
+      </View>
+    </BackgroundGradient>
+  );
+};
+
+export default ConfigScreen;
 
 ConfigScreen.propTypes = {
   navigation: PropTypes.object.isRequired,

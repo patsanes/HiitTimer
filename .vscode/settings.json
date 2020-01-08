@@ -6,5 +6,8 @@
   // available through eslint plugin in vscode
   "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
-  "eslint.packageManager": "yarn"
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }

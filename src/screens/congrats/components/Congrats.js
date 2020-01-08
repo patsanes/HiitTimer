@@ -50,18 +50,22 @@ const Congrats = props => {
   const details = [
     {
       name: I18N.countdownLabel,
+      icon: I18N.iconCountdownLabel,
       data: training,
     },
     {
       name: I18N.restLabel,
+      icon: I18N.iconRestLabel,
       data: rest,
     },
     {
       name: I18N.cycleLabel,
+      icon: I18N.iconCycleLabel,
       data: cycle,
     },
     {
       name: I18N.serieLabel,
+      icon: I18N.iconSerieLabel,
       data: serie,
     },
   ];
@@ -73,7 +77,7 @@ const Congrats = props => {
           <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
             {details.map((item, index) => (
               <View key={item.name} label={item} value={item} style={styles.cardItem}>
-                <Icons name={item.name} />
+                <Icons name={item.icon} />
                 <Text key={index.id} style={styles.text}>
                   {item.name}: {item.data}
                 </Text>

@@ -21,6 +21,7 @@ const iconsSettings = {
   spinner: { name: 'spinner', Icon: IconFontAwesome },
   timer: { name: 'ios-timer', Icon: IconIonicons },
   stopwatch: { name: 'stopwatch', Icon: IconEntypo },
+  chevron: { name: 'chevron-up', Icon: IconEntypo },
 };
 
 const Icons = ({ name: iconName, size: sizeIcon, color: colorIcon }) => {

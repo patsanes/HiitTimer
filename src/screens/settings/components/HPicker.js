@@ -62,7 +62,7 @@ export default class HPicker extends Component {
             style={styles.touch}
           >
             <View style={styles.valueContainer}>
-              <Icons name={iconName || placeholder} />
+              <Icons name={iconName} />
               <Text style={styles.headerValue}>{placeholder}</Text>
               <Text style={styles.value}>{selectedValue} s </Text>
             </View>

@@ -45,7 +45,7 @@ export default class HPicker extends Component {
         <View style={styles.modalContent}>
           <View style={styles.inner}>
             <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
-              <Icons name="chevron-up" size={30} />
+              <Icons name="chevron" size={30} />
               <Text style={styles.modalTitleText}>{placeholder}</Text>
             </TouchableOpacity>
             <View style={styles.border} />

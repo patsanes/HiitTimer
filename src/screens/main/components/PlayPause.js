@@ -2,21 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { ButtonTimer } from 'HiitTimer/src/components';
+import { colors } from 'HiitTimer/src/utils/theme';
+
 import I18N from 'HiitTimer/src/lenguage';
 
 const styles = StyleSheet.create({
   container: { display: 'flex', flex: 1, flexDirection: 'row' },
   left: {
     flex: 3,
-    borderColor: 'green',
+    borderColor: colors.green,
   },
   center: {
     flex: 4,
-    borderColor: 'red',
+    borderColor: colors.red,
   },
   right: {
     flex: 3,
-    borderColor: 'green',
+    borderColor: colors.green,
   },
 });
 export default class PlayPause extends React.PureComponent {

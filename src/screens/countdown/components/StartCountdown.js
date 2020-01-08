@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { fontSizes, fontFamilies, colors } from 'HiitTimer/src/utils/theme';
+import { fontSizes, fontFamilies, colors, fontWeight } from 'HiitTimer/src/utils/theme';
 
 
 const styles = StyleSheet.create({
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.xxxxLarge,
     position: 'absolute',
     fontFamily: fontFamilies.leagueGothic,
-    fontWeight: 'bold',
+    fontWeight: fontWeight.bold,
     color: colors.neutral,
     alignSelf: 'center',
   },

@@ -25,8 +25,12 @@ export const colors = {
 
   restBlue: '#6DD5FA',
   progressPink: '#BB377D',
+  skyAnimated: '#00e0ff',
+  greyAnimated: '#3d5875',
 
   transparent: 'transparent',
+  red: 'red',
+  green: 'green',
 };
 
 // https://www.w3schools.com/cssref/pr_font_font-size.asp
@@ -49,11 +53,14 @@ export const fontFamilies = {
   montserrat: 'Montserrat-Light',
 };
 
+export const fontWeight = {
+  bold: 'bold',
+};
+
 export const space = {
   jumbo: 120,
-
   xxLarge: 30,
-  //   xLarge: 20,
+  xLarge: 20,
   large: 15,
   medium: 10,
   small: 8,

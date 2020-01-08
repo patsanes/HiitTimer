@@ -1,4 +1,6 @@
 import { StyleSheet } from 'react-native';
+import { space } from 'HiitTimer/src/utils/theme';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -21,9 +23,9 @@ const styles = StyleSheet.create({
   },
   linearGradient: {
     flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
+    paddingLeft: space.large,
+    paddingRight: space.large,
+    borderRadius: space.xSmall,
   },
 });
 

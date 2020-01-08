@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Modal, Picker, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/components/Icons';
-import { fontSizes, colors } from 'HiitTimer/src/utils/theme';
+import { fontSizes, colors, fontWeight, space } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   modalContent: {
@@ -15,16 +15,14 @@ const styles = StyleSheet.create({
   inner: {
     opacity: 0.98,
     backgroundColor: colors.secondaryLight,
-    borderRadius: 20,
-    // borderWidth: 1,
+    borderRadius: space.xLarge,
   },
   modalTitle: {
     alignItems: 'center',
   },
   modalTitleText: {
     fontSize: fontSizes.small,
-    // color: colors.neutral,
-    fontWeight: 'bold',
+    fontWeight: fontWeight.bold,
     alignSelf: 'center',
   },
 });

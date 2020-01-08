@@ -11,6 +11,7 @@ class PickerCycleContainer extends React.Component {
     const items = Array.from({ length: 20 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
+        iconName="cycle"
         placeholder="Cycle"
         selectedValue={cycle.toString()}
         onValueChange={updateCycle}

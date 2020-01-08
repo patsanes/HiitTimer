@@ -11,6 +11,7 @@ class PickerStartCountdownContainer extends React.Component {
     const items = Array.from({ length: 10 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
+        iconName="stopwatch"
         placeholder="Start countdown"
         selectedValue={startCountdown.toString()}
         onValueChange={updateStartCountdown}

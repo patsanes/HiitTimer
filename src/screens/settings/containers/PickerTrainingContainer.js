@@ -11,6 +11,7 @@ class PickerTrainingContainer extends React.Component {
     const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
+        iconName="fitness"
         placeholder="Countdown"
         selectedValue={training.toString()}
         onValueChange={updateTraining}

@@ -11,6 +11,7 @@ class PickerRestBetweenCyclesContainer extends React.Component {
     const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
+        iconName="timer"
         placeholder="Rest between cycles"
         selectedValue={restBetween.toString()}
         onValueChange={updateRestBetween}

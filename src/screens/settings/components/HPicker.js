@@ -48,7 +48,7 @@ export default class HPicker extends Component {
   };
 
   render() {
-    const { placeholder, selectedValue, onValueChange, items } = this.props;
+    const { iconName, placeholder, selectedValue, onValueChange, items } = this.props;
     const { isVisiblePicker, modalVisible } = this.state;
 
     return (
@@ -62,7 +62,7 @@ export default class HPicker extends Component {
             style={styles.touch}
           >
             <View style={styles.valueContainer}>
-              <Icons name={placeholder} />
+              <Icons name={iconName || placeholder} />
               <Text style={styles.headerValue}>{placeholder}</Text>
               <Text style={styles.value}>{selectedValue} s </Text>
             </View>
@@ -83,6 +83,7 @@ export default class HPicker extends Component {
 }
 
 HPicker.propTypes = {
+  iconName: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
   selectedValue: PropTypes.string.isRequired,
   onValueChange: PropTypes.func.isRequired,

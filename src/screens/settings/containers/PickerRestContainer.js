@@ -11,6 +11,7 @@ class PickerRestContainer extends React.Component {
     const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
+        iconName="rest"
         placeholder="Rest"
         selectedValue={rest.toString()}
         onValueChange={updateRest}

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { fontSizes, fontFamilies, colors, space } from '../../utils/theme';
+import { fontSizes, fontFamilies, colors, space } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   container: {

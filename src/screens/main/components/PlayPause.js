@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import { ButtonTimer } from '../../../components';
+import { ButtonTimer } from 'HiitTimer/src/components';
 
 const styles = StyleSheet.create({
   container: { display: 'flex', flex: 1, flexDirection: 'row' },

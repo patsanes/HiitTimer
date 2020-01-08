@@ -2,8 +2,8 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
+import { fontSizes, fontFamilies, colors } from 'HiitTimer/src/utils/theme';
 import { ProgressContainer, TimerMachineContainer } from '../containers';
-import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   titleText: {

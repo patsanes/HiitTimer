@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import CircularProgressContainer from './CircularProgressContainer';
-import { colors } from '../../../utils/theme';
+import { colors } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   container: {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Modal, Picker, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import Icons from 'HiitTimer/src/utils/Icons';
-import { fontSizes, colors } from '../../../utils/theme';
+import Icons from 'HiitTimer/src/components/Icons';
+import { fontSizes, colors } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   modalContent: {

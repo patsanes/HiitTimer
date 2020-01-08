@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { ButtonConfig } from '../../../components';
-import { fontSizes, fontFamilies, colors, space } from '../../../utils/theme';
+import { fontSizes, fontFamilies, colors, space } from 'HiitTimer/src/utils/theme';
+import { ButtonConfig } from 'HiitTimer/src/components';
 
 const styles = StyleSheet.create({
   button: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
+import { fontSizes, fontFamilies, colors } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   baseText: {

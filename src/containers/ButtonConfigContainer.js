@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
-
-import { ButtonConfig } from '../components';
-import { goToSettings } from '../navigation/actions';
+import { ButtonConfig } from 'HiitTimer/src/components';
+import { goToSettings } from 'HiitTimer/src/navigation/actions';
 
 class ButtonConfigContainer extends React.Component {
   render() {

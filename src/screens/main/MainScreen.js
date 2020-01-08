@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import firebase from 'react-native-firebase';
 
 import { observer, inject } from 'mobx-react';
+import { BackgroundGradient } from 'HiitTimer/src/components';
+import { goToCountdown, goToCongrats } from 'HiitTimer/src/navigation/actions';
 import { PlayPauseContainer } from './containers';
-import { BackgroundGradient } from '../../components';
 import { WorkoutSpace } from './components';
-import { goToCountdown, goToCongrats } from '../../navigation/actions';
 
 import styles from './styles';
 

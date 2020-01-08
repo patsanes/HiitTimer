@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
+import { UselessTextInput } from 'HiitTimer/src/components';
 
-import { UselessTextInput } from '../components';
 
 class TextInputCountDownContainer extends React.Component {
   render() {

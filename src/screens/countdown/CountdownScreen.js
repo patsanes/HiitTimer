@@ -3,10 +3,9 @@ import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
-
+import { colors } from 'HiitTimer/src/utils/theme';
 import { StartCountdownContainer } from './containers';
 import styles from './styles';
-import { colors } from '../../utils/theme';
 
 class CountdownScreen extends React.Component {
   goToHomeFromCountdown = () => {

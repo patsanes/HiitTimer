@@ -1,14 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from 'prop-types';
-
 import LottieView from 'lottie-react-native';
-import styles from './styles';
-import { BackgroundGradient } from '../../components';
+import { BackgroundGradient } from 'HiitTimer/src/components';
+import { goToHome } from 'HiitTimer/src/navigation/actions';
 import { CongratsContainer } from './containers';
+import styles from './styles';
 // import { source } from '../../../assets/animations/check_orange.json';
 
-import { goToHome } from '../../navigation/actions';
 
 export default class CongratsScreen extends React.Component {
   render() {
@@ -25,7 +24,7 @@ export default class CongratsScreen extends React.Component {
           <View style={styles.bottom}>
             <LottieView
               // eslint-disable-next-line global-require
-              source={require('../../../assets/animations/check_orange.json')}
+              source={require('HiitTimer/assets/animations/check_orange.json')}
               autoPlay
               loop={false}
             />

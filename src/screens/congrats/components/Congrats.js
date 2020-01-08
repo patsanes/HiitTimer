@@ -2,8 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
-import Icons from 'HiitTimer/src/utils/Icons';
-import { fontSizes, fontFamilies, colors, space } from '../../../utils/theme';
+import Icons from 'HiitTimer/src/components/Icons';
+import { fontSizes, fontFamilies, colors, space } from 'HiitTimer/src/utils/theme';
+
 
 const styles = StyleSheet.create({
   container: {

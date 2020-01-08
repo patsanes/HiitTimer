@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
-import { colors, fontSizes, space } from '../../../utils/theme';
+import { colors, fontSizes, space } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   iconContainer: {

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { TextInput, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { fontSizes, colors, space } from '../utils/theme';
+import { colors, fontSizes, space } from 'HiitTimer/src/utils/theme';
+
 
 const styles = StyleSheet.create({
   text: {

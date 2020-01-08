@@ -4,7 +4,6 @@ export const { height, width } = Dimensions.get('window');
 
 // https://css-tricks.com/what-do-you-name-color-variables/
 export const colors = {
-  //   primary: 'black',
   primaryLight: 'white',
   primaryDark: '#ECE9E6',
 
@@ -12,12 +11,7 @@ export const colors = {
   secondary: 'grey',
   secondaryDark: '#373B44',
 
-  //   neutralDarker: 'black',
-  //   neutrayDark: 'black',
   neutral: 'black',
-  //   neutralLight: 'black',
-  //   neutralLighter: 'black',
-  //   neutralLightest: 'black',
   countdownYellow: '#FDC830',
   countdownOrange: '#F37335',
   restGreen: '#38ef7d',

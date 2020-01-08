@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import { colors, fontSizes, space } from 'HiitTimer/src/utils/theme';
+import I18N from 'HiitTimer/src/lenguage';
 
 const styles = StyleSheet.create({
   iconContainer: {
@@ -22,12 +23,7 @@ const InfoSpace = () => {
       <View style={styles.iconContainer}>
         <Icon name="info" size={fontSizes.xSmall} color={colors.secondaryDark} />
       </View>
-      <Text>
-        Pequenez lo lo abonados en el zorrilla contento. Paz sus pueblo ocioso restos dia caidas
-        una. El voluntad amenazas un debieran so. Del adulterio tio amenazaba templados aca
-        envolvian. Le adulterino abofeteado un te reintegrar levantarse. Con gente suo fuego veces
-        pecho comia puede.
-      </Text>
+      <Text> {I18N.infoSpaceText}</Text>
     </React.Fragment>
   );
 };

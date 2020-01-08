@@ -4,7 +4,7 @@ import { Card } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/components/Icons';
 import { fontSizes, fontFamilies, colors, space } from 'HiitTimer/src/utils/theme';
-
+import I18N from 'HiitTimer/src/lenguage';
 
 const styles = StyleSheet.create({
   container: {
@@ -49,19 +49,19 @@ const Congrats = props => {
   const { training, rest, cycle, serie, endTime } = props;
   const details = [
     {
-      name: 'Countdown',
+      name: I18N.countdownLabel,
       data: training,
     },
     {
-      name: 'Rest',
+      name: I18N.restLabel,
       data: rest,
     },
     {
-      name: 'Cycle',
+      name: I18N.cycleLabel,
       data: cycle,
     },
     {
-      name: 'Serie',
+      name: I18N.serieLabel,
       data: serie,
     },
   ];
@@ -83,7 +83,7 @@ const Congrats = props => {
         </View>
         <View style={styles.containerText}>
           <Text style={styles.textCompletedIn}>
-            You have completed a session in {endTime} time.
+            {I18N.completedSessionInLabel} {endTime} {I18N.timeLabel}.
           </Text>
         </View>
       </View>

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
 import { ButtonTimer } from 'HiitTimer/src/components';
+import I18N from 'HiitTimer/src/lenguage';
 
 const styles = StyleSheet.create({
   container: { display: 'flex', flex: 1, flexDirection: 'row' },
@@ -35,7 +36,7 @@ export default class PlayPause extends React.PureComponent {
           <View style={styles.right}>
             <ButtonTimer
               disabled={!isPlay}
-              name="stop"
+              name={I18N.stopLabel}
               onPress={onStop}
               setInProgress={setInProgress}
             />

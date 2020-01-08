@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer, inject } from 'mobx-react';
-
+import I18N from 'HiitTimer/src/lenguage';
 import { HPicker } from '../components';
 
 class PickerTrainingContainer extends React.Component {
@@ -11,8 +11,8 @@ class PickerTrainingContainer extends React.Component {
     const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
     return (
       <HPicker
-        iconName="fitness"
-        placeholder="Countdown"
+        iconName={I18N.iconCountdownLabel}
+        placeholder={I18N.countdownLabel}
         selectedValue={training.toString()}
         onValueChange={updateTraining}
         items={items}

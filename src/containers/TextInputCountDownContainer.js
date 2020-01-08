@@ -1,19 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { UselessTextInput } from 'HiitTimer/src/components';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 
+const TextInputCountDownContainer = observer(() => {
+  const { session } = useStores();
+  const { updateTraining, training } = session;
+  return <UselessTextInput placeholder="Countdown" value={training} onChange={updateTraining} />;
+});
 
-class TextInputCountDownContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { updateTraining, training } = session;
-    return <UselessTextInput placeholder="Countdown" value={training} onChange={updateTraining} />;
-  }
-}
-
-TextInputCountDownContainer.propTypes = {
-  session: PropTypes.object.isRequired,
-};
-
-export default inject('session')(observer(TextInputCountDownContainer));
+export default TextInputCountDownContainer;

@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { View, AppState } from 'react-native';
 import PropTypes from 'prop-types';
 import firebase from 'react-native-firebase';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { BackgroundGradient } from 'HiitTimer/src/components';
 import { goToCountdown, goToCongrats } from 'HiitTimer/src/navigation/actions';
 import { PlayPauseContainer } from './containers';
@@ -11,8 +12,9 @@ import { WorkoutSpace } from './components';
 
 import styles from './styles';
 
-const MainScreen = props => {
-  const { session, navigation } = props;
+const MainScreen = observer(props => {
+  const { session } = useStores();
+  const { navigation } = props;
   const { dispatch } = navigation;
   const { isRest } = session;
 
@@ -86,11 +88,10 @@ const MainScreen = props => {
       </BackgroundGradient>
     </View>
   );
-};
+});
 
 MainScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
-  session: PropTypes.object.isRequired,
 };
 
-export default inject('session')(observer(MainScreen));
+export default MainScreen;

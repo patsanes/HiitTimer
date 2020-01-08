@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import I18N from 'HiitTimer/src/lenguage';
 
 import { HPicker } from '../components';
 
-const PickerCycleContainer = props => {
-  const { session } = props;
+const PickerCycleContainer = observer(() => {
+  const { session } = useStores();
   const { updateCycle, cycle } = session;
   const items = Array.from({ length: 20 }, (v, i) => (i + 1).toString());
   return (
@@ -18,10 +18,6 @@ const PickerCycleContainer = props => {
       items={items}
     />
   );
-};
+});
 
-PickerCycleContainer.propTypes = {
-  session: PropTypes.object.isRequired,
-};
-
-export default inject('session')(observer(PickerCycleContainer));
+export default PickerCycleContainer;

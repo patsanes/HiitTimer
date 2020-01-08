@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
+
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import TimerMachine from 'react-timer-machine';
 
 momentDurationFormatSetup(moment);
 
-const TimerMachineContainer = props => {
-  const { session, _onFinish } = props;
+const TimerMachineContainer = observer(props => {
+  const { session } = useStores();
+  const { _onFinish } = props;
   const {
     isPlay,
     isStop,
@@ -53,12 +56,10 @@ const TimerMachineContainer = props => {
       )}
     </>
   );
-};
+});
 
 TimerMachineContainer.propTypes = {
-  session: PropTypes.object.isRequired,
-  // count: PropTypes.number.isRequired,
   _onFinish: PropTypes.func.isRequired,
 };
 
-export default inject('session')(observer(TimerMachineContainer));
+export default TimerMachineContainer;

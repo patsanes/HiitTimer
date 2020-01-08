@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import { Congrats } from '../components';
 
-const CongratsContainer = props => {
-  const { session, onPress } = props;
+const CongratsContainer = observer(props => {
+  const { session } = useStores();
+  const { onPress } = props;
   const { training, rest, cycle, serie, endTime } = session;
   return (
     <Congrats
@@ -16,11 +18,10 @@ const CongratsContainer = props => {
       onPress={onPress}
     />
   );
-};
+});
 
 CongratsContainer.propTypes = {
-  session: PropTypes.object.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
-export default inject('session')(observer(CongratsContainer));
+export default CongratsContainer;

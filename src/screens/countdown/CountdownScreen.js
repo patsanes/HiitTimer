@@ -2,14 +2,17 @@ import React from 'react';
 import { View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { colors } from 'HiitTimer/src/utils/theme';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import { StartCountdownContainer } from './containers';
 import styles from './styles';
 
-const CountdownScreen = props => {
+const CountdownScreen = observer(props => {
+  const { session } = useStores();
+
   const goToHomeFromCountdown = () => {
-    const { navigation, session } = props;
+    const { navigation } = props;
     const { goBack } = navigation;
     const { setInProgress, setPlay } = session;
     setInProgress();
@@ -32,11 +35,10 @@ const CountdownScreen = props => {
       </LinearGradient>
     </View>
   );
-};
+});
 
 CountdownScreen.propTypes = {
   navigation: PropTypes.object.isRequired,
-  session: PropTypes.object.isRequired,
 };
 
-export default inject('session')(observer(CountdownScreen));
+export default CountdownScreen;

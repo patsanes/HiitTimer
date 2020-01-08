@@ -2,9 +2,10 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { colors } from 'HiitTimer/src/utils/theme';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import { Countdown } from '../components';
 
-const CountdownContainer = props => {
+const CountdownContainer = observer(props => {
   const onFinish = () => {
     const {
       session: { timeCompleteWorkout, timePased, setStop },
@@ -17,7 +18,7 @@ const CountdownContainer = props => {
     }
   };
 
-  const { session } = props;
+  const { session } = useStores();
   const {
     isRest,
     timePasedWorkout,
@@ -36,11 +37,10 @@ const CountdownContainer = props => {
       // playSound={playSound}
     />
   );
-};
+});
 
 CountdownContainer.propTypes = {
-  session: PropTypes.object.isRequired,
   goToCongratsFromHome: PropTypes.func.isRequired,
 };
 
-export default inject('session')(observer(CountdownContainer));
+export default CountdownContainer;

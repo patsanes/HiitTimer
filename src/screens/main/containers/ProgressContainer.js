@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
+import { colors } from 'HiitTimer/src/utils/theme';
 import CircularProgressContainer from './CircularProgressContainer';
-import { colors } from '../../../utils/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,33 +12,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-class ProgressContainer extends React.Component {
-  render() {
-    const { fill, fillComplete, tintColor } = this.props;
-    return (
-      <>
-        {/* Countdown workout */}
-        <View style={styles.container}>
-          <CircularProgressContainer
-            size={350}
-            fill={fillComplete}
-            tintColor={colors.progressPink}
-            backgroundColor={colors.secondary}
-          />
-        </View>
-        {/* Complete workout */}
-        <View style={styles.container}>
-          <CircularProgressContainer
-            size={320}
-            fill={fill}
-            tintColor={tintColor}
-            backgroundColor={colors.secondaryLight}
-          />
-        </View>
-      </>
-    );
-  }
-}
+const ProgressContainer = props => {
+  const { fill, fillComplete, tintColor } = props;
+  return (
+    <>
+      {/* Countdown workout */}
+      <View style={styles.container}>
+        <CircularProgressContainer
+          size={350}
+          fill={fillComplete}
+          tintColor={colors.progressPink}
+          backgroundColor={colors.secondary}
+        />
+      </View>
+      {/* Complete workout */}
+      <View style={styles.container}>
+        <CircularProgressContainer
+          size={320}
+          fill={fill}
+          tintColor={tintColor}
+          backgroundColor={colors.secondaryLight}
+        />
+      </View>
+    </>
+  );
+};
 
 ProgressContainer.propTypes = {
   fill: PropTypes.number.isRequired,

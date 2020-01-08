@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Modal, Picker, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
-import Icons from 'HiitTimer/src/utils/Icons';
-import { fontSizes, colors } from '../../../utils/theme';
+import Icons from 'HiitTimer/src/components/Icons';
+import { fontSizes, colors, fontWeight, space } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   modalContent: {
@@ -15,51 +15,41 @@ const styles = StyleSheet.create({
   inner: {
     opacity: 0.98,
     backgroundColor: colors.secondaryLight,
-    borderRadius: 20,
-    // borderWidth: 1,
+    borderRadius: space.xLarge,
   },
   modalTitle: {
     alignItems: 'center',
   },
   modalTitleText: {
     fontSize: fontSizes.small,
-    // color: colors.neutral,
-    fontWeight: 'bold',
+    fontWeight: fontWeight.bold,
     alignSelf: 'center',
   },
 });
 
-export default class HPicker extends Component {
-  render() {
-    const {
-      modalVisible,
-      togglePicker,
-      placeholder,
-      selectedValue,
-      onValueChange,
-      items,
-    } = this.props;
-
-    return (
-      <Modal animationType="slide" transparent visible={modalVisible}>
-        <View style={styles.modalContent}>
-          <View style={styles.inner}>
-            <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
-              <Icons name="chevron-up" size={30} />
-              <Text style={styles.modalTitleText}>{placeholder}</Text>
-            </TouchableOpacity>
-            <View style={styles.border} />
-            <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-              {items.map((item, index) => (
-                <Picker.Item key={index.id} label={item} value={item} />
-              ))}
-            </Picker>
-          </View>
+const HPicker = props => {
+  const { modalVisible, togglePicker, placeholder, selectedValue, onValueChange, items } = props;
+  return (
+    <Modal animationType="slide" transparent visible={modalVisible}>
+      <View style={styles.modalContent}>
+        <View style={styles.inner}>
+          <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
+            <Icons name="chevron" size={30} />
+            <Text style={styles.modalTitleText}>{placeholder}</Text>
+          </TouchableOpacity>
+          <View style={styles.border} />
+          <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
+            {items.map((item, index) => (
+              <Picker.Item key={index.id} label={item} value={item} />
+            ))}
+          </Picker>
         </View>
-      </Modal>
-    );
-  }
-}
+      </View>
+    </Modal>
+  );
+};
+
+export default HPicker;
 
 HPicker.propTypes = {
   placeholder: PropTypes.string.isRequired,

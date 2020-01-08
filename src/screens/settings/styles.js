@@ -1,7 +1,4 @@
 import { StyleSheet } from 'react-native';
-// import { space } from '../../utils/theme';
-// import { space } from 'HiitTimer/src/utils/theme';
-// import { space } from 'src/utils/theme';
 
 const styles = StyleSheet.create({
   container: {

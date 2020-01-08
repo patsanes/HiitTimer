@@ -1,53 +1,46 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
-
 import { colors } from 'HiitTimer/src/utils/theme';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import { Countdown } from '../components';
 
-class CountdownContainer extends React.Component {
-  onFinish = () => {
+const CountdownContainer = observer(props => {
+  const onFinish = () => {
     const {
       session: { timeCompleteWorkout, timePased, setStop },
       goToCongratsFromHome,
       // Reset progress
-    } = this.props;
+    } = props;
     if (timeCompleteWorkout === timePased) {
       setStop();
       goToCongratsFromHome();
     }
   };
 
-  render() {
-    const { session } = this.props;
-    const {
-      isRest,
-      timePasedWorkout,
-      timePasedPerSerie,
-      // playSound,
-    } = session;
+  const { session } = useStores();
+  const {
+    isRest,
+    timePasedWorkout,
+    timePasedPerSerie,
+    // playSound,
+  } = session;
 
-    const currentCircleColor = isRest ? colors.restGreen : colors.restBlue;
-    // const count = isRest ? rest : training;
-    // console.log({ currentTime, count });
+  const currentCircleColor = isRest ? colors.restGreen : colors.restBlue;
 
-    // console.log({ timePasedPerSerie, timePasedWorkout });
-
-    return (
-      <Countdown
-        currentCircleColor={currentCircleColor}
-        fill={timePasedPerSerie}
-        fillComplete={timePasedWorkout}
-        _onFinish={this.onFinish}
-        // playSound={playSound}
-      />
-    );
-  }
-}
+  return (
+    <Countdown
+      currentCircleColor={currentCircleColor}
+      fill={timePasedPerSerie}
+      fillComplete={timePasedWorkout}
+      _onFinish={onFinish}
+      // playSound={playSound}
+    />
+  );
+});
 
 CountdownContainer.propTypes = {
-  session: PropTypes.object.isRequired,
   goToCongratsFromHome: PropTypes.func.isRequired,
 };
 
-export default inject('session')(observer(CountdownContainer));
+export default CountdownContainer;

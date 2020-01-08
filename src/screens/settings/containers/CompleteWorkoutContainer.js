@@ -1,28 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
+import I18N from 'HiitTimer/src/lenguage';
+import { observer } from 'mobx-react';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 
-import { observer, inject } from 'mobx-react';
-// import moment from 'moment';
-// import momentDurationFormatSetup from 'moment-duration-format';
+const CompleteWorkoutContainer = observer(() => {
+  const { session } = useStores;
+  const { endTime } = session;
+  return (
+    <View>
+      <Text>
+        {I18N.completeWorkoutTime}
+        {endTime}.
+      </Text>
+    </View>
+  );
+});
 
-// momentDurationFormatSetup(moment);
-
-class CompleteWorkoutContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { endTime } = session;
-    return (
-      <View>
-        <Text>Complete workout time: {endTime}.</Text>
-      </View>
-    );
-  }
-}
-
-CompleteWorkoutContainer.propTypes = {
-  session: PropTypes.object.isRequired,
-};
-
-// decorators
-export default inject('session')(observer(CompleteWorkoutContainer));
+export default CompleteWorkoutContainer;

@@ -4,7 +4,6 @@ export const { height, width } = Dimensions.get('window');
 
 // https://css-tricks.com/what-do-you-name-color-variables/
 export const colors = {
-  //   primary: 'black',
   primaryLight: 'white',
   primaryDark: '#ECE9E6',
 
@@ -12,12 +11,7 @@ export const colors = {
   secondary: 'grey',
   secondaryDark: '#373B44',
 
-  //   neutralDarker: 'black',
-  //   neutrayDark: 'black',
   neutral: 'black',
-  //   neutralLight: 'black',
-  //   neutralLighter: 'black',
-  //   neutralLightest: 'black',
   countdownYellow: '#FDC830',
   countdownOrange: '#F37335',
   restGreen: '#38ef7d',
@@ -25,8 +19,12 @@ export const colors = {
 
   restBlue: '#6DD5FA',
   progressPink: '#BB377D',
+  skyAnimated: '#00e0ff',
+  greyAnimated: '#3d5875',
 
   transparent: 'transparent',
+  red: 'red',
+  green: 'green',
 };
 
 // https://www.w3schools.com/cssref/pr_font_font-size.asp
@@ -49,11 +47,14 @@ export const fontFamilies = {
   montserrat: 'Montserrat-Light',
 };
 
+export const fontWeight = {
+  bold: 'bold',
+};
+
 export const space = {
   jumbo: 120,
-
   xxLarge: 30,
-  //   xLarge: 20,
+  xLarge: 20,
   large: 15,
   medium: 10,
   small: 8,

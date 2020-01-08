@@ -1,50 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet } from 'react-native';
-import { ButtonTimer } from '../../../components';
+import { ButtonTimer } from 'HiitTimer/src/components';
+import { colors } from 'HiitTimer/src/utils/theme';
+
+import I18N from 'HiitTimer/src/lenguage';
 
 const styles = StyleSheet.create({
   container: { display: 'flex', flex: 1, flexDirection: 'row' },
   left: {
     flex: 3,
-    borderColor: 'green',
+    borderColor: colors.green,
   },
   center: {
     flex: 4,
-    borderColor: 'red',
+    borderColor: colors.red,
   },
   right: {
     flex: 3,
-    borderColor: 'green',
+    borderColor: colors.green,
   },
 });
-export default class PlayPause extends React.PureComponent {
-  render() {
-    const { isPlay, onPlay, onPause, onStop, setInProgress } = this.props;
-    return (
-      <>
-        <View style={styles.container}>
-          <View style={styles.left} />
-          <View style={styles.center}>
-            <ButtonTimer
-              disabled={false}
-              name={isPlay ? 'pause' : 'play'}
-              onPress={isPlay ? onPause : onPlay}
-            />
-          </View>
-          <View style={styles.right}>
-            <ButtonTimer
-              disabled={!isPlay}
-              name="stop"
-              onPress={onStop}
-              setInProgress={setInProgress}
-            />
-          </View>
+
+const PlayPause = props => {
+  const { isPlay, onPlay, onPause, onStop, setInProgress } = props;
+  return (
+    <>
+      <View style={styles.container}>
+        <View style={styles.left} />
+        <View style={styles.center}>
+          <ButtonTimer
+            disabled={false}
+            name={isPlay ? 'pause' : 'play'}
+            onPress={isPlay ? onPause : onPlay}
+          />
         </View>
-      </>
-    );
-  }
-}
+        <View style={styles.right}>
+          <ButtonTimer
+            disabled={!isPlay}
+            name={I18N.stopLabel}
+            onPress={onStop}
+            setInProgress={setInProgress}
+          />
+        </View>
+      </View>
+    </>
+  );
+};
+
+export default PlayPause;
 
 PlayPause.propTypes = {
   isPlay: PropTypes.bool.isRequired,

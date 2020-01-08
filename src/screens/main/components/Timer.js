@@ -1,17 +1,12 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-
-// import moment from 'moment';
-// import momentDurationFormatSetup from 'moment-duration-format';
 import {
   CountdownContainer,
   LapCycleContainer,
   LapSerieContainer,
   TimeElapsedContainer,
 } from '../containers';
-
-// momentDurationFormatSetup(moment);
 
 const styles = StyleSheet.create({
   container: {
@@ -49,7 +44,6 @@ const Timer = props => {
   );
 };
 Timer.propTypes = {
-  // inProgress: PropTypes.bool.isRequired,
   goToCongratsFromHome: PropTypes.func.isRequired,
 };
 

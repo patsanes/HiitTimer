@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { ButtonConfig } from '../../../components';
-import { fontSizes, fontFamilies, colors, space } from '../../../utils/theme';
+import { fontSizes, fontFamilies, colors, space } from 'HiitTimer/src/utils/theme';
+import { ButtonConfig } from 'HiitTimer/src/components';
 
 const styles = StyleSheet.create({
   button: {
@@ -32,22 +32,21 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class ConfigTraining extends React.PureComponent {
-  render() {
-    const { onPress } = this.props;
-    return (
-      <>
-        <View style={styles.topLeft} />
-        <View style={styles.topMiddle}>
-          <Text style={styles.titleText}>HIIT </Text>
-        </View>
-        <View style={styles.topRight}>
-          <ButtonConfig style={styles.button} disabled={false} name="cog" onPress={onPress} />
-        </View>
-      </>
-    );
-  }
-}
+const ConfigTraining = props => {
+  const { onPress } = props;
+  return (
+    <>
+      <View style={styles.topLeft} />
+      <View style={styles.topMiddle}>
+        <Text style={styles.titleText}>HIIT </Text>
+      </View>
+      <View style={styles.topRight}>
+        <ButtonConfig style={styles.button} disabled={false} name="cog" onPress={onPress} />
+      </View>
+    </>
+  );
+};
+export default ConfigTraining;
 
 ConfigTraining.propTypes = {
   onPress: PropTypes.func.isRequired,

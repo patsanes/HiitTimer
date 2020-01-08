@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { fontSizes, fontFamilies, colors } from '../utils/theme';
+import { colors, fontSizes, fontFamilies } from 'HiitTimer/src/utils/theme';
+
 
 const styles = StyleSheet.create({
   title: {

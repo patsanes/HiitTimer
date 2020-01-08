@@ -1,27 +1,23 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
-
+import { observer } from 'mobx-react';
+import { useStores } from 'HiitTimer/src/stores/hooks';
+import I18N from 'HiitTimer/src/lenguage';
 import { HPicker } from '../components';
 
-class PickerTrainingContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { updateTraining, training } = session;
-    const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
-    return (
-      <HPicker
-        placeholder="Countdown"
-        selectedValue={training.toString()}
-        onValueChange={updateTraining}
-        items={items}
-      />
-    );
-  }
-}
+const PickerTrainingContainer = observer(() => {
+  const { session } = useStores();
 
-PickerTrainingContainer.propTypes = {
-  session: PropTypes.object.isRequired,
-};
+  const { updateTraining, training } = session;
+  const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
+  return (
+    <HPicker
+      iconName={I18N.iconCountdownLabel}
+      placeholder={I18N.countdownLabel}
+      selectedValue={training.toString()}
+      onValueChange={updateTraining}
+      items={items}
+    />
+  );
+});
 
-export default inject('session')(observer(PickerTrainingContainer));
+export default PickerTrainingContainer;

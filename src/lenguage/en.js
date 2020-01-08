@@ -1,0 +1,22 @@
+export default {
+  countdownLabel: 'Countdown',
+  iconCountdownLabel: 'fitness',
+  restLabel: 'Rest',
+  iconRestLabel: 'rest',
+  cycleLabel: 'Cycle',
+  iconCycleLabel: 'cycle',
+  cyclesLabel: 'Cycles',
+  serieLabel: 'Serie',
+  iconSerieLabel: 'spinner',
+  seriesLabel: 'Series',
+  stopLabel: 'stop',
+  iconRestBetweenLabel: 'timer',
+  restBetweenCyclesLabel: 'Rest between cycles',
+  completeWorkoutTime: 'Complete workout time: ',
+  startCoundownLabel: 'Start countdown',
+  iconStartCoundownLabel: 'stopwatch',
+  infoSpaceText:
+    'Pequenez lo lo abonados en el zorrilla contento. Paz sus pueblo ocioso restos dia caidas una. El voluntad amenazas un debieran so. Del adulterio tio amenazaba templados aca envolvian. Le adulterino abofeteado un te reintegrar levantarse. Con gente suo fuego veces pecho comia puede.',
+  completedSessionInLabel: 'You have completed a session in ',
+  timeLabel: 'time.',
+};

@@ -1,19 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { observer, inject } from 'mobx-react';
-
+import { observer } from 'mobx-react';
+import { useStores } from 'HiitTimer/src/stores/hooks';
+import I18N from 'HiitTimer/src/lenguage';
 import { Lap } from '../components';
 
-class LapCycleContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { currentCycle, cycle } = session;
-    return <Lap name="Cycles" count={cycle} current={currentCycle} />;
-  }
-}
+const LapCycleContainer = observer(() => {
+  const { session } = useStores();
+  const { currentCycle, cycle } = session;
+  return <Lap name={I18N.cyclesLabel} count={cycle} current={currentCycle} />;
+});
 
-LapCycleContainer.propTypes = {
-  session: PropTypes.object.isRequired,
-};
-
-export default inject('session')(observer(LapCycleContainer));
+export default LapCycleContainer;

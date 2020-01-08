@@ -1,16 +1,17 @@
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import React from 'react';
 import { View } from 'react-native';
+import { space, colors } from 'HiitTimer/src/utils/theme';
 
 const AnimatedCircular = () => {
   return (
     <View>
       <AnimatedCircularProgress
-        size={120}
-        width={15}
+        size={space.jumbo}
+        width={space.large}
         fill={100}
-        tintColor="#00e0ff"
-        backgroundColor="#3d5875"
+        tintColor={colors.skyAnimated}
+        backgroundColor={colors.greyAnimated}
       />
     </View>
   );

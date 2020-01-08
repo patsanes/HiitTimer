@@ -2,7 +2,7 @@ import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '../utils/theme';
+import { colors } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   linearGradient: {

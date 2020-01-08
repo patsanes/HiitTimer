@@ -3,7 +3,6 @@ import moment from 'moment';
 // https://facebook.github.io/react-native/docs/vibration
 import { Vibration } from 'react-native';
 import Sound from 'react-native-sound';
-// import firebase from 'react-native-firebase';
 
 Sound.setCategory('Playback');
 

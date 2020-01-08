@@ -2,7 +2,8 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors, fontSizes, space } from '../utils/theme';
+import { colors, fontSizes, space } from 'HiitTimer/src/utils/theme';
+
 
 const styles = StyleSheet.create({
   button: {

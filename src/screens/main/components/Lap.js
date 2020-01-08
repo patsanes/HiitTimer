@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import { fontSizes, fontFamilies, colors } from '../../../utils/theme';
+import { fontSizes, fontFamilies, colors, fontWeight } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   cycles: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   },
   baseText: {
     fontSize: fontSizes.xSmall,
-    fontWeight: 'bold',
+    fontWeight: fontWeight.bold,
     fontFamily: fontFamilies.leagueGothic,
     color: colors.secondaryDark,
   },

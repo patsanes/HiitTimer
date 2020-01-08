@@ -5,25 +5,25 @@ import IconIonicons from 'react-native-vector-icons/Ionicons';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import PropTypes from 'prop-types';
-import { colors, fontSizes, space } from '../theme';
+import { colors, fontSizes, space } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   iconList: {
     width: space.xxLarge,
     textAlign: 'center',
-    // borderRadius: 15,
-    // borderWidth: 1,
   },
 });
+
 const iconsSettings = {
-  Countdown: { name: 'ios-fitness', Icon: IconIonicons },
-  Rest: { name: 'rest', Icon: IconAntDesign },
-  Cycle: { name: 'cycle', Icon: IconEntypo },
-  Serie: { name: 'spinner', Icon: IconFontAwesome },
-  'Rest between cycles': { name: 'ios-timer', Icon: IconIonicons },
-  'Start countdown': { name: 'stopwatch', Icon: IconEntypo },
-  'chevron-up': { name: 'chevron-up', Icon: IconFontAwesome },
+  fitness: { name: 'ios-fitness', Icon: IconIonicons },
+  rest: { name: 'rest', Icon: IconAntDesign },
+  cycle: { name: 'cycle', Icon: IconEntypo },
+  spinner: { name: 'spinner', Icon: IconFontAwesome },
+  timer: { name: 'ios-timer', Icon: IconIonicons },
+  stopwatch: { name: 'stopwatch', Icon: IconEntypo },
+  chevron: { name: 'chevron-up', Icon: IconEntypo },
 };
+
 const Icons = ({ name: iconName, size: sizeIcon, color: colorIcon }) => {
   const { name, Icon } = iconsSettings[iconName];
   return <Icon name={name} size={sizeIcon} color={colorIcon} style={styles.iconList} />;

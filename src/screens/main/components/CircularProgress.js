@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
+import { space } from 'HiitTimer/src/utils/theme';
 
 const CircularProgress = props => {
   const { size, fill, tintColor, backgroundColor } = props;
@@ -8,7 +9,7 @@ const CircularProgress = props => {
   return (
     <AnimatedCircularProgress
       size={size}
-      width={15}
+      width={space.large}
       fill={fill}
       tintColor={tintColor}
       backgroundColor={backgroundColor}

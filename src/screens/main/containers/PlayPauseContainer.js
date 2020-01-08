@@ -1,39 +1,33 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react';
 import PropTypes from 'prop-types';
-
+import { observer } from 'mobx-react';
+import { useStores } from 'HiitTimer/src/stores/hooks';
 import { PlayPause } from '../components';
 
-class PlayPauseContainer extends React.Component {
-  onPlay = () => {
-    const {
-      session: { setPlay, inProgress },
-      onPress,
-    } = this.props;
+const PlayPauseContainer = observer(props => {
+  const { session } = useStores();
+  const onPlay = () => {
+    const { setPlay, inProgress } = session;
+    const { onPress } = props;
     if (inProgress) {
       setPlay();
     } else {
       onPress();
     }
   };
-
-  render() {
-    const { session } = this.props;
-    return (
-      <PlayPause
-        isPlay={session.isPlay}
-        onPlay={this.onPlay}
-        onPause={session.setPause}
-        onStop={session.setStop}
-        setInProgress={session.setInProgress}
-      />
-    );
-  }
-}
+  return (
+    <PlayPause
+      isPlay={session.isPlay}
+      onPlay={onPlay}
+      onPause={session.setPause}
+      onStop={session.setStop}
+      setInProgress={session.setInProgress}
+    />
+  );
+});
 
 PlayPauseContainer.propTypes = {
-  session: PropTypes.object.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 
-export default inject('session')(observer(PlayPauseContainer));
+export default PlayPauseContainer;

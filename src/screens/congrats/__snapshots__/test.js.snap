@@ -160,6 +160,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               label={
                 Object {
                   "data": 3,
+                  "icon": "fitness",
                   "name": "Countdown",
                 }
               }
@@ -174,6 +175,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               value={
                 Object {
                   "data": 3,
+                  "icon": "fitness",
                   "name": "Countdown",
                 }
               }
@@ -219,6 +221,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               label={
                 Object {
                   "data": 2,
+                  "icon": "rest",
                   "name": "Rest",
                 }
               }
@@ -233,6 +236,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               value={
                 Object {
                   "data": 2,
+                  "icon": "rest",
                   "name": "Rest",
                 }
               }
@@ -278,6 +282,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               label={
                 Object {
                   "data": 1,
+                  "icon": "cycle",
                   "name": "Cycle",
                 }
               }
@@ -292,6 +297,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               value={
                 Object {
                   "data": 1,
+                  "icon": "cycle",
                   "name": "Cycle",
                 }
               }
@@ -337,6 +343,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               label={
                 Object {
                   "data": 2,
+                  "icon": "spinner",
                   "name": "Serie",
                 }
               }
@@ -351,6 +358,7 @@ exports[`CongratsScreen renders correctly 1`] = `
               value={
                 Object {
                   "data": 2,
+                  "icon": "spinner",
                   "name": "Serie",
                 }
               }
@@ -415,8 +423,11 @@ exports[`CongratsScreen renders correctly 1`] = `
           }
         >
           You have completed a session in 
+           
           0 horas 0 min y 10 seg
-           time.
+           
+          time.
+          .
         </Text>
       </View>
     </View>

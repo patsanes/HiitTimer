@@ -21,33 +21,34 @@ const styles = StyleSheet.create({
     borderColor: colors.green,
   },
 });
-export default class PlayPause extends React.PureComponent {
-  render() {
-    const { isPlay, onPlay, onPause, onStop, setInProgress } = this.props;
-    return (
-      <>
-        <View style={styles.container}>
-          <View style={styles.left} />
-          <View style={styles.center}>
-            <ButtonTimer
-              disabled={false}
-              name={isPlay ? 'pause' : 'play'}
-              onPress={isPlay ? onPause : onPlay}
-            />
-          </View>
-          <View style={styles.right}>
-            <ButtonTimer
-              disabled={!isPlay}
-              name={I18N.stopLabel}
-              onPress={onStop}
-              setInProgress={setInProgress}
-            />
-          </View>
+
+const PlayPause = props => {
+  const { isPlay, onPlay, onPause, onStop, setInProgress } = props;
+  return (
+    <>
+      <View style={styles.container}>
+        <View style={styles.left} />
+        <View style={styles.center}>
+          <ButtonTimer
+            disabled={false}
+            name={isPlay ? 'pause' : 'play'}
+            onPress={isPlay ? onPause : onPlay}
+          />
         </View>
-      </>
-    );
-  }
-}
+        <View style={styles.right}>
+          <ButtonTimer
+            disabled={!isPlay}
+            name={I18N.stopLabel}
+            onPress={onStop}
+            setInProgress={setInProgress}
+          />
+        </View>
+      </View>
+    </>
+  );
+};
+
+export default PlayPause;
 
 PlayPause.propTypes = {
   isPlay: PropTypes.bool.isRequired,

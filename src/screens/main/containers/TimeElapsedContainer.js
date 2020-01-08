@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 
 import { TimeElapsed } from '../components';
 
-class TimeElapsedContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { isPlay, isStop } = session;
-    return <TimeElapsed isPlay={isPlay} isStop={isStop} />;
-  }
-}
+const TimeElapsedContainer = props => {
+  const { session } = props;
+  const { isPlay, isStop } = session;
+  return <TimeElapsed isPlay={isPlay} isStop={isStop} />;
+};
 
 TimeElapsedContainer.propTypes = {
   session: PropTypes.object.isRequired,

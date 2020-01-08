@@ -27,37 +27,29 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class HPicker extends Component {
-  render() {
-    const {
-      modalVisible,
-      togglePicker,
-      placeholder,
-      selectedValue,
-      onValueChange,
-      items,
-    } = this.props;
-
-    return (
-      <Modal animationType="slide" transparent visible={modalVisible}>
-        <View style={styles.modalContent}>
-          <View style={styles.inner}>
-            <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
-              <Icons name="chevron" size={30} />
-              <Text style={styles.modalTitleText}>{placeholder}</Text>
-            </TouchableOpacity>
-            <View style={styles.border} />
-            <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-              {items.map((item, index) => (
-                <Picker.Item key={index.id} label={item} value={item} />
-              ))}
-            </Picker>
-          </View>
+const HPicker = props => {
+  const { modalVisible, togglePicker, placeholder, selectedValue, onValueChange, items } = props;
+  return (
+    <Modal animationType="slide" transparent visible={modalVisible}>
+      <View style={styles.modalContent}>
+        <View style={styles.inner}>
+          <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
+            <Icons name="chevron" size={30} />
+            <Text style={styles.modalTitleText}>{placeholder}</Text>
+          </TouchableOpacity>
+          <View style={styles.border} />
+          <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
+            {items.map((item, index) => (
+              <Picker.Item key={index.id} label={item} value={item} />
+            ))}
+          </Picker>
         </View>
-      </Modal>
-    );
-  }
-}
+      </View>
+    </Modal>
+  );
+};
+
+export default HPicker;
 
 HPicker.propTypes = {
   placeholder: PropTypes.string.isRequired,

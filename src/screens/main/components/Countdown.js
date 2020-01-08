@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Sound from 'react-native-sound';
-import { fontSizes, fontFamilies, colors } from 'HiitTimer/src/utils/theme';
+import { fontSizes, fontFamilies, colors, fontWeight } from 'HiitTimer/src/utils/theme';
 import { ProgressContainer, TimerMachineContainer } from '../containers';
 
 const styles = StyleSheet.create({
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.xxxLarge,
     position: 'absolute',
     fontFamily: fontFamilies.leagueGothic,
-    fontWeight: 'bold',
+    fontWeight: fontWeight.bold,
     color: colors.secondaryDark,
     alignSelf: 'center',
   },

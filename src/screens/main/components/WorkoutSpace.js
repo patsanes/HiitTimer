@@ -32,7 +32,6 @@ const WorkoutSpace = props => {
   );
 };
 WorkoutSpace.propTypes = {
-  // inProgress: PropTypes.bool.isRequired,
   goToCongratsFromHome: PropTypes.func.isRequired,
 };
 

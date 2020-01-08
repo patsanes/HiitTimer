@@ -5,13 +5,18 @@ import I18N from 'HiitTimer/src/lenguage';
 
 import { Lap } from '../components';
 
-class LapSerieContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { currentSerie, serie } = session;
-    return <Lap name={I18N.seriesLabel} count={serie} current={currentSerie} />;
-  }
-}
+const LapSerieContainer = props => {
+  const { session } = props;
+  const { currentSerie, serie } = session;
+  return <Lap name={I18N.seriesLabel} count={serie} current={currentSerie} />;
+};
+// class LapSerieContainer extends React.Component {
+//   render() {
+//     const { session } = this.props;
+//     const { currentSerie, serie } = session;
+//     return <Lap name={I18N.seriesLabel} count={serie} current={currentSerie} />;
+//   }
+// }
 
 LapSerieContainer.propTypes = {
   session: PropTypes.object.isRequired,

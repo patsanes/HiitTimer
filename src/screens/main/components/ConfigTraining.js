@@ -32,22 +32,21 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class ConfigTraining extends React.PureComponent {
-  render() {
-    const { onPress } = this.props;
-    return (
-      <>
-        <View style={styles.topLeft} />
-        <View style={styles.topMiddle}>
-          <Text style={styles.titleText}>HIIT </Text>
-        </View>
-        <View style={styles.topRight}>
-          <ButtonConfig style={styles.button} disabled={false} name="cog" onPress={onPress} />
-        </View>
-      </>
-    );
-  }
-}
+const ConfigTraining = props => {
+  const { onPress } = props;
+  return (
+    <>
+      <View style={styles.topLeft} />
+      <View style={styles.topMiddle}>
+        <Text style={styles.titleText}>HIIT </Text>
+      </View>
+      <View style={styles.topRight}>
+        <ButtonConfig style={styles.button} disabled={false} name="cog" onPress={onPress} />
+      </View>
+    </>
+  );
+};
+export default ConfigTraining;
 
 ConfigTraining.propTypes = {
   onPress: PropTypes.func.isRequired,

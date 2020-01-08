@@ -4,22 +4,20 @@ import { observer, inject } from 'mobx-react';
 import I18N from 'HiitTimer/src/lenguage';
 import { HPicker } from '../components';
 
-class PickerRestContainer extends React.Component {
-  render() {
-    const { session } = this.props;
-    const { updateRest, rest } = session;
-    const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
-    return (
-      <HPicker
-        iconName={I18N.iconRestLabel}
-        placeholder={I18N.restLabel}
-        selectedValue={rest.toString()}
-        onValueChange={updateRest}
-        items={items}
-      />
-    );
-  }
-}
+const PickerRestContainer = props => {
+  const { session } = props;
+  const { updateRest, rest } = session;
+  const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
+  return (
+    <HPicker
+      iconName={I18N.iconRestLabel}
+      placeholder={I18N.restLabel}
+      selectedValue={rest.toString()}
+      onValueChange={updateRest}
+      items={items}
+    />
+  );
+};
 
 PickerRestContainer.propTypes = {
   session: PropTypes.object.isRequired,

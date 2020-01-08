@@ -17,6 +17,6 @@ const PickerSerieContainer = observer(() => {
       items={items}
     />
   );
-};
+});
 
 export default PickerSerieContainer;

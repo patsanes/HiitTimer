@@ -1,24 +1,21 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react';
+import { observer } from 'mobx-react';
 import PropTypes from 'prop-types';
 import { colors } from 'HiitTimer/src/utils/theme';
 import { useStores } from 'HiitTimer/src/stores/hooks';
 import { Countdown } from '../components';
 
 const CountdownContainer = observer(props => {
+  const { session } = useStores();
+  const { goToCongratsFromHome } = props;
   const onFinish = () => {
-    const {
-      session: { timeCompleteWorkout, timePased, setStop },
-      goToCongratsFromHome,
-      // Reset progress
-    } = props;
+    const { timeCompleteWorkout, timePased, setStop } = session;
     if (timeCompleteWorkout === timePased) {
       setStop();
       goToCongratsFromHome();
     }
   };
 
-  const { session } = useStores();
   const {
     isRest,
     timePasedWorkout,

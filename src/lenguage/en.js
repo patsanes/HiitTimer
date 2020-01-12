@@ -15,8 +15,8 @@ export default {
   completeWorkoutTime: 'Complete workout time: ',
   startCoundownLabel: 'Start countdown',
   iconStartCoundownLabel: 'stopwatch',
-  infoSpaceText:
-    'Pequenez lo lo abonados en el zorrilla contento. Paz sus pueblo ocioso restos dia caidas una. El voluntad amenazas un debieran so. Del adulterio tio amenazaba templados aca envolvian. Le adulterino abofeteado un te reintegrar levantarse. Con gente suo fuego veces pecho comia puede.',
+  infoSpaceText: `Here you can choose how many seconds each part of the exercise takes. \n\r Countdown is the active time of the workout (60 seconds tops).\n\r Rest is the time you take between workouts (60 seconds tops). \n\r Series and cycles is self explanatory (I hope), if not this app is not for you :D`,
   completedSessionInLabel: 'You have completed a session in ',
   timeLabel: 'time.',
+  enterTheDataLabel: 'Enter the data you want for your workout:',
 };

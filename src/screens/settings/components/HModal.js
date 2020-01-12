@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Modal, Picker, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/components/Icons';
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const HPicker = props => {
+const HModal = props => {
   const { modalVisible, togglePicker, placeholder, selectedValue, onValueChange, items } = props;
   return (
     <Modal animationType="slide" transparent visible={modalVisible}>
@@ -49,9 +49,9 @@ const HPicker = props => {
   );
 };
 
-export default HPicker;
+export default HModal;
 
-HPicker.propTypes = {
+HModal.propTypes = {
   placeholder: PropTypes.string.isRequired,
   selectedValue: PropTypes.string.isRequired,
   onValueChange: PropTypes.func.isRequired,

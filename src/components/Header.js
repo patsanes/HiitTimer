@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import I18N from 'HiitTimer/src/lenguage';
 import { colors, fontSizes, fontFamilies } from 'HiitTimer/src/utils/theme';
-
 
 const styles = StyleSheet.create({
   title: {
@@ -15,7 +15,7 @@ export default class Header extends React.PureComponent {
   render() {
     return (
       <View>
-        <Text style={styles.title}> Enter the data you want for your workout:</Text>
+        <Text style={styles.title}> {I18N.enterTheDataLabel}</Text>
       </View>
     );
   }

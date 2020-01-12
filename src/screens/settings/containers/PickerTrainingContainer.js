@@ -6,7 +6,6 @@ import { HPicker } from '../components';
 
 const PickerTrainingContainer = observer(() => {
   const { session } = useStores();
-
   const { updateTraining, training } = session;
   const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
   return (

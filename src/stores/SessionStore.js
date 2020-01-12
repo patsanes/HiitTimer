@@ -55,7 +55,7 @@ export const SessionStore = types
       const startTime = '00:00:00';
       const extraSeconds = (self.rest + self.training) * self.serie * self.cycle;
       const endTime = moment(startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
-      return endTime.format('H [horas] m [min y] s [seg]');
+      return endTime.format('H [hours] m [min y] s [sec]');
     },
     get timePasedWorkout() {
       const timePasedWorkout = (self.timePased / self.timeCompleteWorkout) * 100;

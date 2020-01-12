@@ -10,17 +10,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  containerCard: {
-    flex: 0.6,
-  },
-  containerText: {
-    flex: 0.4,
-    justifyContent: 'center',
-    marginLeft: space.large,
-    marginRight: space.large,
-  },
+  containerCard: { marginTop: 10 },
   textCompletedIn: {
-    fontSize: fontSizes.small,
+    fontSize: fontSizes.xxSmall,
     fontFamily: fontFamilies.montserrat,
     color: colors.secondary,
   },
@@ -28,8 +20,8 @@ const styles = StyleSheet.create({
     color: colors.secondaryDark,
   },
   text: {
-    fontSize: fontSizes.small,
-    fontFamily: fontFamilies.leagueGothic,
+    fontSize: fontSizes.xxSmall,
+    fontFamily: fontFamilies.montserrat,
     color: colors.secondaryDark,
   },
   card: {
@@ -74,7 +66,7 @@ const Congrats = props => {
     <React.Fragment>
       <View style={styles.container}>
         <View style={styles.containerCard}>
-          <Card containerStyle={styles.card} title="DETAIL" titleStyle={styles.titleCard}>
+          <Card containerStyle={styles.card} title="WORKOUT DETAIL" titleStyle={styles.titleCard}>
             {details.map((item, index) => (
               <View key={item.name} label={item} value={item} style={styles.cardItem}>
                 <Icons name={item.icon} />
@@ -85,10 +77,12 @@ const Congrats = props => {
             ))}
           </Card>
         </View>
-        <View style={styles.containerText}>
-          <Text style={styles.textCompletedIn}>
-            {I18N.completedSessionInLabel} {endTime} {I18N.timeLabel}.
-          </Text>
+        <View style={styles.containerCard}>
+          <Card containerStyle={styles.card} title="RESULTS!" titleStyle={styles.titleCard}>
+            <Text style={styles.textCompletedIn}>
+              {I18N.completedSessionInLabel} {endTime} {I18N.timeLabel}
+            </Text>
+          </Card>
         </View>
       </View>
     </React.Fragment>

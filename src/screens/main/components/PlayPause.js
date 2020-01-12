@@ -10,15 +10,12 @@ const styles = StyleSheet.create({
   container: { display: 'flex', flex: 1, flexDirection: 'row' },
   left: {
     flex: 3,
-    borderColor: colors.green,
   },
   center: {
     flex: 4,
-    borderColor: colors.red,
   },
   right: {
     flex: 3,
-    borderColor: colors.green,
   },
 });
 

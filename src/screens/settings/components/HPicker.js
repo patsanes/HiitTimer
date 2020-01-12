@@ -37,8 +37,9 @@ const HPicker = props => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const togglePicker = () => {
-    setIsVisiblePicker(!isVisiblePicker);
-    setModalVisible(isVisiblePicker);
+    // setIsVisiblePicker(!isVisiblePicker);
+    setIsVisiblePicker(true);
+    setModalVisible(false);
   };
 
   const { iconName, placeholder, selectedValue, onValueChange, items } = props;
@@ -48,6 +49,7 @@ const HPicker = props => {
         <TouchableHighlight
           underlayColor={colors.transparent}
           onPress={() => {
+            setIsVisiblePicker(false);
             setModalVisible(true);
           }}
           style={styles.touch}
@@ -61,6 +63,7 @@ const HPicker = props => {
       </View>
       {!isVisiblePicker ? (
         <HModal
+          selectedValue={selectedValue}
           onValueChange={onValueChange}
           modalVisible={modalVisible}
           togglePicker={togglePicker}
@@ -76,7 +79,7 @@ export default HPicker;
 HPicker.propTypes = {
   iconName: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  selectedValue: PropTypes.string.isRequired,
+  selectedValue: PropTypes.number.isRequired,
   onValueChange: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired, // [1,2,3,4,5,67,7]
 };

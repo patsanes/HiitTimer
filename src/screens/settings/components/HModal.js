@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 const HModal = props => {
   const { modalVisible, togglePicker, placeholder, selectedValue, onValueChange, items } = props;
   return (
-    <Modal animationType="slide" transparent visible={modalVisible}>
+    <Modal animationType="fade" transparent visible={modalVisible} onRequestClose={togglePicker}>
       <View style={styles.modalContent}>
         <View style={styles.inner}>
           <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
@@ -39,8 +39,8 @@ const HModal = props => {
           </TouchableOpacity>
           <View style={styles.border} />
           <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-            {items.map((item, index) => (
-              <Picker.Item key={index.id} label={item} value={item} />
+            {items.map(item => (
+              <Picker.Item key={item} label={item} value={item} />
             ))}
           </Picker>
         </View>

@@ -7,12 +7,12 @@ import { HPicker } from '../components';
 const PickerRestBetweenCyclesContainer = observer(() => {
   const { session } = useStores();
   const { updateRestBetween, restBetween } = session;
-  const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
+  const items = Array.from({ length: 60 }, (v, i) => i + 1);
   return (
     <HPicker
       iconName={I18N.iconRestBetweenLabel}
       placeholder={I18N.restBetweenCyclesLabel}
-      selectedValue={restBetween.toString()}
+      selectedValue={restBetween}
       onValueChange={updateRestBetween}
       items={items}
     />

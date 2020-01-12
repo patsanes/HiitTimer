@@ -7,12 +7,12 @@ import { HPicker } from '../components';
 const PickerSerieContainer = observer(() => {
   const { session } = useStores();
   const { updateSerie, serie } = session;
-  const items = Array.from({ length: 10 }, (v, i) => (i + 1).toString());
+  const items = Array.from({ length: 10 }, (v, i) => i + 1);
   return (
     <HPicker
       iconName={I18N.iconSerieLabel}
       placeholder={I18N.serieLabel}
-      selectedValue={serie.toString()}
+      selectedValue={serie}
       onValueChange={updateSerie}
       items={items}
     />

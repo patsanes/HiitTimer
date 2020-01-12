@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/components/Icons';
-import { fontSizes, colors } from 'HiitTimer/src/utils/theme';
+import { fontSizes, colors, fontFamilies } from 'HiitTimer/src/utils/theme';
 import HModal from './HModal';
 
 const styles = StyleSheet.create({
@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   },
   headerValue: {
     fontSize: fontSizes.xxSmall,
+    fontFamily: fontFamilies.montserrat,
     flex: 0.6,
   },
   value: {

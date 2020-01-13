@@ -16,22 +16,21 @@ const CountdownContainer = observer(props => {
     }
   };
 
-  const {
-    isRest,
-    timePasedWorkout,
-    timePasedPerSerie,
-    // playSound,
-  } = session;
+  const { isRest, rest, training, currentTime, timePased, timeCompleteWorkout } = session;
+
+  const count = isRest ? rest : training;
+  const fillTime = 100 - (currentTime / count) * 100;
+
+  const timePasedWorkout = (timePased / timeCompleteWorkout) * 100;
 
   const currentCircleColor = isRest ? colors.restGreen : colors.restBlue;
 
   return (
     <Countdown
       currentCircleColor={currentCircleColor}
-      fill={timePasedPerSerie}
+      fill={fillTime}
       fillComplete={timePasedWorkout}
       _onFinish={onFinish}
-      // playSound={playSound}
     />
   );
 });

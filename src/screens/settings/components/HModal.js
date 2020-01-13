@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Modal, Picker, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/components/Icons';
@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const HPicker = props => {
+const HModal = props => {
   const { modalVisible, togglePicker, placeholder, selectedValue, onValueChange, items } = props;
   return (
-    <Modal animationType="slide" transparent visible={modalVisible}>
+    <Modal animationType="fade" transparent visible={modalVisible} onRequestClose={togglePicker}>
       <View style={styles.modalContent}>
         <View style={styles.inner}>
           <TouchableOpacity onPress={togglePicker} style={styles.modalTitle}>
@@ -39,8 +39,8 @@ const HPicker = props => {
           </TouchableOpacity>
           <View style={styles.border} />
           <Picker selectedValue={selectedValue} onValueChange={onValueChange}>
-            {items.map((item, index) => (
-              <Picker.Item key={index.id} label={item} value={item} />
+            {items.map(item => (
+              <Picker.Item key={item} label={item} value={item} />
             ))}
           </Picker>
         </View>
@@ -49,9 +49,9 @@ const HPicker = props => {
   );
 };
 
-export default HPicker;
+export default HModal;
 
-HPicker.propTypes = {
+HModal.propTypes = {
   placeholder: PropTypes.string.isRequired,
   selectedValue: PropTypes.string.isRequired,
   onValueChange: PropTypes.func.isRequired,

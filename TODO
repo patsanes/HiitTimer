@@ -1,5 +1,4 @@
 remove moment-duration-format (is it neccesary?)
-upgrade RN (react-native-git-upgrade ours theirs) ??? 
 * upgrade libraries (yarn upgrade-interactive --latest)
 *? use git hooks to run eslint command (https://github.com/observing/pre-commit)
 create a command on package.json that run eslint (yarn eslint ./src) (https://eslint.org/docs/3.0.0/user-guide/command-line-interface)
@@ -17,3 +16,15 @@ import using the index.js file
 
 React.Component vs PureComponent
 * shouldComponentUpdate
+
+move utils/icons to components
+
+refactor const iconsSettings = {
+
+clean SessionStore. removed unused methods
+
+move all texts to a single place! eg: 
+        title: `Well done!`, SETTINGS , etc
+
+
+classes to hooks

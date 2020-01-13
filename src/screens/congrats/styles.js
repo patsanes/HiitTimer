@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { space } from 'HiitTimer/src/utils/theme';
-
+import { space, colors } from 'HiitTimer/src/utils/theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,14 +11,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   middle: {
-    flex: 7,
+    flex: 4.5,
     flexDirection: 'row',
     justifyContent: 'center',
   },
   bottom: {
-    flex: 4.8,
+    flex: 5.5,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'flex-start',
   },
   linearGradient: {
     flex: 1,

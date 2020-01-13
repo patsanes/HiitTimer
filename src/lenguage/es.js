@@ -4,4 +4,5 @@ export default {
   cycleLabel: 'Ciclo',
   cyclesLabel: 'Cycles',
   serieLabel: 'Serie',
+  enterTheDataLabel: 'Enter the data you want for your workout:',
 };

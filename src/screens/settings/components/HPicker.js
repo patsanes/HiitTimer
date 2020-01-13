@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { TouchableHighlight, StyleSheet, Text, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Icons from 'HiitTimer/src/components/Icons';
-import { fontSizes, colors } from 'HiitTimer/src/utils/theme';
+import { fontSizes, colors, fontFamilies } from 'HiitTimer/src/utils/theme';
 import HModal from './HModal';
 
 const styles = StyleSheet.create({
@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   },
   headerValue: {
     fontSize: fontSizes.xxSmall,
+    fontFamily: fontFamilies.montserrat,
     flex: 0.6,
   },
   value: {
@@ -36,8 +37,9 @@ const HPicker = props => {
   const [modalVisible, setModalVisible] = useState(false);
 
   const togglePicker = () => {
-    setIsVisiblePicker(!isVisiblePicker);
-    setModalVisible(isVisiblePicker);
+    // setIsVisiblePicker(!isVisiblePicker);
+    setIsVisiblePicker(true);
+    setModalVisible(false);
   };
 
   const { iconName, placeholder, selectedValue, onValueChange, items } = props;
@@ -47,6 +49,7 @@ const HPicker = props => {
         <TouchableHighlight
           underlayColor={colors.transparent}
           onPress={() => {
+            setIsVisiblePicker(false);
             setModalVisible(true);
           }}
           style={styles.touch}
@@ -60,6 +63,7 @@ const HPicker = props => {
       </View>
       {!isVisiblePicker ? (
         <HModal
+          selectedValue={selectedValue}
           onValueChange={onValueChange}
           modalVisible={modalVisible}
           togglePicker={togglePicker}
@@ -75,7 +79,7 @@ export default HPicker;
 HPicker.propTypes = {
   iconName: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  selectedValue: PropTypes.string.isRequired,
+  selectedValue: PropTypes.number.isRequired,
   onValueChange: PropTypes.func.isRequired,
   items: PropTypes.array.isRequired, // [1,2,3,4,5,67,7]
 };

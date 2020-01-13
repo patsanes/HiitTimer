@@ -7,12 +7,12 @@ import { HPicker } from '../components';
 const PickerRestContainer = observer(() => {
   const { session } = useStores();
   const { updateRest, rest } = session;
-  const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
+  const items = Array.from({ length: 60 }, (v, i) => i + 1);
   return (
     <HPicker
       iconName={I18N.iconRestLabel}
       placeholder={I18N.restLabel}
-      selectedValue={rest.toString()}
+      selectedValue={rest}
       onValueChange={updateRest}
       items={items}
     />

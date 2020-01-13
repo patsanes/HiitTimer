@@ -7,12 +7,12 @@ import { HPicker } from '../components';
 const PickerStartCountdownContainer = observer(() => {
   const { session } = useStores();
   const { updateStartCountdown, startCountdown } = session;
-  const items = Array.from({ length: 10 }, (v, i) => (i + 1).toString());
+  const items = Array.from({ length: 10 }, (v, i) => i + 1);
   return (
     <HPicker
       iconName={I18N.iconStartCoundownLabel}
       placeholder={I18N.startCoundownLabel}
-      selectedValue={startCountdown.toString()}
+      selectedValue={startCountdown}
       onValueChange={updateStartCountdown}
       items={items}
     />

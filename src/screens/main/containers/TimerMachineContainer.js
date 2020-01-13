@@ -25,8 +25,6 @@ const TimerMachineContainer = observer(props => {
   } = session;
 
   const count = isRest ? rest : training;
-
-  // console.log({ inProgress });
   return (
     <>
       {!inProgress ? (

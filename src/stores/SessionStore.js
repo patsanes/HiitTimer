@@ -36,7 +36,7 @@ export const SessionStore = types
   .model('SessionStore', {
     training: types.number,
     rest: types.number,
-    restBetween: types.number, // seconds for resting ADD THIS LATER ON
+    restBetween: types.number,
     serie: types.number,
     currentSerie: types.number,
     cycle: types.number,
@@ -55,17 +55,17 @@ export const SessionStore = types
       const startTime = '00:00:00';
       const extraSeconds = (self.rest + self.training) * self.serie * self.cycle;
       const endTime = moment(startTime, 'HH:mm:ss').add(extraSeconds, 'seconds');
-      return endTime.format('H [horas] m [min y] s [seg]');
+      return endTime.format('H [hours] m [min y] s [sec]');
     },
-    get timePasedWorkout() {
-      const timePasedWorkout = (self.timePased / self.timeCompleteWorkout) * 100;
-      return timePasedWorkout;
-    },
-    get timePasedPerSerie() {
-      const count = self.isRest ? self.rest : self.training;
-      const fillTime = 100 - (self.currentTime / count) * 100;
-      return fillTime;
-    },
+    // get timePasedWorkout() {
+    //   const timePasedWorkout = (self.timePased / self.timeCompleteWorkout) * 100;
+    //   return timePasedWorkout;
+    // },
+    // get timePasedPerSerie() {
+    //   const count = self.isRest ? self.rest : self.training;
+    //   const fillTime = 100 - (self.currentTime / count) * 100;
+    //   return fillTime;
+    // },
     get isTimeToFinish() {
       const isTime =
         self.serie === self.currentSerie &&
@@ -174,6 +174,7 @@ export const SessionStore = types
     },
     updateTraining(newValue) {
       self.training = Number(newValue);
+      self.currentTime = self.training;
     },
     updateRest(newValue) {
       self.rest = Number(newValue);

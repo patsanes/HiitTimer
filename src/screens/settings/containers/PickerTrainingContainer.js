@@ -6,14 +6,14 @@ import { HPicker } from '../components';
 
 const PickerTrainingContainer = observer(() => {
   const { session } = useStores();
-
   const { updateTraining, training } = session;
-  const items = Array.from({ length: 60 }, (v, i) => (i + 1).toString());
+  // TODO: 60
+  const items = Array.from({ length: 60 }, (v, i) => i + 1);
   return (
     <HPicker
       iconName={I18N.iconCountdownLabel}
       placeholder={I18N.countdownLabel}
-      selectedValue={training.toString()}
+      selectedValue={training}
       onValueChange={updateTraining}
       items={items}
     />
